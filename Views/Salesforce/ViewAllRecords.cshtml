@@ -1,0 +1,38 @@
+﻿@{
+    var leads = ViewBag.Leads as List<SalesforceIntegrationApp.Models.Lead>;
+    var contacts = ViewBag.Contacts as List<SalesforceIntegrationApp.Models.Contact>;
+}
+
+<h2>Leads</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Company</th>
+    </tr>
+    @foreach (var lead in leads)
+    {
+        <tr>
+            <td>@lead.FirstName</td>
+            <td>@lead.LastName</td>
+            <td>@lead.Company</td>
+        </tr>
+    }
+</table>
+
+<h2>Contacts</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+    </tr>
+    @foreach (var contact in contacts)
+    {
+        <tr>
+            <td>@contact.FirstName</td>
+            <td>@contact.LastName</td>
+            <td>@contact.Email</td>
+        </tr>
+    }
+</table>
