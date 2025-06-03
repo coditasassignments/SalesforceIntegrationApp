@@ -6,6 +6,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using SalesforceIntegrationApp.Data;
 using SalesforceIntegrationApp.Models;
+using Newtonsoft.Json;
 
 namespace SalesforceIntegrationApp.Controllers
 {
@@ -13,7 +14,7 @@ namespace SalesforceIntegrationApp.Controllers
     public class SalesforceController : Controller
     {
         private readonly string instanceUrl = "https://coditasdomain-dev-ed.my.salesforce.com";
-        private readonly string accessToken = "00D90000000uBr5!AQsAQBB1wvXNmFV.VkqXg6DnDY3pqTyXfvONrJzvUxRZ6Fc7252cMK0jQ6yBHmKUmsLuIblnetGUK8vSjEmIitzh0aq7lEKt";
+        private readonly string accessToken = "00D90000000uBr5!AQsAQAs.3dsBSa.AssXEVmb3mK06IvGKK9Ps2rOoQ2TI.WDb.jsB8dD2EOMNaAl.yVoN40s9F5.qxLmmg.dxg_SB8PBSjyjH";
 
         private readonly ApplicationDbContext _context;
         public SalesforceController(ApplicationDbContext context)
@@ -54,7 +55,7 @@ namespace SalesforceIntegrationApp.Controllers
                         });
                     }
 
-                   
+
                     int pageSize = 10;
                     int pageNumber = 1;
 
@@ -81,6 +82,9 @@ namespace SalesforceIntegrationApp.Controllers
                 else
                 {
                     ViewBag.Error = $"Error: {response.StatusCode} - {response.ReasonPhrase}";
+                    ViewBag.Fields = new List<dynamic>();
+                    ViewBag.CurrentPage = 1;
+                    ViewBag.TotalPages = 1;
                     return View("GetLeadMetaData");
                 }
             }
@@ -94,8 +98,8 @@ namespace SalesforceIntegrationApp.Controllers
             {
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
-                string query = "SELECT Id, FirstName, LastName, Email FROM Contact LIMIT 5";
-                string query2 = "SELECT Id, FirstName, LastName, Company FROM Lead LIMIT 5";
+                string query = "SELECT Id, FirstName, LastName, Email FROM Contact";
+                string query2 = "SELECT Id, FirstName, LastName, Company FROM Lead";
 
                 string urlContact = $"{instanceUrl}/services/data/v54.0/query/?q={Uri.EscapeDataString(query)}";
                 string urlLead = $"{instanceUrl}/services/data/v54.0/query/?q={Uri.EscapeDataString(query2)}";
@@ -109,7 +113,7 @@ namespace SalesforceIntegrationApp.Controllers
                     dynamic parsed = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
                     contactData = parsed.records.ToObject<List<dynamic>>();
 
-                  
+
                     foreach (var contact in contactData)
                     {
                         var contactModel = new Contact
@@ -135,7 +139,7 @@ namespace SalesforceIntegrationApp.Controllers
                     dynamic parsed = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
                     leadData = parsed.records.ToObject<List<dynamic>>();
 
-                  
+
                     foreach (var lead in leadData)
                     {
                         var leadModel = new Lead
@@ -158,7 +162,7 @@ namespace SalesforceIntegrationApp.Controllers
                 return View("GetLeadAndContactFields");
             }
         }
-        public async Task<IActionResult> ViewAllRecords()
+        /*public async Task<IActionResult> ViewAllRecords()
         {
             var leads = await _context.Leads.ToListAsync();
             var contacts = await _context.Contacts.ToListAsync();
@@ -166,12 +170,72 @@ namespace SalesforceIntegrationApp.Controllers
             ViewBag.Leads = leads;
             ViewBag.Contacts = contacts;
 
-            return View("ViewAllRecords"); // 
+            return View("ViewAllRecords");
+        }*/
+        public async Task<IActionResult> FetchLeadAndContactWithOpenTask()
+        {
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", accessToken);
+
+             
+                var leadQuery = "SELECT Id, Name, Email FROM Lead WHERE Id IN (SELECT WhoId FROM Task WHERE Status = 'Open' AND Who.Type = 'Lead')";
+                var contactQuery = "SELECT Id, Name, Email FROM Contact WHERE Id IN (SELECT WhoId FROM Task WHERE Status = 'Open' AND Who.Type = 'Contact')";
+
+                var leadResponse = await client.GetAsync($"{instanceUrl}/services/data/v54.0/query?q={Uri.EscapeDataString(leadQuery)}");
+                var contactResponse = await client.GetAsync($"{instanceUrl}/services/data/v54.0/query?q={Uri.EscapeDataString(contactQuery)}");
+
+                var allItems = new List<LeadAndContactWithOpenTask>();
+
+                if (leadResponse.IsSuccessStatusCode)
+                {
+                    var json = await leadResponse.Content.ReadAsStringAsync();
+                    dynamic parsed = JsonConvert.DeserializeObject(json);
+                    foreach (var record in parsed.records)
+                    {
+                        allItems.Add(new LeadAndContactWithOpenTask
+                        {
+                            Label = "Lead",
+                            Name = record.Name,
+                            Email = record.Email,
+                            Status = "Open"
+                        });
+                    }
+                }
+
+                if (contactResponse.IsSuccessStatusCode)
+                {
+                    var json = await contactResponse.Content.ReadAsStringAsync();
+                    dynamic parsed = JsonConvert.DeserializeObject(json);
+                    foreach (var record in parsed.records)
+                    {
+                        allItems.Add(new LeadAndContactWithOpenTask
+                        {
+                            Label = "Contact",
+                            Name = record.Name,
+                            Email = record.Email,
+                            Status = "Open"
+                        });
+                    }
+                }
+
+                
+                _context.LeadAndContactWithOpenTasks.RemoveRange(_context.LeadAndContactWithOpenTasks); // Clear old records
+                _context.LeadAndContactWithOpenTasks.AddRange(allItems);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction("LeadAndContactWithOpenTask");
         }
 
-
-
-
-
+        public IActionResult LeadAndContactWithOpenTask()
+        {
+            var data = _context.LeadAndContactWithOpenTasks.ToList();
+            return View("LeadAndContactWithOpenTask", data);
+        }
     }
+
 }
+

@@ -12,5 +12,9 @@ namespace SalesforceIntegrationApp.Data
 
         public DbSet<Lead> Leads { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+
+        public DbSet<LeadAndContactWithOpenTask> LeadAndContactWithOpenTasks { get; set; }
+
+
     }
 }

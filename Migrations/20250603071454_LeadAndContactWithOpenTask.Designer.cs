@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SalesforceIntegrationApp.Data;
 
@@ -10,9 +11,11 @@ using SalesforceIntegrationApp.Data;
 namespace SalesforceIntegrationApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250603071454_LeadAndContactWithOpenTask")]
+    partial class LeadAndContactWithOpenTask
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,6 +49,35 @@ namespace SalesforceIntegrationApp.Migrations
                     b.ToTable("Contacts");
                 });
 
+            modelBuilder.Entity("SalesforceIntegrationApp.Models.ContactWithOpenTask", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SalesforceId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ContactsWithOpenTasks");
+                });
+
             modelBuilder.Entity("SalesforceIntegrationApp.Models.Lead", b =>
                 {
                     b.Property<int>("Id")
@@ -71,7 +103,7 @@ namespace SalesforceIntegrationApp.Migrations
                     b.ToTable("Leads");
                 });
 
-            modelBuilder.Entity("SalesforceIntegrationApp.Models.LeadAndContactWithOpenTask", b =>
+            modelBuilder.Entity("SalesforceIntegrationApp.Models.LeadWithOpenTask", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -79,25 +111,25 @@ namespace SalesforceIntegrationApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Email")
+                    b.Property<string>("Company")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Label")
+                    b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Status")
+                    b.Property<string>("SalesforceId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("LeadAndContactWithOpenTasks");
+                    b.ToTable("LeadsWithOpenTasks");
                 });
 #pragma warning restore 612, 618
         }
