@@ -1,0 +1,35 @@
+[INFO]  04-06-2025 14:04:24 - Fetching Salesforce report data...
+[INFO]  04-06-2025 14:04:25 - Report parsed successfully.
+[INFO]  04-06-2025 14:04:27 - Report data saved to DB.
+[INFO]  04-06-2025 14:04:46 - Fetching Salesforce report data...
+[INFO]  04-06-2025 14:04:47 - Report parsed successfully.
+[INFO]  04-06-2025 14:04:47 - Report data saved to DB.
+[INFO]  04-06-2025 14:21:07 - Fetching Salesforce report data...
+[INFO]  04-06-2025 14:21:08 - Report parsed successfully.
+[INFO]  04-06-2025 14:21:08 - Report data saved to DB.
+[INFO]  04-06-2025 14:36:37 - Started fetching lead metadata from Salesforce.
+[INFO]  04-06-2025 14:36:40 - Lead metadata fetch response: OK
+[INFO]  04-06-2025 14:36:48 - Started fetching lead metadata from Salesforce.
+[INFO]  04-06-2025 14:36:49 - Lead metadata fetch response: OK
+[INFO]  04-06-2025 14:36:59 - Started fetching lead metadata from Salesforce.
+[INFO]  04-06-2025 14:37:00 - Lead metadata fetch response: OK
+[INFO]  04-06-2025 14:37:09 - Started fetching lead metadata from Salesforce.
+[INFO]  04-06-2025 14:37:12 - Lead metadata fetch response: OK
+[INFO]  04-06-2025 14:37:24 - Started fetching lead metadata from Salesforce.
+[INFO]  04-06-2025 14:37:25 - Started fetching lead metadata from Salesforce.
+[INFO]  04-06-2025 14:37:25 - Lead metadata fetch response: OK
+[INFO]  04-06-2025 14:37:26 - Lead metadata fetch response: OK
+[INFO]  04-06-2025 14:41:37 - Fetching Salesforce report data...
+[INFO]  04-06-2025 14:41:38 - Report parsed successfully.
+[INFO]  04-06-2025 14:41:39 - Report data saved to DB.
+[INFO]  04-06-2025 14:44:33 - Fetching Salesforce report data...
+[INFO]  04-06-2025 14:44:34 - Report parsed successfully.
+[INFO]  04-06-2025 14:44:35 - Report data saved to DB.
+[INFO]  04-06-2025 14:58:42 - Started fetching lead metadata from Salesforce.
+[INFO]  04-06-2025 14:58:44 - Lead metadata fetch response: OK
+[INFO]  04-06-2025 14:58:48 - Started fetching lead metadata from Salesforce.
+[INFO]  04-06-2025 14:58:50 - Lead metadata fetch response: OK
+[INFO]  04-06-2025 14:58:53 - Started fetching lead metadata from Salesforce.
+[INFO]  04-06-2025 14:58:55 - Lead metadata fetch response: OK
+[INFO]  04-06-2025 14:58:58 - Started fetching lead metadata from Salesforce.
+[INFO]  04-06-2025 14:58:59 - Lead metadata fetch response: OK

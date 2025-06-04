@@ -1,0 +1,44 @@
+﻿@model List<SalesforceIntegrationApp.Models.ReportData>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    // Columns ko define karne ke liye Model se pehla row parse karte hain (JSON)
+    var firstRow = Model.FirstOrDefault();
+    List<string> columns = new List<string>();
+
+    if (firstRow != null)
+    {
+        var firstRowData = Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(firstRow.RowDataJson);
+        for (int i = 0; i < firstRowData.Count; i++)
+        {
+            columns.Add("Column " + (i + 1)); // Temporary column names, ya dynamic fetch kar sakti ho
+        }
+    }
+}
+
+<h2>Salesforce Report Data</h2>
+
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            @foreach (var col in columns)
+            {
+                <th>@col</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            var rowData = Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(item.RowDataJson);
+            <tr>
+                @foreach (var cell in rowData)
+                {
+                    <td>@cell</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
