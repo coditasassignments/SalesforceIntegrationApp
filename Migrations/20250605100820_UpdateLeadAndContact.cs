@@ -5,7 +5,7 @@
 namespace SalesforceIntegrationApp.Migrations
 {
     /// <inheritdoc />
-    public partial class updatetable : Migration
+    public partial class UpdateLeadAndContact : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

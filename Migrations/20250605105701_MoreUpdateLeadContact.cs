@@ -5,7 +5,7 @@
 namespace SalesforceIntegrationApp.Migrations
 {
     /// <inheritdoc />
-    public partial class SecondCreate : Migration
+    public partial class MoreUpdateLeadContact : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

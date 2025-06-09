@@ -11,8 +11,8 @@ using SalesforceIntegrationApp.Data;
 namespace SalesforceIntegrationApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250602115349_SecondCreate")]
-    partial class SecondCreate
+    [Migration("20250605105701_MoreUpdateLeadContact")]
+    partial class MoreUpdateLeadContact
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,11 +26,8 @@ namespace SalesforceIntegrationApp.Migrations
 
             modelBuilder.Entity("SalesforceIntegrationApp.Models.Contact", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
@@ -51,11 +48,8 @@ namespace SalesforceIntegrationApp.Migrations
 
             modelBuilder.Entity("SalesforceIntegrationApp.Models.Lead", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Company")
                         .HasColumnType("nvarchar(max)");
@@ -72,6 +66,48 @@ namespace SalesforceIntegrationApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Leads");
+                });
+
+            modelBuilder.Entity("SalesforceIntegrationApp.Models.LeadAndContactWithOpenTask", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Label")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LeadAndContactWithOpenTasks");
+                });
+
+            modelBuilder.Entity("SalesforceIntegrationApp.Models.ReportData", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("RowDataJson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ReportDatas");
                 });
 #pragma warning restore 612, 618
         }

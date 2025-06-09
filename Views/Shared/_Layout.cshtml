@@ -29,14 +29,26 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Salesforce" asp-action="GetLeadMetaData">GetLeadMetadata</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Salesforce" asp-action="GetLeadAndContactFields">Get Lead & Contact Fields</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Salesforce" asp-action="FetchLeadAndContactWithOpenTask">
-                                LeadAndContactWithOpenTask
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="getDataDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                GetData
                             </a>
+                            <ul class="dropdown-menu" aria-labelledby="getDataDropdown">
+                                <li><a class="dropdown-item" href="/Data/GetLeadData">Get Lead Data</a></li>
+                                <li><a class="dropdown-item" href="/Data/GetContactData">Get Contact Data</a></li>
+                            </ul>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="openTaskDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Open Task
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="openTaskDropdown">
+                                <li><a class="dropdown-item" href="/OpenTask/FetchLeadsWithOpenTask">Lead With Open Task</a></li>
+                                <li><a class="dropdown-item" href="/OpenTask/FetchContactsWithOpenTask">Contact With Open Task</a></li>
+                            </ul>
+                        </li>
+
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="Report" asp-action="FetchAndShowReports">ReportsData</a>
                         </li>

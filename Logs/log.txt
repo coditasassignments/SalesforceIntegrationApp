@@ -33,3 +33,80 @@
 [INFO]  04-06-2025 14:58:55 - Lead metadata fetch response: OK
 [INFO]  04-06-2025 14:58:58 - Started fetching lead metadata from Salesforce.
 [INFO]  04-06-2025 14:58:59 - Lead metadata fetch response: OK
+[INFO]  05-06-2025 15:00:26 - Started fetching lead metadata from Salesforce.
+[INFO]  05-06-2025 15:00:28 - Lead metadata fetch response: OK
+[INFO]  05-06-2025 15:00:32 - Started fetching lead metadata from Salesforce.
+[INFO]  05-06-2025 15:00:33 - Lead metadata fetch response: OK
+[INFO]  05-06-2025 16:23:20 - Started fetching lead metadata from Salesforce.
+[INFO]  05-06-2025 16:23:21 - Lead metadata fetch response: OK
+[INFO]  05-06-2025 17:12:35 - Started fetching lead metadata from Salesforce.
+[INFO]  05-06-2025 17:12:37 - Lead metadata fetch response: OK
+[INFO]  05-06-2025 17:12:41 - Fetching Salesforce report data...
+[ERROR] 05-06-2025 17:12:42 - Error while fetching report from Salesforce.
+Exception: Failed to fetch report from Salesforce. Status: Unauthorized
+StackTrace:    at SalesforceIntegrationApp.Controllers.ReportController.FetchReportJsonFromSalesforce() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\ReportController.cs:line 74
+   at SalesforceIntegrationApp.Controllers.ReportController.FetchAndShowReports() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\ReportController.cs:line 27
+[INFO]  09-06-2025 09:08:28 - Started fetching lead metadata from Salesforce.
+[INFO]  09-06-2025 09:08:30 - Lead metadata fetch response: OK
+[INFO]  09-06-2025 09:38:28 - Started fetching lead metadata from Salesforce.
+[INFO]  09-06-2025 09:38:29 - Lead metadata fetch response: OK
+[INFO]  09-06-2025 09:42:38 - Started fetching lead metadata from Salesforce.
+[INFO]  09-06-2025 09:42:39 - Lead metadata fetch response: OK
+[INFO]  09-06-2025 09:44:25 - Fetching Salesforce report data...
+[INFO]  09-06-2025 09:44:26 - Report parsed successfully.
+[INFO]  09-06-2025 09:44:27 - Report data saved to DB.
+[INFO]  09-06-2025 09:44:27 - Fetching Salesforce report data...
+[INFO]  09-06-2025 09:44:28 - Report parsed successfully.
+[INFO]  09-06-2025 09:44:28 - Report data saved to DB.
+[INFO]  09-06-2025 09:52:40 - Fetching Salesforce report data...
+[INFO]  09-06-2025 09:52:41 - Report parsed successfully.
+[INFO]  09-06-2025 09:52:44 - Report data saved to DB.
+[INFO]  09-06-2025 10:20:35 - Fetching Salesforce report data...
+[INFO]  09-06-2025 10:20:36 - Report parsed successfully.
+[INFO]  09-06-2025 10:20:40 - Report data saved to DB.
+[INFO]  09-06-2025 10:20:50 - Fetching Salesforce report data...
+[INFO]  09-06-2025 10:20:51 - Report parsed successfully.
+[INFO]  09-06-2025 10:20:52 - Report data saved to DB.
+[INFO]  09-06-2025 10:23:07 - Fetching Salesforce report data...
+[INFO]  09-06-2025 10:23:09 - Report parsed successfully.
+[INFO]  09-06-2025 10:23:12 - Report data saved to DB.
+[INFO]  09-06-2025 10:23:49 - Started fetching lead metadata from Salesforce.
+[INFO]  09-06-2025 10:23:50 - Lead metadata fetch response: OK
+[INFO]  09-06-2025 10:23:56 - Started fetching lead metadata from Salesforce.
+[INFO]  09-06-2025 10:23:57 - Lead metadata fetch response: OK
+[INFO]  09-06-2025 10:33:32 - Started fetching lead metadata from Salesforce.
+[INFO]  09-06-2025 10:33:35 - Lead metadata fetch response: OK
+[INFO]  09-06-2025 10:40:25 - Fetching Salesforce report data...
+[INFO]  09-06-2025 10:40:27 - Report parsed successfully.
+[INFO]  09-06-2025 10:40:31 - Report data saved to DB.
+[INFO]  09-06-2025 10:40:35 - Fetching Salesforce report data...
+[INFO]  09-06-2025 10:40:37 - Report parsed successfully.
+[INFO]  09-06-2025 10:40:37 - Report data saved to DB.
+[INFO]  09-06-2025 10:40:39 - Fetching Salesforce report data...
+[INFO]  09-06-2025 10:40:40 - Report parsed successfully.
+[INFO]  09-06-2025 10:40:41 - Report data saved to DB.
+[INFO]  09-06-2025 12:03:37 - Started fetching lead metadata from Salesforce.
+[INFO]  09-06-2025 12:03:38 - Lead metadata fetch response: Forbidden
+[INFO]  09-06-2025 12:07:07 - Started fetching lead metadata from Salesforce.
+[INFO]  09-06-2025 12:07:08 - Lead metadata fetch response: Forbidden
+[INFO]  09-06-2025 12:15:17 - Started fetching lead metadata from Salesforce.
+[INFO]  09-06-2025 12:15:17 - Lead metadata fetch response: Forbidden
+[INFO]  09-06-2025 12:24:45 - Started fetching lead metadata from Salesforce.
+[INFO]  09-06-2025 12:24:46 - Lead metadata fetch response: Forbidden
+[INFO]  09-06-2025 12:25:08 - Fetching Salesforce report data...
+[ERROR] 09-06-2025 12:25:09 - Error while fetching report from Salesforce.
+Exception: Failed to fetch report from Salesforce. Status: Forbidden
+StackTrace:    at SalesforceIntegrationApp.Controllers.ReportController.FetchReportJsonFromSalesforce() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\ReportController.cs:line 59
+   at SalesforceIntegrationApp.Controllers.ReportController.FetchAndShowReports() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\ReportController.cs:line 25
+[INFO]  09-06-2025 12:25:24 - Started fetching lead metadata from Salesforce.
+[INFO]  09-06-2025 12:25:25 - Lead metadata fetch response: Forbidden
+[INFO]  09-06-2025 12:30:24 - Started fetching lead metadata from Salesforce.
+[INFO]  09-06-2025 12:30:26 - Lead metadata fetch response: Forbidden
+[INFO]  09-06-2025 12:35:48 - Started fetching lead metadata from Salesforce.
+[INFO]  09-06-2025 12:35:49 - Lead metadata fetch response: Forbidden
+[INFO]  09-06-2025 13:50:17 - Started fetching lead metadata from Salesforce.
+[INFO]  09-06-2025 13:50:18 - Lead metadata fetch response: Forbidden
+[INFO]  09-06-2025 13:50:52 - Started fetching lead metadata from Salesforce.
+[INFO]  09-06-2025 13:50:53 - Lead metadata fetch response: Forbidden
+[INFO]  09-06-2025 13:51:00 - Started fetching lead metadata from Salesforce.
+[INFO]  09-06-2025 13:51:01 - Lead metadata fetch response: Forbidden

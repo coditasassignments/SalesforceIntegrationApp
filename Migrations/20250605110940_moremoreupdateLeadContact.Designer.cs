@@ -11,8 +11,8 @@ using SalesforceIntegrationApp.Data;
 namespace SalesforceIntegrationApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250603095915_CreateSalesforceTable")]
-    partial class CreateSalesforceTable
+    [Migration("20250605110940_moremoreupdateLeadContact")]
+    partial class moremoreupdateLeadContact
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,11 +26,8 @@ namespace SalesforceIntegrationApp.Migrations
 
             modelBuilder.Entity("SalesforceIntegrationApp.Models.Contact", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
@@ -41,9 +38,6 @@ namespace SalesforceIntegrationApp.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SalesforceId")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.ToTable("Contacts");
@@ -51,11 +45,8 @@ namespace SalesforceIntegrationApp.Migrations
 
             modelBuilder.Entity("SalesforceIntegrationApp.Models.Lead", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Company")
                         .HasColumnType("nvarchar(max)");
@@ -64,9 +55,6 @@ namespace SalesforceIntegrationApp.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SalesforceId")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -83,24 +71,37 @@ namespace SalesforceIntegrationApp.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Label")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Status")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("LeadAndContactWithOpenTasks");
+                });
+
+            modelBuilder.Entity("SalesforceIntegrationApp.Models.ReportData", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("RowDataJson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ReportDatas");
                 });
 #pragma warning restore 612, 618
         }

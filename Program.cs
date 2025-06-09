@@ -1,6 +1,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using SalesforceIntegrationApp.Data;
+using SalesforceIntegrationApp.Services.Implementations;
+using SalesforceIntegrationApp.Services.Interfaces;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<ISalesforceService, SalesforceIntegrationApp.Services.Implementations.SalesforceService>();
+builder.Services.AddScoped<IDataService, DataService>();
+builder.Services.AddScoped<IOpenTaskService, OpenTaskService>();
+
+
 
 var app = builder.Build();
 
