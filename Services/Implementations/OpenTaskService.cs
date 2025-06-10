@@ -11,15 +11,19 @@ namespace SalesforceIntegrationApp.Services.Implementations
 {
     public class OpenTaskService : IOpenTaskService
     {
-        private readonly string accessToken = "00D90000000uBr5!AQsAQLJ2CHuKNC7NBWqVQRLboIe1Et3qE19cSBggBTjBbXJkcgwkSJ7O64GBznypK6JIPN2pQoKiRgS1_4p3NJnK1Jp0tuJe";
-        private readonly string instanceUrl = "https://coditasdomain-dev-ed.my.salesforce.com";
+        private readonly AuthService _authService;
+        public OpenTaskService(AuthService authService)
+        {
+            _authService = authService;
+        }
         public async Task<List<LeadAndContactWithOpenTask>> GetOpenTasksByTypeAsync(string type)
         {
+            var auth = await _authService.GetValidTokenAsync();
             var result = new List<LeadAndContactWithOpenTask>();
-            string queryUrl = $"{instanceUrl}/services/data/v54.0/query?q={Uri.EscapeDataString($"SELECT Id, WhoId, Who.Name, Who.Email, Who.Type FROM Task WHERE Status = 'In Progress' AND Who.Type = '{type}'")}";
+            string queryUrl = $"{auth.InstanceUrl}/services/data/v54.0/query?q={Uri.EscapeDataString($"SELECT Id, WhoId, Who.Name, Who.Email, Who.Type FROM Task WHERE Status = 'In Progress' AND Who.Type = '{type}'")}";
             using (var client = new HttpClient())
             {
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", auth.AccessToken);
                 while (!string.IsNullOrEmpty(queryUrl))
                 {
                     var response = await client.GetAsync(queryUrl);
@@ -39,7 +43,8 @@ namespace SalesforceIntegrationApp.Services.Implementations
                             Status = "In Progress"
                         });
                     }
-                    queryUrl = null;
+                    queryUrl = parsed.nextRecordsUrl != null? $"{auth.InstanceUrl}{parsed.nextRecordsUrl}": null;
+
                 }
             }
             return result;

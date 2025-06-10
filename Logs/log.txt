@@ -110,3 +110,65 @@ StackTrace:    at SalesforceIntegrationApp.Controllers.ReportController.FetchRep
 [INFO]  09-06-2025 13:50:53 - Lead metadata fetch response: Forbidden
 [INFO]  09-06-2025 13:51:00 - Started fetching lead metadata from Salesforce.
 [INFO]  09-06-2025 13:51:01 - Lead metadata fetch response: Forbidden
+[INFO]  10-06-2025 09:33:26 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  10-06-2025 09:33:28 - Lead metadata fetch response: OK
+[INFO]  10-06-2025 09:33:31 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  10-06-2025 09:33:32 - Lead metadata fetch response: OK
+[INFO]  10-06-2025 09:34:10 - Fetching Salesforce report data...
+[ERROR] 10-06-2025 09:34:11 - Error while fetching report from Salesforce.
+Exception: Failed to fetch report from Salesforce. Status: Unauthorized
+StackTrace:    at SalesforceIntegrationApp.Controllers.ReportController.FetchReportJsonFromSalesforce() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\ReportController.cs:line 59
+   at SalesforceIntegrationApp.Controllers.ReportController.FetchAndShowReports() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\ReportController.cs:line 25
+[INFO]  10-06-2025 09:35:39 - Fetching Salesforce report data...
+[INFO]  10-06-2025 09:35:40 - Report parsed successfully.
+[INFO]  10-06-2025 09:35:42 - Report data saved to DB.
+[INFO]  10-06-2025 09:35:47 - Fetching Salesforce report data...
+[INFO]  10-06-2025 09:35:48 - Report parsed successfully.
+[INFO]  10-06-2025 09:35:48 - Report data saved to DB.
+[INFO]  10-06-2025 09:35:51 - Fetching Salesforce report data...
+[INFO]  10-06-2025 09:35:52 - Report parsed successfully.
+[INFO]  10-06-2025 09:35:52 - Report data saved to DB.
+[INFO]  10-06-2025 09:35:55 - Fetching Salesforce report data...
+[INFO]  10-06-2025 09:35:55 - Report parsed successfully.
+[INFO]  10-06-2025 09:35:55 - Report data saved to DB.
+[INFO]  10-06-2025 09:49:55 - Fetching Salesforce report data...
+[ERROR] 10-06-2025 09:49:56 - Error while fetching report from Salesforce.
+Exception: Failed to fetch report. Status: Unauthorized
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.ReportService.FetchAndParseReportAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\ReportService.cs:line 32
+   at SalesforceIntegrationApp.Controllers.ReportController.FetchAndShowReports() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\ReportController.cs:line 45
+[INFO]  10-06-2025 09:50:06 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  10-06-2025 09:50:07 - Lead metadata fetch response: OK
+[INFO]  10-06-2025 09:52:06 - Fetching Salesforce report data...
+[INFO]  10-06-2025 09:52:08 - Parsing Salesforce report JSON...
+[INFO]  10-06-2025 09:52:08 - Saving report data to DB...
+[INFO]  10-06-2025 11:13:29 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  10-06-2025 11:13:31 - Lead metadata fetch response: OK
+[INFO]  10-06-2025 11:14:03 - Fetching Salesforce report data...
+[ERROR] 10-06-2025 11:14:04 - Error while fetching report from Salesforce.
+Exception: Failed to fetch report. Status: Unauthorized
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.ReportService.FetchAndParseReportAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\ReportService.cs:line 32
+   at SalesforceIntegrationApp.Controllers.ReportController.FetchAndShowReports() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\ReportController.cs:line 27
+[INFO]  10-06-2025 12:11:06 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  10-06-2025 12:11:07 - Lead metadata fetch response: OK
+[INFO]  10-06-2025 12:33:14 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  10-06-2025 12:33:16 - Lead metadata fetch response: OK
+[ERROR] 10-06-2025 14:04:31 - Unexpected error in GetLeadMetaData.
+Exception: ❌ Failed to refresh token from Salesforce.
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.AuthService.GetValidTokenAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 40
+   at SalesforceIntegrationApp.Controllers.SalesforceController.GetLeadMetaData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\SalesforceController.cs:line 28
+[ERROR] 10-06-2025 14:08:48 - Unexpected error in GetLeadMetaData.
+Exception: ❌ Failed to refresh token from Salesforce.
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.AuthService.GetValidTokenAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 40
+   at SalesforceIntegrationApp.Controllers.SalesforceController.GetLeadMetaData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\SalesforceController.cs:line 28
+[INFO]  10-06-2025 14:09:24 - Fetching Salesforce report data...
+[INFO]  10-06-2025 14:09:26 - Parsing Salesforce report JSON...
+[INFO]  10-06-2025 14:09:26 - Saving report data to DB...
+[INFO]  10-06-2025 14:19:39 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  10-06-2025 14:19:41 - Lead metadata fetch response: OK
+[INFO]  10-06-2025 14:20:10 - Fetching Salesforce report data...
+[INFO]  10-06-2025 14:20:11 - Parsing Salesforce report JSON...
+[INFO]  10-06-2025 14:20:11 - Saving report data to DB...
+[INFO]  10-06-2025 15:03:07 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  10-06-2025 15:03:10 - Lead metadata fetch response: OK
+[INFO]  10-06-2025 16:56:36 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  10-06-2025 16:56:38 - Lead metadata fetch response: OK
