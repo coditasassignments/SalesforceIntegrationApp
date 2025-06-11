@@ -7,6 +7,7 @@ using SalesforceIntegrationApp.Exceptions;
 using SalesforceIntegrationApp.Logging;
 using SalesforceIntegrationApp.Helpers;
 using SalesforceIntegrationApp.Services.Implementations;
+using SalesforceIntegrationApp.Models.DTOs;
 
 namespace SalesforceIntegrationApp.Controllers
 {
@@ -43,6 +44,7 @@ namespace SalesforceIntegrationApp.Controllers
                 Logger.LogError("Unexpected error in GetLeadMetaData.", ex);
                 ViewBag.Error = "Unexpected error occurred while fetching lead metadata.";
             }
+            //ViewBag.Fields = new List<LeadFieldDto>(); ;
             ViewBag.Fields = new List<dynamic>();
             ViewBag.CurrentPage = 1;
             ViewBag.TotalPages = 1;

@@ -26,13 +26,10 @@ namespace SalesforceIntegrationApp.Controllers
             {
                 var reportData = await _reportService.FetchAndParseReportAsync();
                 _reportService.SaveReportToDatabase(reportData);
-
                 var savedData = _db.ReportDatas.ToList();
                 var (paginatedData, totalPages, currentPage) = PaginationHelper.ApplyPagination(savedData, Request, 10);
-
                 ViewBag.TotalPages = totalPages;
                 ViewBag.CurrentPage = currentPage;
-
                 return View("ReportView", paginatedData);
             }
             catch (ReportFetchException ex)

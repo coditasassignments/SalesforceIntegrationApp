@@ -9,37 +9,53 @@ public class DataController : Controller
 {
     private readonly ApplicationDbContext _context;
     private readonly IDataService _dataService; 
-    public DataController(ApplicationDbContext context, IDataService dataService)
+    public DataController(ApplicationDbContext context, IDataService dataService) // Injecting the Database access layer and service layer through DI(Dependency Injection)
     {
         _context = context;
         _dataService = dataService;
     }
-    public async Task<IActionResult> GetLeadData()
+    public async Task<IActionResult> GetLeadData() // Controller method to fetch LeadsMetaData
     {
-        var leadData = await _dataService.GetLeadsAsync();
-        foreach (var lead in leadData)
+        var leadDtos = await _dataService.GetLeadsAsync();
+        var leads = leadDtos.Select(dto => new Lead // Mapping Dto to model
+        {
+            Id = dto.Id,
+            FirstName = dto.FirstName,
+            LastName = dto.LastName,
+            Company = dto.Company
+        }).ToList();
+        foreach (var lead in leads)
         {
             if (!_context.Leads.Any(x => x.Id == lead.Id))
                 _context.Leads.Add(lead);
         }
         await _context.SaveChangesAsync();
-        var (paginatedLeads, totalPages, currentPage) = PaginationHelper.ApplyPagination(leadData, Request);
+        var (paginatedLeads, totalPages, currentPage) = PaginationHelper.ApplyPagination(leads, Request);
         ViewBag.CurrentPage = currentPage;
         ViewBag.TotalPages = totalPages;
         return View("~/Views/Salesforce/Lead.cshtml", paginatedLeads);
     }
+
     public async Task<IActionResult> GetContactData()
     {
-        var contactData = await _dataService.GetContactsAsync();
-        foreach (var contact in contactData)
+        var contactDtos = await _dataService.GetContactsAsync();
+        var contacts = contactDtos.Select(dto => new Contact
+        {
+            Id = dto.Id,
+            FirstName = dto.FirstName,
+            LastName = dto.LastName,
+            Email = dto.Email
+        }).ToList();
+        foreach (var contact in contacts)
         {
             if (!_context.Contacts.Any(x => x.Id == contact.Id))
                 _context.Contacts.Add(contact);
         }
         await _context.SaveChangesAsync();
-        var (paginatedContacts, totalPages, currentPage) = PaginationHelper.ApplyPagination(contactData, Request);
+        var (paginatedContacts, totalPages, currentPage) = PaginationHelper.ApplyPagination(contacts, Request);
         ViewBag.CurrentPage = currentPage;
         ViewBag.TotalPages = totalPages;
         return View("~/Views/Salesforce/Contact.cshtml", paginatedContacts);
     }
+
 }

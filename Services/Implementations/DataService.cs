@@ -1,6 +1,7 @@
 ﻿using Azure.Core;
 using Newtonsoft.Json;
 using SalesforceIntegrationApp.Models;
+using SalesforceIntegrationApp.Models.DTOs;
 using SalesforceIntegrationApp.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace SalesforceIntegrationApp.Services.Implementations
         {
             _authService = authService;
         }
-        public async Task<List<Lead>> GetLeadsAsync()
+        public async Task<List<LeadDto>> GetLeadsAsync()
         {
             var auth = await _authService.GetValidTokenAsync();
 
@@ -29,12 +30,12 @@ namespace SalesforceIntegrationApp.Services.Implementations
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
-                dynamic parsed = JsonConvert.DeserializeObject(json); //Deserializing the json data to c# objects.
-                return parsed.records.ToObject<List<Lead>>(); //Converting the dynamic parsed to strongly typed list.
+                var parsed = JsonConvert.DeserializeObject<LeadWrapDto>(json); //Deserializing the json data to c# objects.
+                return parsed.Records; //Converting the dynamic parsed to strongly typed list.
             }
-            return new List<Lead>();
+            return new List<LeadDto>();
         }
-        public async Task<List<Contact>> GetContactsAsync()
+        public async Task<List<ContactDto>> GetContactsAsync()
         {
             var auth = await _authService.GetValidTokenAsync();
             using var client = new HttpClient();
@@ -45,10 +46,10 @@ namespace SalesforceIntegrationApp.Services.Implementations
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
-                dynamic parsed = JsonConvert.DeserializeObject(json);
-                return parsed.records.ToObject<List<Contact>>();
+                var parsed = JsonConvert.DeserializeObject<ContactWrapDto>(json);
+                return parsed.Records;
             }
-            return new List<Contact>();
+            return new List<ContactDto>();
         }
     }
 }
