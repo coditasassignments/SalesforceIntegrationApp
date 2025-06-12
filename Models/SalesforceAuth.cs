@@ -10,7 +10,7 @@
         public string AccessToken { get; set; }
         public string InstanceUrl { get; set; }
         public DateTime? TokenLastUpdated { get; set; }
-        public int TokenValiditySeconds { get; set; } = 3600; // default 1 hour
+        public int TokenValiditySeconds { get; set; } = 3600;
 
     }
 }

@@ -26,6 +26,8 @@ namespace SalesforceIntegrationApp.Services.Implementations
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", auth.AccessToken);
             //string query = "SELECT Id, WhoId, Who.Name, Who.Email, Who.Type FROM Task WHERE Status = 'In Progress' AND Who.Type = 'Lead'";
             string query = "SELECT Id, WhoId, Who.Name, Who.Email FROM Task WHERE Status = 'In Progress'";
+            //string query = SELECT Id, WhoId, Who.Name, Who.Email, Who.Type FROM Task WHERE Status = 'In Progress';
+            //string query = "SELECT Lead.Id, Lead.FirstName, Lead.LastName(SELECT Id, Subject, Status FROM Tasks WHERE WhatId = Lead.Id AND STATUS IN('Open' , 'Not Started')) FROM Lead WHERE Lead.Id IN(SELECT WhatId FROM Task WHERE WhatId != NULL);
             string url = $"{auth.InstanceUrl}/services/data/v54.0/query?q={Uri.EscapeDataString(query)}";
             var response = await client.GetAsync(url);
             if (response.IsSuccessStatusCode)

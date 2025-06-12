@@ -21,9 +21,9 @@ public class InProgressController : Controller
         var leads = leadDtos.Select(dto => new LeadInProgress // Mapping Dto to model
         {
             Id = dto.Id,
-            FirstName = dto.FirstName,
-            LastName = dto.LastName,
-            Company = dto.Company
+            WhoId = dto.WhoId,
+            Name = dto.Who?.Name,
+            Email = dto.Who?.Email
         }).ToList();
         foreach (var lead in leads)
         {
