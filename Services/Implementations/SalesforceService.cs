@@ -58,6 +58,7 @@ namespace SalesforceIntegrationApp.Services.Implementations
                 }).Cast<dynamic>().ToList();
                 return parsed.Fields;*/
                 //return dynamicList;
+
                 if (parsed?.Fields == null || parsed.Fields.Count == 0)
                     throw new InvalidLeadDataException("Lead metadata does not contain any fields.");
                 //return parsed.Fields;

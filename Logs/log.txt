@@ -311,3 +311,14 @@ StackTrace:    at SalesforceIntegrationApp.Services.Implementations.ReportServic
 [INFO]  12-06-2025 15:05:42 - Lead metadata fetch response: OK
 [INFO]  12-06-2025 15:23:05 - Started fetching lead metadata from Salesforce (Service Layer).
 [INFO]  12-06-2025 15:23:08 - Lead metadata fetch response: OK
+[ERROR] 13-06-2025 09:22:35 - Unexpected error in GetLeadMetaData.
+Exception: Failed to refresh Salesforce token. Status: BadRequest. Details: {"error":"unsupported_grant_type","error_description":"grant type not supported"}
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.AuthService.RefreshAccessTokenAsync(SalesforceAuth credentials) in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 58
+   at SalesforceIntegrationApp.Services.Implementations.AuthService.GetValidTokenAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 34
+   at SalesforceIntegrationApp.Controllers.SalesforceController.GetLeadMetaData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\SalesforceController.cs:line 29
+[INFO]  13-06-2025 10:03:33 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  13-06-2025 10:03:35 - Lead metadata fetch response: OK
+[INFO]  13-06-2025 10:10:26 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  13-06-2025 10:10:26 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  13-06-2025 10:10:28 - Lead metadata fetch response: OK
+[INFO]  13-06-2025 10:10:28 - Lead metadata fetch response: OK

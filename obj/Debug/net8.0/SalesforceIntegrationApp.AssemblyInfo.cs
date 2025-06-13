@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SalesforceIntegrationApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+add539fe5515de0f5bcc583d9129b97a954fb4c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c92db1c49d4ff18860ab63dc95854a5746f24705")]
 [assembly: System.Reflection.AssemblyProductAttribute("SalesforceIntegrationApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SalesforceIntegrationApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
