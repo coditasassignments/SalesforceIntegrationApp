@@ -9,7 +9,11 @@ namespace SalesforceIntegrationApp.Services.Interfaces
     public interface IDataService
     {
         Task<List<LeadDto>> GetLeadsAsync();
+        Task<bool> UpdateLeadInSalesforceAsync(Lead lead);
+        Task<bool> DeleteLeadFromSalesforceAsync(string id);
+
         Task<List<ContactDto>> GetContactsAsync();
+        Task<bool> UpdateContactInSalesforceAsync(Contact contact);
     }
 }
 

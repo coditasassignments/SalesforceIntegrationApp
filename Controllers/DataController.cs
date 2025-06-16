@@ -6,6 +6,7 @@ using SalesforceIntegrationApp.Data;
 using SalesforceIntegrationApp.Helpers;
 using SalesforceIntegrationApp.Logging;
 using SalesforceIntegrationApp.Services.Interfaces;
+using SalesforceIntegrationApp.Services.Implementations;
 public class DataController : Controller
 {
     private readonly ApplicationDbContext _context;
@@ -25,7 +26,11 @@ public class DataController : Controller
                 Id = dto.Id,
                 FirstName = dto.FirstName,
                 LastName = dto.LastName,
-                Company = dto.Company
+                Company = dto.Company,
+                Email = dto.Email,
+                Status = dto.Status,
+                Title = dto.Title,
+                Phone = dto.Phone
             }).ToList();
             foreach (var lead in leads)
             {
@@ -49,7 +54,57 @@ public class DataController : Controller
         }
         
     }
-
+    [HttpPost]
+    public async Task<IActionResult> UpdateLead([FromBody] Lead updatedLead)
+    {
+        try
+        {
+            var existingLead = _context.Leads.FirstOrDefault(l => l.Id == updatedLead.Id);
+            if (existingLead == null)
+                return NotFound();
+            existingLead.FirstName = updatedLead.FirstName;
+            existingLead.LastName = updatedLead.LastName;
+            existingLead.Email = updatedLead.Email;
+            existingLead.Phone = updatedLead.Phone;
+            existingLead.Company = updatedLead.Company;
+            existingLead.Status = updatedLead.Status;
+            existingLead.Title = updatedLead.Title;
+            await _context.SaveChangesAsync();
+            var result = await _dataService.UpdateLeadInSalesforceAsync(updatedLead);
+            if (result)
+                return Json(new { success = true });
+            else
+                return Json(new { success = false, message = "Salesforce update failed" });
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError("Error in UpdateLead", ex);
+            return Json(new { success = false, message = ex.Message });
+        }
+    }
+    [HttpPost]
+    public async Task<IActionResult> DeleteLead(string id)
+    {
+        try
+        {
+            var leadInDb = _context.Leads.FirstOrDefault(l => l.Id == id);
+            if (leadInDb != null)
+            {
+                _context.Leads.Remove(leadInDb);
+                await _context.SaveChangesAsync();
+            }
+            var result = await _dataService.DeleteLeadFromSalesforceAsync(id);
+            if (result)
+                return Json(new { success = true });
+            else
+                return Json(new { success = false, message = "Salesforce delete failed" });
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError("Error in DeleteLead", ex);
+            return Json(new { success = false, message = ex.Message });
+        }
+    }
     public async Task<IActionResult> GetContactData()
     {
         try
@@ -60,7 +115,10 @@ public class DataController : Controller
                 Id = dto.Id,
                 FirstName = dto.FirstName,
                 LastName = dto.LastName,
-                Email = dto.Email
+                Phone = dto.Phone,
+                Email = dto.Email,
+                Title = dto.Title,
+
             }).ToList();
             foreach (var contact in contacts)
             {
@@ -68,6 +126,7 @@ public class DataController : Controller
                     _context.Contacts.Add(contact);
             }
             await _context.SaveChangesAsync();
+            Console.WriteLine("Db updated");
             var (paginatedContacts, totalPages, currentPage) = PaginationHelper.ApplyPagination(contacts, Request);
             ViewBag.CurrentPage = currentPage;
             ViewBag.TotalPages = totalPages;
@@ -82,5 +141,30 @@ public class DataController : Controller
             return View("~/Views/Salesforce/Contact.cshtml", new List<Contact>());
         }
     }
-
+    [HttpPost]
+    public async Task<IActionResult> UpdateContact([FromBody] Contact updatedContact)
+    {
+        try
+        {
+            var existingContact = _context.Contacts.FirstOrDefault(c => c.Id == updatedContact.Id);
+            if (existingContact == null)
+                return NotFound();
+            existingContact.FirstName = updatedContact.FirstName;
+            existingContact.LastName = updatedContact.LastName;
+            existingContact.Phone = updatedContact.Phone;
+            existingContact.Email = updatedContact.Email;
+            existingContact.Title = updatedContact.Title;
+            await _context.SaveChangesAsync();
+            var result = await _dataService.UpdateContactInSalesforceAsync(updatedContact);
+            if (result)
+                return Json(new { success = true });
+            else
+                return Json(new { success = false, message = "Salesforce update failed" });
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError("Error in UpdateContact", ex);
+            return Json(new { success = false, message = ex.Message });
+        }
+    }
 }

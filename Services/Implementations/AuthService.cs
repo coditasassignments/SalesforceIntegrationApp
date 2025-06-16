@@ -59,12 +59,12 @@ namespace SalesforceIntegrationApp.Services.Implementations
             }
             var content = await response.Content.ReadAsStringAsync(); // asynchronous method to read response received in json format is converted to string
             //dynamic result = JsonConvert.DeserializeObject<dynamic>(content);
-            var tokenDto = JsonConvert.DeserializeObject<SalesforceTokenResponseDto>(content); //Deserializes the response to convert it into an object
+            var token = JsonConvert.DeserializeObject<SalesforceTokenResponseDto>(content); //Deserializes the response to convert it into an object
             //credentials.AccessToken = result.access_token;
             //credentials.InstanceUrl = result.instance_url;
             //credentials.TokenLastUpdated = DateTime.UtcNow;
-            credentials.AccessToken = tokenDto.AccessToken; //Mapping the DTO model to the actual model
-            credentials.InstanceUrl = tokenDto.InstanceUrl;
+            credentials.AccessToken = token.AccessToken; //Mapping the DTO model to the actual model
+            credentials.InstanceUrl = token.InstanceUrl;
             credentials.TokenLastUpdated = DateTime.UtcNow;
             _context.SalesforceAuth.Update(credentials); // Updating the value of credentials in the SalesforceAuth table
             await _context.SaveChangesAsync(); //saving all the changes in the database asynchronously

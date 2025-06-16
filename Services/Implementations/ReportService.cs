@@ -13,7 +13,7 @@ namespace SalesforceIntegrationApp.Services.Implementations
     public class ReportService : IReportService
     {
         private readonly ApplicationDbContext _db;
-        private readonly string accessToken = "00D90000000uBr5!AQsAQOul9umrb3S8.vGzy2OoXbOARC2pO3pMX65x59sVhIjsym.9S1l9xlBOIEhH5W6k4LgqLDNf8fLVa4GhvA_1mwUiVWBd";
+        private readonly string accessToken = "00D90000000uBr5!AQsAQAPa6EYCdD8Dw.pI9kkmdDhjszzsC3VhzKWcCjd14cbpnhsKSOE.6GFQWAyjbZdkH7e7e_DChp_N9_A1W9z5UaxuH1cs";
         private readonly string apiUrl = "https://coditasdomain-dev-ed.my.salesforce.com/services/data/v54.0/analytics/reports/00OGC00000N3zUc2AJ";
         public ReportService(ApplicationDbContext db)
         {

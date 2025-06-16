@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XjG1VxleOvuhQTn+6N7hzwctAaR5Ui/PXXEnCjgDIgk=",
+  "Hash": "TMkEz32unyQ2N+ZyPIPZWG5VDKV1M1mgTRZ/pNL8ZEQ=",
   "Source": "SalesforceIntegrationApp",
   "BasePath": "_content/SalesforceIntegrationApp",
   "Mode": "Default",
@@ -99,6 +99,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\icons\\edit.png",
+      "SourceId": "SalesforceIntegrationApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\",
+      "BasePath": "_content/SalesforceIntegrationApp",
+      "RelativePath": "icons/edit#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "a1jtgwqmp7",
+      "Integrity": "YkqWS5+/brz7xjKF0/t+aalPm6KAWnytFOdgYVvZyDU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\icons\\edit.png"
+    },
+    {
+      "Identity": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\icons\\pngegg.png",
+      "SourceId": "SalesforceIntegrationApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\",
+      "BasePath": "_content/SalesforceIntegrationApp",
+      "RelativePath": "icons/pngegg#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "c4vkcnk5qt",
+      "Integrity": "dF3mXO0zjNWG+bmBZJ8rFDDSkxvCUDdEy36fox6z31w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\icons\\pngegg.png"
     },
     {
       "Identity": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\js\\site.js",
@@ -1481,6 +1523,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "icons/edit.a1jtgwqmp7.png",
+      "AssetFile": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\icons\\edit.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10073"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YkqWS5+/brz7xjKF0/t+aalPm6KAWnytFOdgYVvZyDU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Jun 2025 06:03:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "a1jtgwqmp7"
+        },
+        {
+          "Name": "label",
+          "Value": "icons/edit.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YkqWS5+/brz7xjKF0/t+aalPm6KAWnytFOdgYVvZyDU="
+        }
+      ]
+    },
+    {
+      "Route": "icons/edit.png",
+      "AssetFile": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\icons\\edit.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10073"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YkqWS5+/brz7xjKF0/t+aalPm6KAWnytFOdgYVvZyDU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Jun 2025 06:03:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YkqWS5+/brz7xjKF0/t+aalPm6KAWnytFOdgYVvZyDU="
+        }
+      ]
+    },
+    {
+      "Route": "icons/pngegg.c4vkcnk5qt.png",
+      "AssetFile": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\icons\\pngegg.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14150"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dF3mXO0zjNWG+bmBZJ8rFDDSkxvCUDdEy36fox6z31w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Jun 2025 06:41:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c4vkcnk5qt"
+        },
+        {
+          "Name": "label",
+          "Value": "icons/pngegg.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dF3mXO0zjNWG+bmBZJ8rFDDSkxvCUDdEy36fox6z31w="
+        }
+      ]
+    },
+    {
+      "Route": "icons/pngegg.png",
+      "AssetFile": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\icons\\pngegg.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14150"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dF3mXO0zjNWG+bmBZJ8rFDDSkxvCUDdEy36fox6z31w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Jun 2025 06:41:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dF3mXO0zjNWG+bmBZJ8rFDDSkxvCUDdEy36fox6z31w="
         }
       ]
     },

@@ -5,20 +5,100 @@
     int currentPage = ViewBag.CurrentPage != null ? (int)ViewBag.CurrentPage : 1;
     int totalPages = ViewBag.TotalPages != null ? (int)ViewBag.TotalPages : 1;
 }
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: auto;
+        background-color: #f9f9f9;
+    }
 
-<div class="container mt-5">
+    .lead-container {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .lead-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+        table-layout: auto;
+    }
+
+        .lead-table th,
+        .lead-table td {
+            padding: 12px 16px;
+            text-align: left;
+            vertical-align: middle;
+            border: 1px solid #dee2e6;
+            white-space: nowrap;
+        }
+
+        .lead-table thead {
+            background-color: #343a40;
+            color: white;
+        }
+
+        .lead-table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+    .edit-icon,
+    .delete-icon {
+        display: inline-block;
+        margin-right: 10px; 
+    }
+
+        .edit-icon img {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+            .edit-icon img:hover {
+                transform: scale(1.2);
+            }
+
+        .delete-icon img {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.2s ease-in-out;
+            filter: grayscale(100%) brightness(0.7);
+        }
+
+            .delete-icon img:hover {
+                transform: scale(1.2);
+                filter: none;
+            }
+
+
+</style>
+
+
+
+<div class="w-100" style="padding:0; margin:0;">
+
+
     <h2 class="text-center mb-4">Lead Data</h2>
 
     @if (Model != null && Model.Count > 0)
     {
-        <div class="table-responsive">
-            <table class="table table-striped table-bordered">
-                <thead class="table-dark">
+        <div class="lead-container">
+            <table class="lead-table">
+                <thead>
                     <tr>
                         <th>Id</th>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Company</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Title</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,6 +109,29 @@
                             <td>@lead.FirstName</td>
                             <td>@lead.LastName</td>
                             <td>@lead.Company</td>
+                            <td>@lead.Email</td>
+                            <td>@lead.Status</td>
+                            <td>@lead.Title</td>
+                            <td>@lead.Phone</td>
+                            <td class="text-center">
+                                <a href="#" class="edit-icon" title="Edit"
+                                   data-id="@lead.Id"
+                                   data-firstname="@lead.FirstName"
+                                   data-lastname="@lead.LastName"
+                                   data-email="@lead.Email"
+                                   data-phone="@lead.Phone"
+                                   data-company="@lead.Company"
+                                   data-status="@lead.Status"
+                                   data-title="@lead.Title"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#editLeadModal">
+                                    <img src="~/icons/edit.png" alt="Edit" width="20" height="20" />
+                                </a>
+
+                                <a href="#" class="delete-icon" title="Delete">
+                                    <img src="~/icons/pngegg.png" alt="Delete" width="20" height="20" />
+                                </a>
+                            </td>
                         </tr>
                     }
                 </tbody>
@@ -54,9 +157,144 @@
                 </li>
             </ul>
         </nav>
+        <div class="modal fade" id="editLeadModal" tabindex="-1" aria-labelledby="editLeadModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Lead</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editLeadForm">
+                            <input type="hidden" id="editLeadId" />
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label>First Name</label>
+                                    <input type="text" id="editFirstName" class="form-control" />
+                                </div>
+                                <div class="col">
+                                    <label>Last Name</label>
+                                    <input type="text" id="editLastName" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label>Email</label>
+                                <input type="email" id="editEmail" class="form-control" />
+                            </div>
+                            <div class="mb-3">
+                                <label>Phone</label>
+                                <input type="text" id="editPhone" class="form-control" />
+                            </div>
+                            <div class="mb-3">
+                                <label>Company</label>
+                                <input type="text" id="editCompany" class="form-control" />
+                            </div>
+                            <div class="mb-3">
+                                <label>Status</label>
+                                <select id="editStatus" class="form-control">
+                                    <option value="Open - Not Contacted">Open - Not Contacted</option>
+                                    <option value="Working - Contacted">Working - Contacted</option>
+                                    <option value="Closed - Converted">Closed - Converted</option>
+                                    <option value="Closed - Not Converted">Closed - Not Converted</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label>Title</label>
+                                <input type="text" id="editTitle" class="form-control" />
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     }
     else
     {
         <div class="alert alert-info text-center">No leads to display.</div>
     }
 </div>
+@section Scripts {
+    <script>
+        $(document).on('click', '.edit-icon, .edit-icon img', function () {
+            const $el = $(this).closest('.edit-icon');
+            $('#editLeadId').val($el.data('id'));
+            $('#editFirstName').val($el.data('firstname'));
+            $('#editLastName').val($el.data('lastname'));
+            $('#editEmail').val($el.data('email'));
+            $('#editPhone').val($el.data('phone'));
+            $('#editCompany').val($el.data('company'));
+            $('#editStatus').val($el.data('status'));
+            $('#editTitle').val($el.data('title'));
+        });
+        $('#editLeadForm').on('submit', function (e) {
+            e.preventDefault();
+
+            const updatedLead = {
+                Id: $('#editLeadId').val(),
+                FirstName: $('#editFirstName').val(),
+                LastName: $('#editLastName').val(),
+                Email: $('#editEmail').val(),
+                Phone: $('#editPhone').val(),
+                Company: $('#editCompany').val(),
+                Status: $('#editStatus').val(),
+                Title: $('#editTitle').val()
+            };
+
+            $.ajax({
+                url: '/Data/UpdateLead',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(updatedLead),
+                success: function (response) {
+                    if (response.success) {
+                        alert('Lead updated successfully!');
+                        const row = $('td').filter(function () {
+                            return $(this).text() === updatedLead.Id;
+                        }).closest('tr');
+                        row.find('td:eq(1)').text(updatedLead.FirstName);
+                        row.find('td:eq(2)').text(updatedLead.LastName);
+                        row.find('td:eq(3)').text(updatedLead.Company);
+                        row.find('td:eq(4)').text(updatedLead.Email);
+                        row.find('td:eq(5)').text(updatedLead.Status);
+                        row.find('td:eq(6)').text(updatedLead.Title);
+                        row.find('td:eq(7)').text(updatedLead.Phone);
+                        $('#editLeadModal').modal('hide');
+                    } else {
+                        alert('Update failed: ' + response.message);
+                    }
+                },
+                error: function () {
+                    alert('An error occurred while updating lead.');
+                }
+            });
+        });
+            $(document).on('click', '.delete-icon', function (e) {
+            e.preventDefault();
+            const $row = $(this).closest('tr');
+            const leadId = $(this).data('id');
+
+            if (confirm("Are you sure you want to delete this lead?")) {
+                $.ajax({
+                    url: '/Data/DeleteLead',
+                    type: 'POST',
+                    data: { id: leadId },
+                    success: function (response) {
+                        if (response.success) {
+                            $row.remove();
+                            alert("Lead deleted successfully.");
+                        } else {
+                            alert("Delete failed: " + response.message);
+                        }
+                    },
+                    error: function () {
+                        alert("An error occurred while deleting the lead.");
+                    }
+                });
+            }
+        });
+    </script>
+}
+
