@@ -1,96 +1,19 @@
 ﻿@model List<SalesforceIntegrationApp.Models.Lead>
-
 @{
     ViewData["Title"] = "Leads";
     int currentPage = ViewBag.CurrentPage != null ? (int)ViewBag.CurrentPage : 1;
     int totalPages = ViewBag.TotalPages != null ? (int)ViewBag.TotalPages : 1;
 }
-<style>
-    html, body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        box-sizing: border-box;
-        overflow-x: auto;
-        background-color: #f9f9f9;
-    }
-
-    .lead-container {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-    .lead-table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.95rem;
-        table-layout: auto;
-    }
-
-        .lead-table th,
-        .lead-table td {
-            padding: 12px 16px;
-            text-align: left;
-            vertical-align: middle;
-            border: 1px solid #dee2e6;
-            white-space: nowrap;
-        }
-
-        .lead-table thead {
-            background-color: #343a40;
-            color: white;
-        }
-
-        .lead-table tbody tr:hover {
-            background-color: #f1f1f1;
-        }
-
-    .edit-icon,
-    .delete-icon {
-        display: inline-block;
-        margin-right: 10px; 
-    }
-
-        .edit-icon img {
-            width: 20px;
-            height: 20px;
-            transition: transform 0.2s ease-in-out;
-        }
-
-            .edit-icon img:hover {
-                transform: scale(1.2);
-            }
-
-        .delete-icon img {
-            width: 20px;
-            height: 20px;
-            transition: transform 0.2s ease-in-out;
-            filter: grayscale(100%) brightness(0.7);
-        }
-
-            .delete-icon img:hover {
-                transform: scale(1.2);
-                filter: none;
-            }
-
-
-</style>
-
-
-
-<div class="w-100" style="padding:0; margin:0;">
-
-
-    <h2 class="text-center mb-4">Lead Data</h2>
-
+<div class="lead-metadata-bg">
+    <div class="table-wrapper">
+    <h4 class="text-center mb-2">Lead Data</h4>
     @if (Model != null && Model.Count > 0)
     {
-        <div class="lead-container">
-            <table class="lead-table">
-                <thead>
+            <div class="scrollable-table">
+                <table class="table table-bordered white-table">
+                    <thead class="table-white-header">
                     <tr>
-                        <th>Id</th>
+                        <th style="display:none;">Id</th>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Company</th>
@@ -99,15 +22,16 @@
                         <th>Title</th>
                         <th>Phone</th>
                         <th>Actions</th>
+                        <th>View</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var lead in Model)
                     {
                         <tr>
-                            <td>@lead.Id</td>
-                            <td>@lead.FirstName</td>
-                            <td>@lead.LastName</td>
+                            <td style="display:none;">@lead.Id</td>
+                            <td class="sticky-col-1">@lead.FirstName</td>
+                            <td class="sticky-col-2">@lead.LastName</td>
                             <td>@lead.Company</td>
                             <td>@lead.Email</td>
                             <td>@lead.Status</td>
@@ -132,17 +56,29 @@
                                     <img src="~/icons/pngegg.png" alt="Delete" width="20" height="20" />
                                 </a>
                             </td>
+                                <td class="text-center">
+                                    <a href="https://coditasdomain-dev-ed.my.salesforce.com/@lead.Id" target="_blank" title="View in CRM">
+                                        <img src="~/icons/share.png" alt="View" width="20" height="20" />
+                                    </a>
+                                </td>
                         </tr>
-                    }
+                        }
+                    
                 </tbody>
             </table>
-        </div>
+           
+    
+    </div>
+    
 
     
         <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center mt-4">
+            <ul class="pagination justify-content-end mt-4 me-4">
+
                 <li class="page-item @(currentPage == 1 ? "disabled" : "")">
-                    <a class="page-link" href="?page=@(currentPage - 1)">Previous</a>
+                        <a class="page-link" href="?page=@(currentPage - 1)" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
                 </li>
 
                 @for (int i = 1; i <= totalPages; i++)
@@ -153,7 +89,9 @@
                 }
 
                 <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
-                    <a class="page-link" href="?page=@(currentPage + 1)">Next</a>
+                        <a class="page-link" href="?page=@(currentPage + 1)" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
                 </li>
             </ul>
         </nav>
@@ -202,9 +140,25 @@
                                 <label>Title</label>
                                 <input type="text" id="editTitle" class="form-control" />
                             </div>
-
                             <button type="submit" class="btn btn-primary">Update</button>
+                            <div id="loadingIndicator" class="text-center my-2" style="display:none;">
+                                <div class="spinner-border text-primary" role="status"></div>
+                                <div>Updating record...</div>
+                            </div>
+
+                            <div id="updateSuccessMessage" class="alert alert-success text-center mt-2" style="display:none;">
+                                Record updated successfully!
+                            </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="successPopup" tabindex="-1" role="dialog" aria-labelledby="successPopupLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content text-center p-4">
+                    <div class="modal-body">
+                        <h5 class="mb-0">Record updated successfully!</h5>
                     </div>
                 </div>
             </div>
@@ -229,9 +183,9 @@
             $('#editStatus').val($el.data('status'));
             $('#editTitle').val($el.data('title'));
         });
+
         $('#editLeadForm').on('submit', function (e) {
             e.preventDefault();
-
             const updatedLead = {
                 Id: $('#editLeadId').val(),
                 FirstName: $('#editFirstName').val(),
@@ -243,6 +197,12 @@
                 Title: $('#editTitle').val()
             };
 
+            $('#loadingIndicator').show();
+            $('#updateSuccessMessage').hide();
+
+            const $submitButton = $(this).find('button[type="submit"]');
+            $submitButton.prop('disabled', true);
+
             $.ajax({
                 url: '/Data/UpdateLead',
                 type: 'POST',
@@ -250,28 +210,45 @@
                 data: JSON.stringify(updatedLead),
                 success: function (response) {
                     if (response.success) {
-                        alert('Lead updated successfully!');
-                        const row = $('td').filter(function () {
-                            return $(this).text() === updatedLead.Id;
-                        }).closest('tr');
-                        row.find('td:eq(1)').text(updatedLead.FirstName);
-                        row.find('td:eq(2)').text(updatedLead.LastName);
-                        row.find('td:eq(3)').text(updatedLead.Company);
-                        row.find('td:eq(4)').text(updatedLead.Email);
-                        row.find('td:eq(5)').text(updatedLead.Status);
-                        row.find('td:eq(6)').text(updatedLead.Title);
-                        row.find('td:eq(7)').text(updatedLead.Phone);
-                        $('#editLeadModal').modal('hide');
+
+                        setTimeout(function () {
+                            const row = $('td').filter(function () {
+                                return $(this).text() === updatedLead.Id;
+                            }).closest('tr');
+
+                            row.find('td:eq(1)').text(updatedLead.FirstName);
+                            row.find('td:eq(2)').text(updatedLead.LastName);
+                            row.find('td:eq(3)').text(updatedLead.Company);
+                            row.find('td:eq(4)').text(updatedLead.Email);
+                            row.find('td:eq(5)').text(updatedLead.Status);
+                            row.find('td:eq(6)').text(updatedLead.Title);
+                            row.find('td:eq(7)').text(updatedLead.Phone);
+                            $('#editLeadModal').modal('hide');
+                            $('#loadingIndicator').hide();
+                            $('#successPopup').modal('show');
+                            setTimeout(function () {
+                                $('#successPopup').modal('hide');
+                            }, 2000);
+
+                            $submitButton.prop('disabled', false);
+
+                        }, 1500);
+
                     } else {
                         alert('Update failed: ' + response.message);
+                        $('#loadingIndicator').hide();
+                        $submitButton.prop('disabled', false);
                     }
                 },
                 error: function () {
                     alert('An error occurred while updating lead.');
+                    $('#loadingIndicator').hide();
+                    $submitButton.prop('disabled', false);
                 }
             });
         });
-            $(document).on('click', '.delete-icon', function (e) {
+
+        $(document).on('click', '.delete-icon', function (e) {
             e.preventDefault();
             const $row = $(this).closest('tr');
             const leadId = $(this).data('id');

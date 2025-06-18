@@ -50,11 +50,11 @@ namespace SalesforceIntegrationApp.Services.Implementations
             if (!string.IsNullOrWhiteSpace(lead.Status)) updateFields["Status"] = lead.Status;
             if (!string.IsNullOrWhiteSpace(lead.Title)) updateFields["Title"] = lead.Title;
             if (!string.IsNullOrWhiteSpace(lead.Phone)) updateFields["Phone"] = lead.Phone;
-           var content = new StringContent(
-                JsonConvert.SerializeObject(updateFields),
-                Encoding.UTF8,
-                "application/json"
-            );
+            var content = new StringContent(
+                 JsonConvert.SerializeObject(updateFields),
+                 Encoding.UTF8,
+                 "application/json"
+             );
 
             var url = $"{auth.InstanceUrl}/services/data/v54.0/sobjects/Lead/{lead.Id}";
             var request = new HttpRequestMessage(new HttpMethod("PATCH"), url)

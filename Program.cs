@@ -14,7 +14,6 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<ISalesforceService, SalesforceIntegrationApp.Services.Implementations.SalesforceService>();
 builder.Services.AddScoped<IDataService, DataService>();
 builder.Services.AddScoped<IInProgressService, InProgressService>();
-builder.Services.AddScoped<IOpenTaskService, OpenTaskService>();
 builder.Services.AddScoped<IReportService, ReportService>();
 builder.Services.AddScoped<AuthService>();
 

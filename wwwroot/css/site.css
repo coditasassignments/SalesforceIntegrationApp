@@ -3,9 +3,9 @@ html {
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
@@ -20,3 +20,141 @@ html {
 body {
   margin-bottom: 60px;
 }
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #e6f0ff;
+}
+.navbar{
+   height:45px;
+}
+
+.navbar a {
+    color: #0000FF; /* light text color (like in your image) */
+    /*/padding: 10px 15px;*/
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 400 !important;
+    font-size: 1rem;
+    padding: 1rem 1rem 0.25rem;
+    padding-bottom: 0 !important;
+}
+
+    .navbar a:hover {
+        background-color: #e6f0ff; /* soft light blue hover bg like your image */
+        color: #1d4ed8; /* blue text on hover (matching image style) */
+        font-weight: 450 !important;
+        font-size: 1.01rem;
+        padding: 1rem 1rem 0.5rem;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 0;
+        margin-bottom: -3px !important;
+    }
+/*.nav-link,
+.nav-link:hover {
+    font-weight: normal;
+}*/navbar-collapse
+.text-calm-blue {
+    color: #0000FF;
+    font-weight: normal;
+    text-decoration: none;
+}
+    .text-calm-blue:hover {
+        color: #0056b3; /* Slightly darker blue on hover */
+        font-weight: normal; /* Prevent bold on hover */
+    }
+.nav-link dropdown-toggle text-calm-blue {
+    color: #0000FF !important;
+}
+.lead-metadata-bg {
+    background-color: #e6f0ff;
+}
+
+.white-table {
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+.scrollable-table {
+    max-height: 450px; /* or whatever height you prefer */
+    overflow-y: auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    height: 1200px;
+}
+.table-white-header th {
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 16px; /* optional for better readability */
+    border-bottom: 2px solid #dee2e6;
+}
+.no-scroll-body {
+    overflow: hidden;
+}
+.sticky-header th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+    text-align: center;
+    border-bottom: 2px solid #dee2e6;
+}
+.sticky-top th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 2;
+}
+button,
+.btn,
+.page-link,
+.nav-link,
+.dropdown-item,
+.scrollable-table table,
+a.text-calm-blue {
+    cursor: pointer !important;
+}
+.navbar .app-title {
+    font-size: 1.2rem !important; /* bigger */
+    text-decoration: none !important;
+}
+    .navbar .app-title:hover,
+    .navbar .app-title:focus,
+    .navbar .app-title:active {
+        font-size: 1.2rem !important;
+        font-weight: bold !important;
+        text-decoration: none !important;
+        background-color: transparent !important;
+        color: inherit !important;
+        box-shadow: none !important;
+        border: none !important;
+        outline: none !important;
+        cursor: pointer; /* or default if you want */
+    }
+.navbar .dropdown-menu {
+    position: absolute !important;
+    z-index: 1055 !important;
+}
+.table-wrapper {
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 10px;
+    background-color: #e9f0fb;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+

@@ -512,3 +512,182 @@ StackTrace:    at Microsoft.EntityFrameworkCore.Infrastructure.ModelValidator.Va
 [INFO]  16-06-2025 13:34:16 - Lead metadata fetch response: OK
 [INFO]  16-06-2025 15:13:58 - Started fetching lead metadata from Salesforce (Service Layer).
 [INFO]  16-06-2025 15:14:01 - Lead metadata fetch response: OK
+[INFO]  17-06-2025 03:33:13 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  17-06-2025 03:33:15 - Lead metadata fetch response: OK
+[INFO]  17-06-2025 16:36:34 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  17-06-2025 16:36:36 - Lead metadata fetch response: OK
+[INFO]  17-06-2025 16:38:08 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  17-06-2025 16:38:11 - Lead metadata fetch response: OK
+[INFO]  17-06-2025 17:08:22 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  17-06-2025 17:08:24 - Lead metadata fetch response: OK
+[INFO]  17-06-2025 18:19:15 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  17-06-2025 18:19:17 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 09:08:14 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 09:08:15 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 09:56:53 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 09:56:55 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 10:12:31 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 10:12:33 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 10:13:54 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 10:13:55 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 10:18:30 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 10:18:31 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 10:22:01 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 10:22:03 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 10:24:38 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 10:24:41 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 10:29:50 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 10:29:51 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 10:42:28 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 10:42:31 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 10:44:30 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 10:44:33 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 10:47:46 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 10:47:49 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 10:50:13 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 10:50:16 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 10:55:32 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 10:55:34 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 10:55:37 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 10:55:39 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 10:57:27 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 10:57:28 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 10:57:29 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 10:57:30 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 10:57:32 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 10:57:33 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:02:33 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:02:35 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:04:21 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:04:24 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:10:01 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:10:03 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:16:51 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:16:53 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:19:08 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:19:09 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:19:42 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:19:45 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:23:50 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:23:52 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:24:50 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:24:53 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:26:50 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:26:52 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:27:35 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:27:37 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:27:39 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:27:40 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:29:03 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:29:06 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:29:54 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:29:56 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:33:58 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:34:00 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:34:40 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:34:42 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:35:16 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:35:18 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:37:25 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:37:26 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:42:26 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:42:28 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:46:12 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:46:14 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 11:49:05 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 11:49:07 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 12:30:52 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 12:30:54 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 12:32:15 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 12:32:18 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 12:35:07 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 12:35:10 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 12:39:04 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 12:39:07 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 12:40:52 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 12:40:54 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 12:50:15 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 12:50:17 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 12:54:32 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 12:54:34 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 12:56:26 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 12:56:28 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 13:01:45 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 13:01:48 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 14:07:15 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 14:07:16 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 14:17:20 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 14:17:22 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 14:19:04 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 14:19:06 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 14:19:55 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 14:19:56 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 14:31:18 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 14:31:20 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 14:44:13 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 14:44:15 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 15:20:50 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 15:20:52 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 15:29:13 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 15:29:14 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 15:33:10 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 15:33:12 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 15:49:41 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 15:49:43 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 15:50:59 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 15:51:01 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 15:54:00 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 15:54:01 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 16:06:47 - Fetching Salesforce report data...
+[ERROR] 18-06-2025 16:06:48 - Error while fetching report from Salesforce.
+Exception: Failed to fetch report. Status: Unauthorized
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.ReportService.FetchAndParseReportAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\ReportService.cs:line 29
+   at SalesforceIntegrationApp.Controllers.ReportController.FetchAndShowReports() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\ReportController.cs:line 27
+[INFO]  18-06-2025 16:09:12 - Fetching Salesforce report data...
+[INFO]  18-06-2025 16:09:14 - Parsing Salesforce report JSON...
+[INFO]  18-06-2025 16:09:14 - Saving report data to DB...
+[INFO]  18-06-2025 16:09:38 - Fetching Salesforce report data...
+[INFO]  18-06-2025 16:09:39 - Parsing Salesforce report JSON...
+[INFO]  18-06-2025 16:09:39 - Saving report data to DB...
+[INFO]  18-06-2025 16:09:42 - Fetching Salesforce report data...
+[INFO]  18-06-2025 16:09:43 - Parsing Salesforce report JSON...
+[INFO]  18-06-2025 16:09:43 - Saving report data to DB...
+[INFO]  18-06-2025 16:11:08 - Fetching Salesforce report data...
+[INFO]  18-06-2025 16:11:09 - Parsing Salesforce report JSON...
+[INFO]  18-06-2025 16:11:09 - Saving report data to DB...
+[INFO]  18-06-2025 16:12:07 - Fetching Salesforce report data...
+[INFO]  18-06-2025 16:12:08 - Parsing Salesforce report JSON...
+[INFO]  18-06-2025 16:12:08 - Saving report data to DB...
+[INFO]  18-06-2025 16:12:49 - Fetching Salesforce report data...
+[INFO]  18-06-2025 16:12:50 - Parsing Salesforce report JSON...
+[INFO]  18-06-2025 16:12:50 - Saving report data to DB...
+[INFO]  18-06-2025 16:18:05 - Fetching Salesforce report data...
+[INFO]  18-06-2025 16:18:06 - Parsing Salesforce report JSON...
+[INFO]  18-06-2025 16:18:06 - Saving report data to DB...
+[INFO]  18-06-2025 16:48:42 - Fetching Salesforce report data...
+[INFO]  18-06-2025 16:48:43 - Parsing Salesforce report JSON...
+[INFO]  18-06-2025 16:48:43 - Saving report data to DB...
+[INFO]  18-06-2025 16:49:21 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 16:49:22 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 16:56:16 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 16:56:17 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 17:06:01 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 17:06:03 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 17:08:39 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 17:08:41 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 17:09:26 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 17:09:27 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 17:23:33 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 17:23:35 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 17:25:32 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 17:25:33 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 17:30:00 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 17:30:01 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 17:41:00 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 17:41:02 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 17:41:31 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 17:41:32 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 17:41:58 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 17:42:00 - Lead metadata fetch response: OK
+[INFO]  18-06-2025 17:43:24 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  18-06-2025 17:43:26 - Lead metadata fetch response: OK

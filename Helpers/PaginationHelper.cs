@@ -7,7 +7,7 @@ namespace SalesforceIntegrationApp.Helpers
 {
     public static class PaginationHelper
     {
-        public static (List<dynamic> PaginatedData, int TotalPages, int CurrentPage) ApplyPagination<dynamic>(List<dynamic> sourceList, HttpRequest request, int pageSize = 10)// Method for pagination 
+        public static (List<dynamic> PaginatedData, int TotalPages, int CurrentPage) ApplyPagination<dynamic>(List<dynamic> sourceList, HttpRequest request, int pageSize = 20)// Method for pagination 
         {
             int pageNumber = 1; // Default page number set to 1
             if (request.Query.ContainsKey("page")) // Extracting the page from the query

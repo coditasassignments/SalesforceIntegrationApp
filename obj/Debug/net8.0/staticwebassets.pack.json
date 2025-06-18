@@ -13,12 +13,24 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\icons\\1000024753-removebg-preview.png",
+      "PackagePath": "staticwebassets\\icons\\1000024753-removebg-preview.png"
+    },
+    {
+      "Id": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\icons\\1000024753.png",
+      "PackagePath": "staticwebassets\\icons\\1000024753.png"
+    },
+    {
       "Id": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\icons\\edit.png",
       "PackagePath": "staticwebassets\\icons\\edit.png"
     },
     {
       "Id": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\icons\\pngegg.png",
       "PackagePath": "staticwebassets\\icons\\pngegg.png"
+    },
+    {
+      "Id": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\icons\\share.png",
+      "PackagePath": "staticwebassets\\icons\\share.png"
     },
     {
       "Id": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\js\\site.js",

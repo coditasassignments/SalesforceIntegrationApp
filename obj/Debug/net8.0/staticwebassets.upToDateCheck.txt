@@ -1,7 +1,10 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\icons\1000024753.png
+wwwroot\icons\1000024753-removebg-preview.png
 wwwroot\icons\edit.png
 wwwroot\icons\pngegg.png
+wwwroot\icons\share.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
