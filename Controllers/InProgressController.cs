@@ -18,6 +18,11 @@ public class InProgressController : Controller
     }
     public async Task<IActionResult> GetLeadInProgress()
     {
+        if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserEmail")))
+        {
+            return RedirectToAction("Login", "Account");
+        }
+
         try
         {
             var leadDtos = await _inProgressService.GetLeadInProgressAsync();
@@ -51,6 +56,11 @@ public class InProgressController : Controller
     }
     public async Task<IActionResult> GetContactInProgress()
     {
+        if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserEmail")))
+        {
+            return RedirectToAction("Login", "Account");
+        }
+
         try
         {
             var contactDtos = await _inProgressService.GetContactInProgressAsync();

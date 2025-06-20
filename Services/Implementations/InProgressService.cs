@@ -24,8 +24,12 @@ namespace SalesforceIntegrationApp.Services.Implementations
             using var client = new HttpClient(); //Creating an object client for HttpClient() class that is used to GET, POST Http requests.
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", auth.AccessToken);
             //string query = "SELECT Id, WhoId, Who.Name, Who.Email, Who.Type FROM Task WHERE Status = 'In Progress' AND Who.Type = 'Lead'";
-            string query = "SELECT Id, WhoId, Who.Name, Who.Email FROM Task WHERE Status IN ('In Progress', 'Not Started')";
+            //string query = "SELECT Id, WhoId, Who.Name, Who.Email FROM Task WHERE Status IN ('In Progress', 'Not Started')";
             //AND WhoId LIKE '00Q%';
+            string query = "SELECT Id, FirstName, LastName, Email, " +
+               "(SELECT Id, Subject, Status, ActivityDate FROM Tasks WHERE Status != 'Completed') " +
+               "FROM Lead";
+
             //SELECT Id, WhoId, Who.Name, Who.Email FROM Task WHERE Status IN ('In Progress', 'Not Started') AND WhoId LIKE '00Q%'
             //string query = "SELECT Id, Name, Email(SELECT Id, Status, Subject FROM Tasks WHERE Status IN ('In Progress', 'Not Started')) FROM Lead";
             //string query = SELECT Id, WhoId, Who.Name, Who.Email, Who.Type FROM Task WHERE Status = 'In Progress';

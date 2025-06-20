@@ -8,6 +8,7 @@ namespace SalesforceIntegrationApp.Data
             : base(options)
         {
         }
+        public DbSet<User> Users { get; set; }
         public DbSet<SalesforceAuth> SalesforceAuth { get; set; }
         public DbSet<Lead> Leads { get; set; }
         public DbSet<Contact> Contacts { get; set; }

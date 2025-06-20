@@ -29,7 +29,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 03 Jun 2025 07:14:49 GMT"
+          "Value": "Fri, 20 Jun 2025 07:56:03 GMT"
         }
       ],
       "EndpointProperties": [
@@ -74,7 +74,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 03 Jun 2025 07:14:49 GMT"
+          "Value": "Fri, 20 Jun 2025 07:56:03 GMT"
         }
       ],
       "EndpointProperties": [
@@ -249,8 +249,8 @@
       ]
     },
     {
-      "Route": "icons/1000024753-removebg-preview.3cfz33e4id.png",
-      "AssetFile": "icons/1000024753-removebg-preview.png",
+      "Route": "icons/Login.pl4lpdvsq6.png",
+      "AssetFile": "icons/Login.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -263,7 +263,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "87787"
+          "Value": "1136348"
         },
         {
           "Name": "Content-Type",
@@ -271,31 +271,31 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"nRg4rEiRNVDry/B5RHqqaOTQw4OFbz7x6cBDFz+lN84=\""
+          "Value": "\"jQfeimZ2aQp2WKJDJWzw+442d0NESlx8/63fJ3TK05o=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 18 Jun 2025 08:07:01 GMT"
+          "Value": "Thu, 19 Jun 2025 23:20:12 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3cfz33e4id"
+          "Value": "pl4lpdvsq6"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-nRg4rEiRNVDry/B5RHqqaOTQw4OFbz7x6cBDFz+lN84="
+          "Value": "sha256-jQfeimZ2aQp2WKJDJWzw+442d0NESlx8/63fJ3TK05o="
         },
         {
           "Name": "label",
-          "Value": "icons/1000024753-removebg-preview.png"
+          "Value": "icons/Login.png"
         }
       ]
     },
     {
-      "Route": "icons/1000024753-removebg-preview.png",
-      "AssetFile": "icons/1000024753-removebg-preview.png",
+      "Route": "icons/Login.png",
+      "AssetFile": "icons/Login.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -308,7 +308,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "87787"
+          "Value": "1136348"
         },
         {
           "Name": "Content-Type",
@@ -316,99 +316,17 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"nRg4rEiRNVDry/B5RHqqaOTQw4OFbz7x6cBDFz+lN84=\""
+          "Value": "\"jQfeimZ2aQp2WKJDJWzw+442d0NESlx8/63fJ3TK05o=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 18 Jun 2025 08:07:01 GMT"
+          "Value": "Thu, 19 Jun 2025 23:20:12 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-nRg4rEiRNVDry/B5RHqqaOTQw4OFbz7x6cBDFz+lN84="
-        }
-      ]
-    },
-    {
-      "Route": "icons/1000024753.2503re6gt3.png",
-      "AssetFile": "icons/1000024753.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "906591"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"dnZiA7qMx3JkmHS1pswhCwYjbfSJbeLrZPiUfdf6tpo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 18 Jun 2025 07:56:04 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "2503re6gt3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-dnZiA7qMx3JkmHS1pswhCwYjbfSJbeLrZPiUfdf6tpo="
-        },
-        {
-          "Name": "label",
-          "Value": "icons/1000024753.png"
-        }
-      ]
-    },
-    {
-      "Route": "icons/1000024753.png",
-      "AssetFile": "icons/1000024753.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "906591"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"dnZiA7qMx3JkmHS1pswhCwYjbfSJbeLrZPiUfdf6tpo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 18 Jun 2025 07:56:04 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-dnZiA7qMx3JkmHS1pswhCwYjbfSJbeLrZPiUfdf6tpo="
+          "Value": "sha256-jQfeimZ2aQp2WKJDJWzw+442d0NESlx8/63fJ3TK05o="
         }
       ]
     },

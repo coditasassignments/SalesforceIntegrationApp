@@ -54,6 +54,17 @@
                         <li class="nav-item">
                             <a class="nav-link text-calm-blue" asp-controller="Report" asp-action="FetchAndShowReports">ReportsData</a>
                         </li>
+                           @if (!string.IsNullOrEmpty(Context.Session.GetString("UserEmail")))
+                           {
+                               <li class="nav-item">
+                                   <span class="nav-link">Hi, @Context.Session.GetString("UserEmail")</span>
+                               </li>
+                               <li class="nav-item">
+                                   <a class="nav-link text-danger" asp-controller="Account" asp-action="Logout">Logout</a>
+                               </li>
+}
+
+
                         </ul>
                 </div>
             </div>

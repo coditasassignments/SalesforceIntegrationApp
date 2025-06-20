@@ -24,6 +24,10 @@ namespace SalesforceIntegrationApp.Controllers
         [HttpGet]
         public async Task<IActionResult> GetLeadMetaData()
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserEmail")))
+            {
+                return RedirectToAction("Login", "Account");
+            }
             try
             {
                 var auth = await _authService.GetValidTokenAsync();

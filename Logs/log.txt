@@ -691,3 +691,12 @@ StackTrace:    at SalesforceIntegrationApp.Services.Implementations.ReportServic
 [INFO]  18-06-2025 17:42:00 - Lead metadata fetch response: OK
 [INFO]  18-06-2025 17:43:24 - Started fetching lead metadata from Salesforce (Service Layer).
 [INFO]  18-06-2025 17:43:26 - Lead metadata fetch response: OK
+[INFO]  20-06-2025 05:11:27 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  20-06-2025 05:11:29 - Lead metadata fetch response: OK
+[INFO]  20-06-2025 05:12:00 - Fetching Salesforce report data...
+[ERROR] 20-06-2025 05:12:01 - Error while fetching report from Salesforce.
+Exception: Failed to fetch report. Status: Unauthorized
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.ReportService.FetchAndParseReportAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\ReportService.cs:line 29
+   at SalesforceIntegrationApp.Controllers.ReportController.FetchAndShowReports() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\ReportController.cs:line 32
+[INFO]  20-06-2025 13:31:04 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  20-06-2025 13:31:06 - Lead metadata fetch response: OK

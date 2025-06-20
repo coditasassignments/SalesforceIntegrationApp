@@ -18,6 +18,11 @@ public class DataController : Controller
     }
     public async Task<IActionResult> GetLeadData() // Controller method to fetch LeadsMetaData
     {
+        if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserEmail")))
+        {
+            return RedirectToAction("Login", "Account");
+        }
+
         try
         {
             var leadDtos = await _dataService.GetLeadsAsync();
@@ -107,6 +112,11 @@ public class DataController : Controller
     }
     public async Task<IActionResult> GetContactData()
     {
+        if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserEmail")))
+        {
+            return RedirectToAction("Login", "Account");
+        }
+
         try
         {
             var contactDtos = await _dataService.GetContactsAsync();

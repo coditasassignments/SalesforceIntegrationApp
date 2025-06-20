@@ -22,6 +22,11 @@ namespace SalesforceIntegrationApp.Controllers
         }
         public async Task<ActionResult> FetchAndShowReports()
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserEmail")))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             try
             {
                 var reportData = await _reportService.FetchAndParseReportAsync();
