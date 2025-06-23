@@ -7,7 +7,7 @@ namespace SalesforceIntegrationApp.Services.Interfaces
 {
     public interface IInProgressService
     {
-        Task<List<LeadInProgressDto>> GetLeadInProgressAsync();
-        Task<List<ContactInProgressDto>> GetContactInProgressAsync();
+        Task<List<LeadOpenActivityDto>>? GetLeadInProgressAsync();
+        Task<List<ContactInProgressDto>>? GetContactInProgressAsync();
     }
 }

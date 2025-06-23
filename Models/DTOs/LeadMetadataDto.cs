@@ -6,6 +6,6 @@ namespace SalesforceIntegrationApp.Models.DTOs
     public class LeadMetadataDto
     {
         [JsonProperty("fields")]
-        public List<LeadFieldDto> Fields { get; set; }
+        public List<LeadFieldDto>? Fields { get; set; }
     }
 }

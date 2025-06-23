@@ -6,7 +6,7 @@ namespace SalesforceIntegrationApp.Models.DTOs
     public class ContactInProgressWrapDto
     {
         [JsonProperty("records")]
-        public List<ContactInProgressDto> Records { get; set; }
+        public required List<ContactInProgressDto>? Records { get; set; }
     }
 }
 

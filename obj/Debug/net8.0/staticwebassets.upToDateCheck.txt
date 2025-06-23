@@ -1,5 +1,6 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\icons\delete.png
 wwwroot\icons\edit.png
 wwwroot\icons\Login.png
 wwwroot\icons\pngegg.png

@@ -700,3 +700,172 @@ StackTrace:    at SalesforceIntegrationApp.Services.Implementations.ReportServic
    at SalesforceIntegrationApp.Controllers.ReportController.FetchAndShowReports() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\ReportController.cs:line 32
 [INFO]  20-06-2025 13:31:04 - Started fetching lead metadata from Salesforce (Service Layer).
 [INFO]  20-06-2025 13:31:06 - Lead metadata fetch response: OK
+[INFO]  21-06-2025 14:39:58 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  21-06-2025 14:40:00 - Lead metadata fetch response: OK
+[INFO]  21-06-2025 14:41:58 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  21-06-2025 14:42:01 - Lead metadata fetch response: OK
+[INFO]  21-06-2025 18:42:18 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  21-06-2025 18:42:20 - Lead metadata fetch response: OK
+[INFO]  21-06-2025 19:10:41 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  21-06-2025 19:10:43 - Lead metadata fetch response: OK
+[INFO]  21-06-2025 19:22:38 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  21-06-2025 19:22:40 - Lead metadata fetch response: OK
+[INFO]  22-06-2025 03:15:56 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  22-06-2025 03:15:58 - Lead metadata fetch response: OK
+[INFO]  22-06-2025 03:24:47 - Fetching Salesforce report data...
+[INFO]  22-06-2025 03:24:49 - Parsing Salesforce report JSON...
+[INFO]  22-06-2025 03:24:49 - Saving report data to DB...
+[INFO]  22-06-2025 03:29:48 - Fetching Salesforce report data...
+[INFO]  22-06-2025 03:29:49 - Parsing Salesforce report JSON...
+[INFO]  22-06-2025 03:29:49 - Saving report data to DB...
+[INFO]  22-06-2025 03:34:25 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  22-06-2025 03:34:27 - Lead metadata fetch response: OK
+[INFO]  22-06-2025 11:43:17 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  22-06-2025 11:43:18 - Lead metadata fetch response: OK
+[INFO]  22-06-2025 11:44:54 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  22-06-2025 11:44:57 - Lead metadata fetch response: OK
+[INFO]  22-06-2025 11:45:41 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  22-06-2025 11:45:43 - Lead metadata fetch response: OK
+[INFO]  22-06-2025 11:46:32 - Fetching Salesforce report data...
+[ERROR] 22-06-2025 11:46:32 - Error while fetching report from Salesforce.
+Exception: Failed to fetch report. Status: Unauthorized
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.ReportService.FetchAndParseReportAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\ReportService.cs:line 29
+   at SalesforceIntegrationApp.Controllers.ReportController.FetchAndShowReports() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\ReportController.cs:line 32
+[INFO]  22-06-2025 17:13:31 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  22-06-2025 17:13:33 - Lead metadata fetch response: OK
+[INFO]  22-06-2025 18:03:36 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  22-06-2025 18:03:39 - Lead metadata fetch response: OK
+[INFO]  22-06-2025 18:07:02 - Fetching Salesforce report data...
+[ERROR] 22-06-2025 18:07:03 - Error while fetching report from Salesforce.
+Exception: Failed to fetch report. Status: Unauthorized
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.ReportService.FetchAndParseReportAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\ReportService.cs:line 29
+   at SalesforceIntegrationApp.Controllers.ReportController.FetchAndShowReports() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\ReportController.cs:line 32
+[INFO]  22-06-2025 19:20:38 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  22-06-2025 19:20:40 - Lead metadata fetch response: OK
+[ERROR] 22-06-2025 19:20:54 - Error occurred in GetLeadInProgress.
+Exception: Invalid object name 'LeadsOpenActivity'.
+StackTrace:    at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method234(Closure, QueryContext)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at InProgressController.GetLeadInProgress() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\InProgressController.cs:line 38
+[ERROR] 22-06-2025 19:21:05 - Error occurred in GetLeadInProgress.
+Exception: Invalid object name 'LeadsOpenActivity'.
+StackTrace:    at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method234(Closure, QueryContext)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at InProgressController.GetLeadInProgress() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\InProgressController.cs:line 38
+[INFO]  23-06-2025 09:43:05 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 09:43:07 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 09:45:48 - Fetching Salesforce report data...
+[INFO]  23-06-2025 09:45:50 - Parsing Salesforce report JSON...
+[INFO]  23-06-2025 09:45:50 - Saving report data to DB...
+[ERROR] 23-06-2025 10:11:13 - Unexpected error in FetchAndShowReports
+Exception: The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See https://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+StackTrace:    at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ThrowAggregateUpdateConcurrencyException(RelationalDataReader reader, Int32 commandIndex, Int32 expectedRowsAffected, Int32 rowsAffected)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnly(Int32 commandIndex, RelationalDataReader reader)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.Consume(RelationalDataReader reader)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at SalesforceIntegrationApp.Services.Implementations.ReportService.SaveReportToDatabase(ReportDataModel reportData) in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\ReportService.cs:line 132
+   at SalesforceIntegrationApp.Controllers.ReportController.FetchAndShowReports() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\ReportController.cs:line 33
+[INFO]  23-06-2025 10:17:45 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 10:17:47 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 10:34:12 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 10:34:14 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 10:43:18 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 10:43:19 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 11:03:01 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 11:03:03 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 11:06:27 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 11:06:29 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 11:07:25 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 11:07:26 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 11:15:44 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 11:15:46 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 11:16:41 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 11:16:42 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 11:19:13 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 11:19:15 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 11:28:09 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 11:28:11 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 12:32:03 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 12:32:05 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 12:32:10 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 12:32:12 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 12:32:16 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 12:32:18 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 12:32:23 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 12:32:24 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 12:38:29 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 12:38:32 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 12:38:36 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 12:38:38 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 12:38:46 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 12:38:47 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 12:44:54 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 12:44:56 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 12:45:00 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 12:45:01 - Lead metadata fetch response: OK
+[ERROR] 23-06-2025 12:46:48 - Error occurred in GetLeadData.
+Exception: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+StackTrace:    at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at SalesforceIntegrationApp.Services.Implementations.DataService.GetLeadsAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\DataService.cs:line 31
+   at DataController.GetLeadData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\DataController.cs:line 28
+[INFO]  23-06-2025 12:58:53 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 12:58:56 - Lead metadata fetch response: OK
+[INFO]  23-06-2025 12:59:01 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  23-06-2025 12:59:03 - Lead metadata fetch response: OK
+[ERROR] 23-06-2025 13:03:02 - Error occurred in GetLeadData.
+Exception: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+StackTrace:    at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at SalesforceIntegrationApp.Services.Implementations.DataService.GetLeadsAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\DataService.cs:line 31
+   at DataController.GetLeadData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\DataController.cs:line 28

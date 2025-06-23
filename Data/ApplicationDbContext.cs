@@ -16,6 +16,8 @@ namespace SalesforceIntegrationApp.Data
         public DbSet<ReportData> ReportDatas { get; set; }
         public DbSet<LeadInProgress> LeadsInProgress { get; set; }
         public DbSet<ContactInProgress> ContactsInProgress { get; set; }
+        public DbSet<LeadOpenActivity> LeadsOpenActivity { get; set; }
+
 
     }
 }

@@ -4,171 +4,328 @@
     int currentPage = ViewBag.CurrentPage != null ? (int)ViewBag.CurrentPage : 1;
     int totalPages = ViewBag.TotalPages != null ? (int)ViewBag.TotalPages : 1;
 }
+<style>
+    #overlaySpinner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        backdrop-filter: blur(4px);
+        background-color: rgba(255, 255, 255, 0.4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    .spinner {
+        width: 60px;
+        height: 60px;
+        border: 6px solid rgba(0, 0, 0, 0.1);
+        border-top: 6px solid #007bff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    @@keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .custom-success-box {
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #d4edda;
+        color: #155724;
+        padding: 20px 30px;
+        border-radius: 10px;
+        border: 1px solid #c3e6cb;
+        font-weight: bold;
+        font-size: 18px;
+        z-index: 10000;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .dots-icon {
+        text-decoration: none;
+        font-size: 18px;
+        cursor: pointer;
+        color: black;
+    }
+
+    th {
+        position: relative;
+    }
+
+    .dropdown-item.selected {
+        color: red;
+        font-weight: bold;
+    }
+
+    .dropdown-item:hover {
+        background-color: #ffe6e6; /* Light red background on hover */
+        color: #c0392b; /* Slightly darker red text */
+    }
+
+    .dropdown-menu {
+        min-width: 150px;
+    }
+
+    .sort-dropdown {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+    }
+
+</style>
+<div id="main-content">
 <div class="lead-metadata-bg">
     <div class="table-wrapper">
-    <h4 class="text-center mb-2">Lead Data</h4>
-    @if (Model != null && Model.Count > 0)
-    {
+        <h4 class="text-center mb-2">Lead Data</h4>
+        @if (Model != null && Model.Count > 0)
+        {
             <div class="scrollable-table">
                 <table class="table table-bordered white-table">
                     <thead class="table-white-header">
-                    <tr>
-                        <th style="display:none;">Id</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Company</th>
-                        <th>Email</th>
-                        <th>Status</th>
-                        <th>Title</th>
-                        <th>Phone</th>
-                        <th>Actions</th>
-                        <th>View</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var lead in Model)
-                    {
                         <tr>
-                            <td style="display:none;">@lead.Id</td>
-                            <td class="sticky-col-1">@lead.FirstName</td>
-                            <td class="sticky-col-2">@lead.LastName</td>
-                            <td>@lead.Company</td>
-                            <td>@lead.Email</td>
-                            <td>@lead.Status</td>
-                            <td>@lead.Title</td>
-                            <td>@lead.Phone</td>
-                            <td class="text-center">
-                                <a href="#" class="edit-icon" title="Edit"
-                                   data-id="@lead.Id"
-                                   data-firstname="@lead.FirstName"
-                                   data-lastname="@lead.LastName"
-                                   data-email="@lead.Email"
-                                   data-phone="@lead.Phone"
-                                   data-company="@lead.Company"
-                                   data-status="@lead.Status"
-                                   data-title="@lead.Title"
-                                   data-bs-toggle="modal"
-                                   data-bs-target="#editLeadModal">
-                                    <img src="~/icons/edit.png" alt="Edit" width="20" height="20" />
-                                </a>
-
-                                <a href="#" class="delete-icon" title="Delete">
-                                    <img src="~/icons/pngegg.png" alt="Delete" width="20" height="20" />
-                                </a>
-                            </td>
+                            <th style="display:none;">Id</th>
+                            <th>
+                                First Name
+                                <div class="dropdown sort-dropdown">
+                                    <a href="#" class="dots-icon" data-bs-toggle="dropdown">
+                                        &#x22EE;
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item sort-asc" data-column="1" href="#">Sort Ascending</a></li>
+                                        <li><a class="dropdown-item sort-desc" data-column="1" href="#">Sort Descending</a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                            <th>
+                                Last Name
+                                <div class="dropdown sort-dropdown">
+                                    <a href="#" class="dots-icon" data-bs-toggle="dropdown">
+                                        &#x22EE;
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item sort-asc" data-column="2" href="#">Sort Ascending</a></li>
+                                        <li><a class="dropdown-item sort-desc" data-column="2" href="#">Sort Descending</a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                            <th>
+                                Company
+                                <div class="dropdown sort-dropdown">
+                                    <a href="#" class="dots-icon" data-bs-toggle="dropdown">
+                                        &#x22EE;
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item sort-asc" data-column="3" href="#">Sort Ascending</a></li>
+                                        <li><a class="dropdown-item sort-desc" data-column="3" href="#">Sort Descending</a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                            <th>
+                                Email
+                                <div class="dropdown sort-dropdown">
+                                    <a href="#" class="dots-icon" data-bs-toggle="dropdown">
+                                        &#x22EE;
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item sort-asc" data-column="4" href="#">Sort Ascending</a></li>
+                                        <li><a class="dropdown-item sort-desc" data-column="4" href="#">Sort Descending</a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                            <th>
+                                Status
+                                <div class="dropdown sort-dropdown">
+                                    <a href="#" class="dots-icon" data-bs-toggle="dropdown">
+                                        &#x22EE;
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item sort-asc" data-column="5" href="#">Sort Ascending</a></li>
+                                        <li><a class="dropdown-item sort-desc" data-column="5" href="#">Sort Descending</a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                            <th>
+                                Title
+                                <div class="dropdown sort-dropdown">
+                                    <a href="#" class="dots-icon" data-bs-toggle="dropdown">
+                                        &#x22EE;
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item sort-asc" data-column="6" href="#">Sort Ascending</a></li>
+                                        <li><a class="dropdown-item sort-desc" data-column="6" href="#">Sort Descending</a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                            <th>
+                                Phone
+                                <div class="dropdown sort-dropdown">
+                                    <a href="#" class="dots-icon" data-bs-toggle="dropdown">
+                                        &#x22EE;
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item sort-asc" data-column="7" href="#">Sort Ascending</a></li>
+                                        <li><a class="dropdown-item sort-desc" data-column="7" href="#">Sort Descending</a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                            <th>Actions</th>
+                            <th>View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var lead in Model)
+                        {
+                            <tr>
+                                <td style="display:none;">@lead.Id</td>
+                                <td class="sticky-col-1">@lead.FirstName</td>
+                                <td class="sticky-col-2">@lead.LastName</td>
+                                <td>@lead.Company</td>
+                                <td>@lead.Email</td>
+                                <td>@lead.Status</td>
+                                <td>@lead.Title</td>
+                                <td>@lead.Phone</td>
                                 <td class="text-center">
-                                    <a href="https://coditasdomain-dev-ed.my.salesforce.com/@lead.Id" target="_blank" title="View in CRM">
-                                        <img src="~/icons/share.png" alt="View" width="20" height="20" />
+                                    <a href="#" class="edit-icon" title="Edit"
+                                       data-id="@lead.Id"
+                                       data-firstname="@lead.FirstName"
+                                       data-lastname="@lead.LastName"
+                                       data-email="@lead.Email"
+                                       data-phone="@lead.Phone"
+                                       data-company="@lead.Company"
+                                       data-status="@lead.Status"
+                                       data-title="@lead.Title"
+                                       data-bs-toggle="modal"
+                                       data-bs-target="#editLeadModal">
+                                        <img src="~/icons/edit.png" alt="Edit" width="15" height="15" />
+                                    </a>
+
+                                    <a href="#" class="delete-icon" title="Delete">
+                                        <img src="~/icons/delete.png" alt="Delete" width="20" height="20" />
                                     </a>
                                 </td>
-                        </tr>
+                                <td class="text-center">
+                                    <a href="https://coditasdomain-dev-ed.my.salesforce.com/@lead.Id" target="_blank" title="View in CRM">
+                                        <img src="~/icons/share.png" alt="View" width="15" height="15" />
+                                    </a>
+                                </td>
+                            </tr>
                         }
-                    
-                </tbody>
-            </table>
-           
-    
-    </div>
-    
+                    </tbody>
+                </table>
+            </div>
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-end mt-4 me-4">
 
-    
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-end mt-4 me-4">
-
-                <li class="page-item @(currentPage == 1 ? "disabled" : "")">
+                    <li class="page-item @(currentPage == 1 ? "disabled" : "")">
                         <a class="page-link" href="?page=@(currentPage - 1)" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
-                </li>
-
-                @for (int i = 1; i <= totalPages; i++)
-                {
-                    <li class="page-item @(i == currentPage ? "active" : "")">
-                        <a class="page-link" href="?page=@i">@i</a>
                     </li>
-                }
 
-                <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
+                    @for (int i = 1; i <= totalPages; i++)
+                    {
+                        <li class="page-item @(i == currentPage ? "active" : "")">
+                            <a class="page-link" href="?page=@i">@i</a>
+                        </li>
+                    }
+
+                    <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
                         <a class="page-link" href="?page=@(currentPage + 1)" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="modal fade" id="editLeadModal" tabindex="-1" aria-labelledby="editLeadModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Edit Lead</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="editLeadForm">
-                            <input type="hidden" id="editLeadId" />
-                            <div class="row mb-3">
-                                <div class="col">
-                                    <label>First Name</label>
-                                    <input type="text" id="editFirstName" class="form-control" />
+                    </li>
+                </ul>
+            </nav>
+            <div class="modal fade" id="editLeadModal" tabindex="-1" aria-labelledby="editLeadModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Edit Lead</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="editLeadForm">
+                                <input type="hidden" id="editLeadId" />
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <label>First Name</label>
+                                        <input type="text" id="editFirstName" class="form-control" />
+                                    </div>
+                                    <div class="col">
+                                        <label>Last Name</label>
+                                        <input type="text" id="editLastName" class="form-control" />
+                                    </div>
                                 </div>
-                                <div class="col">
-                                    <label>Last Name</label>
-                                    <input type="text" id="editLastName" class="form-control" />
+                                <div class="mb-3">
+                                    <label>Email</label>
+                                    <input type="email" id="editEmail" class="form-control" />
                                 </div>
-                            </div>
-                            <div class="mb-3">
-                                <label>Email</label>
-                                <input type="email" id="editEmail" class="form-control" />
-                            </div>
-                            <div class="mb-3">
-                                <label>Phone</label>
-                                <input type="text" id="editPhone" class="form-control" />
-                            </div>
-                            <div class="mb-3">
-                                <label>Company</label>
-                                <input type="text" id="editCompany" class="form-control" />
-                            </div>
-                            <div class="mb-3">
-                                <label>Status</label>
-                                <select id="editStatus" class="form-control">
-                                    <option value="Open - Not Contacted">Open - Not Contacted</option>
-                                    <option value="Working - Contacted">Working - Contacted</option>
-                                    <option value="Closed - Converted">Closed - Converted</option>
-                                    <option value="Closed - Not Converted">Closed - Not Converted</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label>Title</label>
-                                <input type="text" id="editTitle" class="form-control" />
-                            </div>
-                            <button type="submit" class="btn btn-primary">Update</button>
-                            <div id="loadingIndicator" class="text-center my-2" style="display:none;">
-                                <div class="spinner-border text-primary" role="status"></div>
-                                <div>Updating record...</div>
-                            </div>
-
-                            <div id="updateSuccessMessage" class="alert alert-success text-center mt-2" style="display:none;">
-                                Record updated successfully!
-                            </div>
-                        </form>
+                                <div class="mb-3">
+                                    <label>Phone</label>
+                                    <input type="text" id="editPhone" class="form-control" />
+                                </div>
+                                <div class="mb-3">
+                                    <label>Company</label>
+                                    <input type="text" id="editCompany" class="form-control" />
+                                </div>
+                                <div class="mb-3">
+                                    <label>Status</label>
+                                    <select id="editStatus" class="form-control">
+                                        <option value="Open - Not Contacted">Open - Not Contacted</option>
+                                        <option value="Working - Contacted">Working - Contacted</option>
+                                        <option value="Closed - Converted">Closed - Converted</option>
+                                        <option value="Closed - Not Converted">Closed - Not Converted</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Title</label>
+                                    <input type="text" id="editTitle" class="form-control" />
+                                </div>
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="modal fade" id="successPopup" tabindex="-1" role="dialog" aria-labelledby="successPopupLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content text-center p-4">
-                    <div class="modal-body">
-                        <h5 class="mb-0">Record updated successfully!</h5>
+            <div class="modal fade" id="successPopup" tabindex="-1" role="dialog" aria-labelledby="successPopupLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content text-center p-4">
+                        <div class="modal-body">
+                            <h5 class="mb-0">Record updated successfully!</h5>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    }
-    else
-    {
-        <div class="alert alert-info text-center">No leads to display.</div>
-    }
+        }
+        else
+        {
+            <div class="alert alert-info text-center">No leads to display.</div>
+        }
+    </div>
+    <div id="overlaySpinner" style="display: none;">
+        <div class="spinner" role="status" aria-label="Loading"></div>
+    </div>
+    <div id="updateSuccessBox" class="custom-success-box" style="display: none;">
+        ✅ Record updated successfully!
+    </div>
+</div>
+</div>
+<div id="loader" style="display: none; position: fixed; top: 50%; left: 50%;
+    transform: translate(-50%, -50%); z-index: 9999;">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
 </div>
 @section Scripts {
     <script>
@@ -183,7 +340,6 @@
             $('#editStatus').val($el.data('status'));
             $('#editTitle').val($el.data('title'));
         });
-
         $('#editLeadForm').on('submit', function (e) {
             e.preventDefault();
             const updatedLead = {
@@ -197,12 +353,10 @@
                 Title: $('#editTitle').val()
             };
 
-            $('#loadingIndicator').show();
-            $('#updateSuccessMessage').hide();
-
-            const $submitButton = $(this).find('button[type="submit"]');
+                $('#overlaySpinner').show();
+                $('#updateSuccessBox').hide();
+                const $submitButton = $(this).find('button[type="submit"]');
             $submitButton.prop('disabled', true);
-
             $.ajax({
                 url: '/Data/UpdateLead',
                 type: 'POST',
@@ -210,12 +364,10 @@
                 data: JSON.stringify(updatedLead),
                 success: function (response) {
                     if (response.success) {
-
                         setTimeout(function () {
                             const row = $('td').filter(function () {
                                 return $(this).text() === updatedLead.Id;
                             }).closest('tr');
-
                             row.find('td:eq(1)').text(updatedLead.FirstName);
                             row.find('td:eq(2)').text(updatedLead.LastName);
                             row.find('td:eq(3)').text(updatedLead.Company);
@@ -224,11 +376,11 @@
                             row.find('td:eq(6)').text(updatedLead.Title);
                             row.find('td:eq(7)').text(updatedLead.Phone);
                             $('#editLeadModal').modal('hide');
-                            $('#loadingIndicator').hide();
-                            $('#successPopup').modal('show');
-                            setTimeout(function () {
-                                $('#successPopup').modal('hide');
-                            }, 2000);
+                                $('#overlaySpinner').hide();
+                                $('#updateSuccessBox').fadeIn();
+                                            setTimeout(() => {
+                $('#updateSuccessBox').fadeOut();
+            }, 2500);
 
                             $submitButton.prop('disabled', false);
 
@@ -236,18 +388,17 @@
 
                     } else {
                         alert('Update failed: ' + response.message);
-                        $('#loadingIndicator').hide();
+                            $('#overlaySpinner').hide();
                         $submitButton.prop('disabled', false);
                     }
                 },
                 error: function () {
                     alert('An error occurred while updating lead.');
-                    $('#loadingIndicator').hide();
+                    $('#overlaySpinner').hide();
                     $submitButton.prop('disabled', false);
                 }
             });
         });
-
         $(document).on('click', '.delete-icon', function (e) {
             e.preventDefault();
             const $row = $(this).closest('tr');
@@ -271,6 +422,54 @@
                     }
                 });
             }
+        });
+    </script>
+    <script>
+        function sortTable(columnIndex, ascending) {
+            const table = document.querySelector('.table');
+            const tbody = table.querySelector('tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            rows.sort((a, b) => {
+                const aText = a.children[columnIndex].innerText.trim().toLowerCase();
+                const bText = b.children[columnIndex].innerText.trim().toLowerCase();
+                if (!isNaN(aText) && !isNaN(bText)) {
+                    return ascending ? aText - bText : bText - aText;
+                }
+                return ascending
+                    ? aText.localeCompare(bText)
+                    : bText.localeCompare(aText);
+            });
+            rows.forEach(row => tbody.appendChild(row));
+        }
+        document.addEventListener('click', function (e) {
+            if (e.target.classList.contains('sort-asc')) {
+                e.preventDefault();
+                const colIndex = parseInt(e.target.dataset.column);
+                sortTable(colIndex, true);
+            }
+            if (e.target.classList.contains('sort-desc')) {
+                e.preventDefault();
+                const colIndex = parseInt(e.target.dataset.column);
+                sortTable(colIndex, false);
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const pageLinks = document.querySelectorAll(".page-link");
+            pageLinks.forEach(link => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const href = this.getAttribute("href");
+                    const loader = document.getElementById("loader");
+                    const mainContent = document.getElementById("main-content");
+                    loader.style.display = "block";
+                    mainContent.classList.add("blurred");
+                    setTimeout(function () {
+                        window.location.href = href;
+                    }, 1000);
+                });
+            });
         });
     </script>
 }

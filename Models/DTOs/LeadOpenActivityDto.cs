@@ -2,7 +2,7 @@
 
 namespace SalesforceIntegrationApp.Models.DTOs
 {
-    public class ContactInProgressDto
+    public class LeadOpenActivityDto
     {
         [JsonProperty("Id")]
         public string? Id { get; set; }

@@ -53,7 +53,6 @@ namespace SalesforceIntegrationApp.Controllers
             ViewBag.CurrentPage = 1;
             ViewBag.TotalPages = 1;
             return View("GetLeadMetaData");
-
         }
     }
 }

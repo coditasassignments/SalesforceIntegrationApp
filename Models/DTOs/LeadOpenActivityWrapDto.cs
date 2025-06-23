@@ -3,10 +3,9 @@ using Newtonsoft.Json;
 
 namespace SalesforceIntegrationApp.Models.DTOs
 {
-    public class ContactWrapDto
+    public class LeadOpenActivityWrapDto
     {
         [JsonProperty("records")]
-        public List<ContactDto>? Records { get; set; }
+        public required List<LeadOpenActivityDto>? Records { get; set; }
     }
 }
-

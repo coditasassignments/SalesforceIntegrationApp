@@ -26,13 +26,13 @@ namespace SalesforceIntegrationApp.Controllers
             {
                 return RedirectToAction("Login", "Account");
             }
-
             try
             {
                 var reportData = await _reportService.FetchAndParseReportAsync();
                 _reportService.SaveReportToDatabase(reportData);
                 var savedData = _db.ReportDatas.ToList();
                 var (paginatedData, totalPages, currentPage) = PaginationHelper.ApplyPagination(savedData, Request, 20);
+                ViewBag.Columns = reportData.Columns;
                 ViewBag.TotalPages = totalPages;
                 ViewBag.CurrentPage = currentPage;
                 return View("ReportView", paginatedData);

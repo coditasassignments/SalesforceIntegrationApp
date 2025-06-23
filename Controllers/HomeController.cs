@@ -11,19 +11,20 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-
     public IActionResult Index()
     {
+        if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserEmail")) ||
+            string.IsNullOrEmpty(HttpContext.Session.GetString("UserPassword")))
+        {
+            TempData["Error"] = "Please enter credentials.";
+            return RedirectToAction("Login", "Account");
+        }
         return View();
     }
-
     public IActionResult Privacy()
     {
         return View();
     }
-   
-
-
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

@@ -22,27 +22,26 @@ public class InProgressController : Controller
         {
             return RedirectToAction("Login", "Account");
         }
-
         try
         {
             var leadDtos = await _inProgressService.GetLeadInProgressAsync();
-            var leads = leadDtos.Select(dto => new LeadInProgress // Mapping Dto to model
+            var leads = leadDtos.Select(dto => new LeadOpenActivity // Mapping Dto to model
             {
                 Id = dto.Id,
-                WhoId = dto.WhoId,
-                Name = dto.Who?.Name,
-                Email = dto.Who?.Email
+                FirstName = dto.FirstName,
+                LastName = dto.LastName,
+                Email = dto.Email
             }).ToList();
             foreach (var lead in leads)
             {
-                if (!_context.LeadsInProgress.Any(x => x.Id == lead.Id))
-                    _context.LeadsInProgress.Add(lead);
+                if (!_context.LeadsOpenActivity.Any(x => x.Id == lead.Id))
+                    _context.LeadsOpenActivity.Add(lead);
             }
             await _context.SaveChangesAsync();
             var (paginatedLeads, totalPages, currentPage) = PaginationHelper.ApplyPagination(leads, Request);
             ViewBag.CurrentPage = currentPage;
             ViewBag.TotalPages = totalPages;
-            return View("~/Views/Salesforce/LeadInProgress.cshtml", paginatedLeads);
+            return View("~/Views/Salesforce/LeadOpenActivity.cshtml", paginatedLeads);
         }
         catch(Exception ex)
         {
@@ -50,7 +49,7 @@ public class InProgressController : Controller
             ViewBag.Error = "An error occurred while fetching Lead In Progress data.";
             ViewBag.CurrentPage = 1;
             ViewBag.TotalPages = 1;
-            return View("~/Views/Salesforce/LeadInProgress.cshtml", new List<LeadInProgress>());
+            return View("~/Views/Salesforce/LeadOpenActivity.cshtml", new List<LeadOpenActivity>());
         }
 
     }
@@ -60,7 +59,6 @@ public class InProgressController : Controller
         {
             return RedirectToAction("Login", "Account");
         }
-
         try
         {
             var contactDtos = await _inProgressService.GetContactInProgressAsync();

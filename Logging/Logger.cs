@@ -9,7 +9,7 @@ namespace SalesforceIntegrationApp.Logging
         static Logger()
         {
             var directory = Path.GetDirectoryName(logFilePath);
-            if (!Directory.Exists(directory))
+            if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
                 Directory.CreateDirectory(directory);
         }
         public static void LogInfo(string message)

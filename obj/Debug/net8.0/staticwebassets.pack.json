@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\icons\\Login.png"
     },
     {
+      "Id": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\icons\\delete.png",
+      "PackagePath": "staticwebassets\\icons\\delete.png"
+    },
+    {
       "Id": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\icons\\edit.png",
       "PackagePath": "staticwebassets\\icons\\edit.png"
     },

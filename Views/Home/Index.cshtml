@@ -1,4 +1,12 @@
-﻿@{
+﻿@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    var response = HttpContextAccessor.HttpContext.Response;
+    response.Headers["Cache-Control"] = "no-cache, no-store, must-revalidate";
+    response.Headers["Pragma"] = "no-cache";
+    response.Headers["Expires"] = "-1";
+}
+@{
     ViewData["Title"] = "Home Page";
 }
 

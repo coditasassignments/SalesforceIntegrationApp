@@ -22,7 +22,6 @@ public class DataController : Controller
         {
             return RedirectToAction("Login", "Account");
         }
-
         try
         {
             var leadDtos = await _dataService.GetLeadsAsync();
@@ -57,7 +56,6 @@ public class DataController : Controller
             ViewBag.TotalPages = 1;
             return View("~/Views/Salesforce/Lead.cshtml", new List<Lead>());
         }
-        
     }
     [HttpPost]
     public async Task<IActionResult> UpdateLead([FromBody] Lead updatedLead)
@@ -77,14 +75,14 @@ public class DataController : Controller
             await _context.SaveChangesAsync();
             var result = await _dataService.UpdateLeadInSalesforceAsync(updatedLead);
             if (result)
-                return Json(new { success = true });
+                return Json(new{success = true});
             else
-                return Json(new { success = false, message = "Salesforce update failed" });
+                return Json(new{success = false, message = "Salesforce update failed"});
         }
         catch (Exception ex)
         {
             Logger.LogError("Error in UpdateLead", ex);
-            return Json(new { success = false, message = ex.Message });
+            return Json(new{success = false, message = ex.Message});
         }
     }
     [HttpPost]
@@ -100,14 +98,14 @@ public class DataController : Controller
             }
             var result = await _dataService.DeleteLeadFromSalesforceAsync(id);
             if (result)
-                return Json(new { success = true });
+                return Json(new{success = true});
             else
-                return Json(new { success = false, message = "Salesforce delete failed" });
+                return Json(new{success = false, message = "Salesforce delete failed"});
         }
         catch (Exception ex)
         {
             Logger.LogError("Error in DeleteLead", ex);
-            return Json(new { success = false, message = ex.Message });
+            return Json(new {success = false, message = ex.Message});
         }
     }
     public async Task<IActionResult> GetContactData()
@@ -116,7 +114,6 @@ public class DataController : Controller
         {
             return RedirectToAction("Login", "Account");
         }
-
         try
         {
             var contactDtos = await _dataService.GetContactsAsync();
@@ -167,14 +164,14 @@ public class DataController : Controller
             await _context.SaveChangesAsync();
             var result = await _dataService.UpdateContactInSalesforceAsync(updatedContact);
             if (result)
-                return Json(new { success = true });
+                return Json(new {success = true});
             else
-                return Json(new { success = false, message = "Salesforce update failed" });
+                return Json(new {success = false, message = "Salesforce update failed"});
         }
         catch (Exception ex)
         {
             Logger.LogError("Error in UpdateContact", ex);
-            return Json(new { success = false, message = ex.Message });
+            return Json(new {success = false, message = ex.Message});
         }
     }
 }

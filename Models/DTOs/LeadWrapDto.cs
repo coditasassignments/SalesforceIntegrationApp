@@ -6,6 +6,6 @@ namespace SalesforceIntegrationApp.Models.DTOs
     public class LeadWrapDto
     {
         [JsonProperty("records")]
-        public List<LeadDto> Records { get; set; }
+        public List<LeadDto>? Records { get; set; }
     }
 }

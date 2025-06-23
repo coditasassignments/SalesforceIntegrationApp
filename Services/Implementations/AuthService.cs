@@ -15,15 +15,6 @@ namespace SalesforceIntegrationApp.Services.Implementations
         {
             _context = context;
         }
-        /*public async Task<SalesforceAuth> GetValidTokenAsync() //Just to retrieve credentials directly from the database
-        {
-            var credentials = _context.SalesforceAuth.FirstOrDefault();
-            if (credentials == null || string.IsNullOrEmpty(credentials.AccessToken) || string.IsNullOrEmpty(credentials.InstanceUrl))
-            {
-                throw new Exception("Not found");
-            }
-            return credentials;
-        }*/
         public async Task<SalesforceAuth> GetValidTokenAsync() //Method to check the validity fof the token
         {
             var credentials = _context.SalesforceAuth.FirstOrDefault(); // Retriving credentials from the database
@@ -46,10 +37,10 @@ namespace SalesforceIntegrationApp.Services.Implementations
             using var httpClient = new HttpClient(); //creating an object for HttpClient class
             var form = new Dictionary<string, string> //storing credentials in a dictionary
             {
-                { "grant_type", credentials.GrantType },
-                { "client_id", credentials.ClientId },
-                { "client_secret", credentials.ClientSecret },
-                { "refresh_token", credentials.RefreshToken }
+                { "grant_type", credentials.GrantType ?? throw new Exception("GrantType is missing") },
+                { "client_id", credentials.ClientId ?? throw new Exception("ClientId is missing") },
+                { "client_secret", credentials.ClientSecret ?? throw new Exception("ClientSecret is missing") },
+                { "refresh_token", credentials.RefreshToken ?? throw new Exception("RefreshToken is missing") }
             };
             var response = await httpClient.PostAsync("https://coditasdomain-dev-ed.my.salesforce.com/services/oauth2/token", new FormUrlEncodedContent(form)); //making an api post call 
             if (!response.IsSuccessStatusCode) // if response is unsuccessfull
@@ -58,11 +49,11 @@ namespace SalesforceIntegrationApp.Services.Implementations
                 throw new Exception($"Failed to refresh Salesforce token. Status: {response.StatusCode}. Details: {errorDetails}"); // throws exception and return error details
             }
             var content = await response.Content.ReadAsStringAsync(); // asynchronous method to read response received in json format is converted to string
-            //dynamic result = JsonConvert.DeserializeObject<dynamic>(content);
             var token = JsonConvert.DeserializeObject<SalesforceTokenResponseDto>(content); //Deserializes the response to convert it into an object
-            //credentials.AccessToken = result.access_token;
-            //credentials.InstanceUrl = result.instance_url;
-            //credentials.TokenLastUpdated = DateTime.UtcNow;
+            if (string.IsNullOrEmpty(token.AccessToken) || string.IsNullOrEmpty(token.InstanceUrl))
+            {
+                throw new Exception("Token response missing required fields.");
+            }
             credentials.AccessToken = token.AccessToken; //Mapping the DTO model to the actual model
             credentials.InstanceUrl = token.InstanceUrl;
             credentials.TokenLastUpdated = DateTime.UtcNow;

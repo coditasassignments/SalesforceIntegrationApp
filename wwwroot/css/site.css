@@ -18,7 +18,8 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    font-family: 'Poppins', sans-serif;
 }
 .app-wrapper {
     display: flex;
@@ -31,8 +32,7 @@ body {
 }
 
 .navbar a {
-    color: #0000FF; /* light text color (like in your image) */
-    /*/padding: 10px 15px;*/
+    color: #0000FF; 
     position: relative;
     text-decoration: none;
     display: inline-block;
@@ -44,8 +44,8 @@ body {
 }
 
     .navbar a:hover {
-        background-color: #e6f0ff; /* soft light blue hover bg like your image */
-        color: #1d4ed8; /* blue text on hover (matching image style) */
+        background-color: #e6f0ff; 
+        color: #1d4ed8; 
         font-weight: 450 !important;
         font-size: 1.01rem;
         padding: 1rem 1rem 0.5rem;
@@ -53,18 +53,15 @@ body {
         padding-bottom: 0;
         margin-bottom: -3px !important;
     }
-/*.nav-link,
-.nav-link:hover {
-    font-weight: normal;
-}*/navbar-collapse
+navbar-collapse
 .text-calm-blue {
     color: #0000FF;
     font-weight: normal;
     text-decoration: none;
 }
     .text-calm-blue:hover {
-        color: #0056b3; /* Slightly darker blue on hover */
-        font-weight: normal; /* Prevent bold on hover */
+        color: #0056b3; 
+        font-weight: normal; 
     }
 .nav-link dropdown-toggle text-calm-blue {
     color: #0000FF !important;
@@ -79,11 +76,11 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 .scrollable-table {
-    max-height: 450px; /* or whatever height you prefer */
+    max-height: 450px; 
     overflow-y: auto;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    height: 1200px;
+    height:1200px;
 }
 .table-white-header th {
     background-color: white;
@@ -91,7 +88,7 @@ body {
     font-weight: 600;
     padding-top: 14px;
     padding-bottom: 14px;
-    font-size: 16px; /* optional for better readability */
+    font-size: 16px; 
     border-bottom: 2px solid #dee2e6;
 }
 .no-scroll-body {
@@ -121,7 +118,7 @@ a.text-calm-blue {
     cursor: pointer !important;
 }
 .navbar .app-title {
-    font-size: 1.2rem !important; /* bigger */
+    font-size: 1.2rem !important; 
     text-decoration: none !important;
 }
     .navbar .app-title:hover,
@@ -135,7 +132,7 @@ a.text-calm-blue {
         box-shadow: none !important;
         border: none !important;
         outline: none !important;
-        cursor: pointer; /* or default if you want */
+        cursor: pointer; 
     }
 .navbar .dropdown-menu {
     position: absolute !important;
@@ -148,6 +145,10 @@ a.text-calm-blue {
     background-color: #e9f0fb;
     border-radius: 10px;
 }
+.blurred {
+    filter: blur(5px);
+}
+
 
 
 
