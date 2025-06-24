@@ -11,7 +11,7 @@ namespace SalesforceIntegrationApp.Models.DTOs
         public string? InstanceUrl { get; set; }
 
         [JsonProperty("id")]
-        public string? UserIdUrl { get; set; } // 
+        public string? UserIdUrl { get; set; } 
 
         [JsonProperty("token_type")]
         public string? TokenType { get; set; } 

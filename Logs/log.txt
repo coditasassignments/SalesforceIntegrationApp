@@ -869,3 +869,13 @@ StackTrace:    at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean 
    at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
    at SalesforceIntegrationApp.Services.Implementations.DataService.GetLeadsAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\DataService.cs:line 31
    at DataController.GetLeadData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\DataController.cs:line 28
+[INFO]  24-06-2025 09:13:52 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  24-06-2025 09:13:54 - Lead metadata fetch response: OK
+[INFO]  24-06-2025 09:14:01 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  24-06-2025 09:14:03 - Lead metadata fetch response: OK
+[INFO]  24-06-2025 11:01:50 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  24-06-2025 11:01:51 - Lead metadata fetch response: OK
+[INFO]  24-06-2025 15:37:54 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  24-06-2025 15:37:57 - Lead metadata fetch response: OK
+[INFO]  24-06-2025 15:38:02 - Started fetching lead metadata from Salesforce (Service Layer).
+[INFO]  24-06-2025 15:38:04 - Lead metadata fetch response: OK

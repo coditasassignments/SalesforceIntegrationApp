@@ -32,11 +32,11 @@
                                 <a class="nav-link text-calm-blue" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-calm-blue" asp-controller="Salesforce" asp-action="GetLeadMetaData">GetLeadMetadata</a>
+                                <a class="nav-link text-calm-blue" asp-controller="Salesforce" asp-action="GetLeadMetaData">Metadata</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-calm-blue" href="#" id="getDataDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    GetData
+                                    Lead/Contact Info
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="getDataDropdown">
                                     <li><a class="dropdown-item" href="/Data/GetLeadData">Get Lead Data</a></li>
@@ -45,7 +45,7 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-calm-blue" href="#" id="getDataDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    GetDataInProgress
+                                    Open Task
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="getDataDropdown">
                                     <li><a class="dropdown-item" href="/InProgress/GetLeadInProgress">Get Lead In Progress</a></li>
@@ -53,7 +53,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-calm-blue" asp-controller="Report" asp-action="FetchAndShowReports">ReportsData</a>
+                                <a class="nav-link text-calm-blue" asp-controller="Report" asp-action="FetchAndShowReports">Reports</a>
                             </li>
                         </ul>
                         @if (!string.IsNullOrEmpty(Context.Session.GetString("UserEmail")))

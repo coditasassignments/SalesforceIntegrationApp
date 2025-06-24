@@ -15,7 +15,7 @@ namespace SalesforceIntegrationApp.Services.Implementations
         {
             _context = context;
         }
-        public async Task<SalesforceAuth> GetValidTokenAsync() //Method to check the validity fof the token
+        public async Task<SalesforceAuth> GetValidTokenAsync() //Method to check the validity for the token
         {
             var credentials = _context.SalesforceAuth.FirstOrDefault(); // Retriving credentials from the database
             if (credentials == null)  //In-case if record is null
@@ -24,7 +24,7 @@ namespace SalesforceIntegrationApp.Services.Implementations
             {
                 credentials = await RefreshAccessTokenAsync(credentials); //in-case of expiry of access-token, calling method to make an api call for fetching new access-token from refresh token
             }
-            return credentials; //else returning the valid credentials
+            return credentials; //returning the valid credentials
         }
         private bool IsTokenExpired(SalesforceAuth credentials) // returns true if token expired else false
         {
@@ -32,7 +32,7 @@ namespace SalesforceIntegrationApp.Services.Implementations
                 return true; // Returns true if tokens last updated value is null
             return (DateTime.UtcNow - credentials.TokenLastUpdated.Value).TotalSeconds >= credentials.TokenValiditySeconds; //checks the validity of the token
         }
-        private async Task<SalesforceAuth> RefreshAccessTokenAsync(SalesforceAuth credentials) //method to make an api call for fething the access token with the help of refresh toke
+        private async Task<SalesforceAuth> RefreshAccessTokenAsync(SalesforceAuth credentials) //method to make an api call for fething the access token with the help of refresh token
         {
             using var httpClient = new HttpClient(); //creating an object for HttpClient class
             var form = new Dictionary<string, string> //storing credentials in a dictionary
@@ -54,7 +54,7 @@ namespace SalesforceIntegrationApp.Services.Implementations
             {
                 throw new Exception("Token response missing required fields.");
             }
-            credentials.AccessToken = token.AccessToken; //Mapping the DTO model to the actual model
+            credentials.AccessToken = token.AccessToken;
             credentials.InstanceUrl = token.InstanceUrl;
             credentials.TokenLastUpdated = DateTime.UtcNow;
             _context.SalesforceAuth.Update(credentials); // Updating the value of credentials in the SalesforceAuth table

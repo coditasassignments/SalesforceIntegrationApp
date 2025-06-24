@@ -67,8 +67,8 @@
     }
 
     .dropdown-item:hover {
-        background-color: #ffe6e6; /* Light red background on hover */
-        color: #c0392b; /* Slightly darker red text */
+        background-color: #ffe6e6; 
+        color: #c0392b;
     }
 
     .dropdown-menu {
@@ -81,19 +81,19 @@
         right: 10px;
         transform: translateY(-50%);
     }
-
 </style>
 <div id="main-content">
 <div class="lead-metadata-bg">
     <div class="table-wrapper">
-        <h4 class="text-center mb-2">Lead Data</h4>
+        <h4 class="text-center mb-2">Lead Info</h4>
         @if (Model != null && Model.Count > 0)
         {
             <div class="scrollable-table">
                 <table class="table table-bordered white-table">
                     <thead class="table-white-header">
                         <tr>
-                            <th style="display:none;">Id</th>
+                                <th style="display:none;">Id</th>
+                               
                             <th>
                                 First Name
                                 <div class="dropdown sort-dropdown">
@@ -187,8 +187,8 @@
                         {
                             <tr>
                                 <td style="display:none;">@lead.Id</td>
-                                <td class="sticky-col-1">@lead.FirstName</td>
-                                <td class="sticky-col-2">@lead.LastName</td>
+                                <td>@lead.FirstName</td>
+                                <td>@lead.LastName</td>
                                 <td>@lead.Company</td>
                                 <td>@lead.Email</td>
                                 <td>@lead.Status</td>

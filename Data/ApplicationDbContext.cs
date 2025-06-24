@@ -17,7 +17,5 @@ namespace SalesforceIntegrationApp.Data
         public DbSet<LeadInProgress> LeadsInProgress { get; set; }
         public DbSet<ContactInProgress> ContactsInProgress { get; set; }
         public DbSet<LeadOpenActivity> LeadsOpenActivity { get; set; }
-
-
     }
 }

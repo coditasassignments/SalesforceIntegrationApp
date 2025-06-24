@@ -1,7 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
-
 namespace SalesforceIntegrationApp.Models
 {
     public class User
@@ -21,7 +19,5 @@ namespace SalesforceIntegrationApp.Models
         [Compare("Password", ErrorMessage = "Passwords do not match")]
         [StringLength(8, ErrorMessage = "Confirm-Password cannot exceed 8 characters.")]
         public string? ConfirmPassword { get; set; }
-
     }
-
 }
