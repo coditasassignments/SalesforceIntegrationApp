@@ -8,7 +8,6 @@ using SalesforceIntegrationApp.Exceptions;
 using SalesforceIntegrationApp.Logging;
 using System;
 using SalesforceIntegrationApp.Models.DTOs;
-using Microsoft.CodeAnalysis;
 
 namespace SalesforceIntegrationApp.Services.Implementations
 {
@@ -16,7 +15,7 @@ namespace SalesforceIntegrationApp.Services.Implementations
     {
         public async Task<List<dynamic>> GetLeadFieldsAsync(string accessToken, string instanceUrl)
         {
-            Logger.LogInfo("Started fetching lead metadata from Salesforce (Service Layer).");
+            Logger.LogInfo("Started fetching lead metadata from Salesforce");
             using (var client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken); //Adding authorization header 

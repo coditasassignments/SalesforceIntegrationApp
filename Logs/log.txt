@@ -879,3 +879,43 @@ StackTrace:    at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean 
 [INFO]  24-06-2025 15:37:57 - Lead metadata fetch response: OK
 [INFO]  24-06-2025 15:38:02 - Started fetching lead metadata from Salesforce (Service Layer).
 [INFO]  24-06-2025 15:38:04 - Lead metadata fetch response: OK
+[INFO]  24-06-2025 22:53:07 - Started fetching lead metadata from Salesforce
+[INFO]  24-06-2025 22:53:10 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 06:27:48 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 06:27:49 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 06:28:46 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 06:28:48 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 06:33:31 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 06:33:33 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 06:33:38 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 06:33:39 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 06:33:43 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 06:33:45 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 06:35:00 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 06:35:03 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 06:35:06 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 06:35:08 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 06:35:09 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 06:35:11 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 06:35:20 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 06:35:21 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 06:39:47 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 06:39:49 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 06:39:53 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 06:39:55 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 06:42:54 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 06:42:56 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 06:42:59 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 06:43:01 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 06:49:55 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 06:49:57 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 06:50:16 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 06:50:18 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 06:52:22 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 06:52:24 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 06:57:01 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 06:57:03 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 06:57:06 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 06:57:08 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 07:06:32 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 07:06:34 - Lead metadata fetch response: OK

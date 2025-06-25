@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="~/SalesforceIntegrationApp.styles.css" asp-append-version="true" />
 </head>
 <body class="no-scroll-body">
+    <div id="main-content">
     <div class="app-wrapper">
         <header>
             <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -25,12 +26,14 @@
                     </button>
                     <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                         <ul class="navbar-nav flex-grow-1">
+                            @*
                             <li class="nav-item">
                                 <a class="nav-link text-calm-blue" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-calm-blue" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                             </li>
+                            *@
                             <li class="nav-item">
                                 <a class="nav-link text-calm-blue" asp-controller="Salesforce" asp-action="GetLeadMetaData">Metadata</a>
                             </li>
@@ -59,8 +62,13 @@
                         @if (!string.IsNullOrEmpty(Context.Session.GetString("UserEmail")))
                         {
                             <ul class="navbar-nav ms-auto d-flex align-items-center">
-                                <li class="nav-item">
-                                    <a class="nav-link text-danger fw-semibold" asp-controller="Account" asp-action="Logout">Logout</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle p-0" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="~/icons/troopicon.png" alt="Profile" class="rounded-circle border border-secondary" width="40" height="40" />
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="profileDropdown">
+                                        <li><a class="dropdown-item" asp-controller="Account" asp-action="Profile">Profile</a></li>
+                                    </ul>
                                 </li>
                             </ul>
                         }
@@ -78,5 +86,46 @@
         <script src="~/js/site.js" asp-append-version="true"></script>
         @await RenderSectionAsync("Scripts", required: false)
     </div>
+    </div>
+    <div id="loader" style="display: none; position: fixed; top: 50%; left: 50%;
+    transform: translate(-50%, -50%); z-index: 9999;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
 </body>
 </html>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const loader = document.getElementById("loader");
+        const mainContent = document.getElementById("main-content");
+
+    
+        function isOverlaySpinnerVisible() {
+            const spinner = document.getElementById("overlaySpinner");
+            return spinner && spinner.style.display !== "none";
+        }
+        document.querySelectorAll("a:not([target='_blank'])").forEach(link => {
+            link.addEventListener("click", function (e) {
+                const href = link.getAttribute("href");
+                if (!href || href.startsWith("#") || href.startsWith("javascript")) return;
+                if (isOverlaySpinnerVisible()) return;
+
+                loader.style.display = "block";
+                mainContent.classList.add("blurred");
+            });
+        });
+        document.querySelectorAll("form").forEach(form => {
+            form.addEventListener("submit", function () {
+                if (isOverlaySpinnerVisible()) return;
+
+                loader.style.display = "block";
+                mainContent.classList.add("blurred");
+            });
+        });
+    });
+</script>
+
+
+
+

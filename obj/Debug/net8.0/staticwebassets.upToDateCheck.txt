@@ -2,9 +2,11 @@ wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\icons\delete.png
 wwwroot\icons\edit.png
+wwwroot\icons\icon.png
 wwwroot\icons\Login.png
 wwwroot\icons\pngegg.png
 wwwroot\icons\share.png
+wwwroot\icons\troopicon.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

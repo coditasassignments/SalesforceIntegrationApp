@@ -145,10 +145,16 @@ a.text-calm-blue {
     background-color: #e9f0fb;
     border-radius: 10px;
 }
-.blurred {
-    filter: blur(5px);
+#main-content.blurred > :not(#overlaySpinner):not(#updateSuccessBox) {
+    filter: blur(3px);
+    pointer-events: none;
 }
-
+#updateSuccessBox {
+    z-index: 10001;
+}
+#overlaySpinner {
+    z-index: 9999;
+}
 
 
 

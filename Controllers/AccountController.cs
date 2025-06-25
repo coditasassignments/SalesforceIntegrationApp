@@ -60,6 +60,17 @@ namespace SalesforceIntegrationApp.Controllers
             TempData["Error"] = "Invalid email or password";
             return View();
         }
+        public IActionResult Profile()
+        {
+            var email = HttpContext.Session.GetString("UserEmail");
+            if (string.IsNullOrEmpty(email))
+                return RedirectToAction("Login");
+            var user = _context.Users.FirstOrDefault(u => u.Email == email);
+            if (user == null)
+                return RedirectToAction("Login");
+            return View(user);
+        }
+
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();

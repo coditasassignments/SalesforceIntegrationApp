@@ -1,0 +1,40 @@
+﻿@model SalesforceIntegrationApp.Models.User
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg rounded-4 border-0">
+                <div class="card-body p-5">
+                    <div class="d-flex align-items-center mb-4">
+                        <img src="~/icons/troopicon.png" class="rounded-circle me-4 border border-3 border-primary" width="120" height="120" alt="Profile Picture" />
+                        <div>
+                            <h3 class="fw-bold mb-0"></h3>
+                            <span class="badge bg-gradient bg-primary">Standard User</span>
+                        </div>
+                    </div>
+                    <hr class="my-4" />
+                    <div class="row mb-3">
+                        <div class="col-sm-4 text-muted">Email:</div>
+                        <div class="col-sm-8">@Model.Email</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4 text-muted">Role:</div>
+                        <div class="col-sm-8">User</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4 text-muted">Member Since:</div>
+                        <div class="col-sm-8">January 2024</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4 text-muted">Account Status:</div>
+                        <div class="col-sm-8"><span class="text-success fw-semibold">Active</span></div>
+                    </div>
+
+                    <div class="text-end mt-4">
+                        <a asp-action="Logout" class="btn btn-outline-danger px-4">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

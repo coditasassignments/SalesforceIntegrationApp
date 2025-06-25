@@ -7,11 +7,9 @@
     int currentPage = ViewBag.CurrentPage != null ? (int)ViewBag.CurrentPage : 1;
     int totalPages = ViewBag.TotalPages != null ? (int)ViewBag.TotalPages : 1;
 }
-<div id="main-content">
 <div class="lead-metadata-bg">
     <div class="table-wrapper">
     <h4 class="text-center mb-2">Reports</h4>
-
     @if (Model != null && Model.Count > 0)
     {
         <div class="scrollable-table">
@@ -66,29 +64,4 @@
     }
 </div>
 </div>
-</div>
-<div id="loader" style="display: none; position: fixed; top: 50%; left: 50%;
-    transform: translate(-50%, -50%); z-index: 9999;">
-    <div class="spinner-border text-primary" role="status">
-        <span class="visually-hidden">Loading...</span>
-    </div>
-</div>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const pageLinks = document.querySelectorAll(".page-link");
-        pageLinks.forEach(link => {
-            link.addEventListener("click", function (e) {
-                e.preventDefault();
-                const href = this.getAttribute("href");
-                const loader = document.getElementById("loader");
-                const mainContent = document.getElementById("main-content");
-                loader.style.display = "block";
-                mainContent.classList.add("blurred");
-                setTimeout(function () {
-                    window.location.href = href;
-                }, 1000);
-            });
-        });
-    });
-</script>
 

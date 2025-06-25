@@ -25,12 +25,20 @@
       "PackagePath": "staticwebassets\\icons\\edit.png"
     },
     {
+      "Id": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\icons\\icon.png",
+      "PackagePath": "staticwebassets\\icons\\icon.png"
+    },
+    {
       "Id": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\icons\\pngegg.png",
       "PackagePath": "staticwebassets\\icons\\pngegg.png"
     },
     {
       "Id": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\icons\\share.png",
       "PackagePath": "staticwebassets\\icons\\share.png"
+    },
+    {
+      "Id": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\icons\\troopicon.png",
+      "PackagePath": "staticwebassets\\icons\\troopicon.png"
     },
     {
       "Id": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\js\\site.js",
