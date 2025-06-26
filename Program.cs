@@ -9,7 +9,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllersWithViews();
-builder.Services.AddSession();
+//builder.Services.AddSession();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+builder.Services.AddDistributedMemoryCache();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<ISalesforceService, SalesforceIntegrationApp.Services.Implementations.SalesforceService>();
 builder.Services.AddScoped<IDataService, DataService>();

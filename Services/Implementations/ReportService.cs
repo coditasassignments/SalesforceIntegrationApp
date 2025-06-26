@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using SalesforceIntegrationApp.Data;
 using SalesforceIntegrationApp.Models;
+using SalesforceIntegrationApp.Logging;
 using SalesforceIntegrationApp.Services.Interfaces;
 using System.Net.Http.Headers;
 
@@ -19,50 +20,78 @@ namespace SalesforceIntegrationApp.Services.Implementations
         }
         public async Task<ReportDataModel> FetchAndParseReportAsync()
         {
-            var auth = await _authService.GetValidTokenAsync();
-            using var client = new HttpClient();
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", auth.AccessToken);
-            string url = $"{auth.InstanceUrl}/services/data/v54.0/analytics/reports/{reportId}";
-            var response = await client.GetAsync(url);
-            if (!response.IsSuccessStatusCode)
-                return new ReportDataModel(); 
-            var json = await response.Content.ReadAsStringAsync();
-            return ParseReportJson(json);
+            Logger.LogInfo("Starting FetchAndParseReportAsync");
+            try
+            {
+                var auth = await _authService.GetValidTokenAsync();
+                using var client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", auth.AccessToken);
+                string url = $"{auth.InstanceUrl}/services/data/v54.0/analytics/reports/{reportId}";
+                var response = await client.GetAsync(url);
+                if (!response.IsSuccessStatusCode)
+                    return new ReportDataModel();
+                var json = await response.Content.ReadAsStringAsync();
+                Logger.LogInfo("Report fetched successfully from Salesforce.");
+                return ParseReportJson(json);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("Exception occurred in FetchAndParseReportAsync", ex);
+                return new ReportDataModel();
+            }
         }
         private ReportDataModel ParseReportJson(string json)
         {
-            var jsonObj = JObject.Parse(json);
-            var detailColumnKeys = jsonObj["reportMetadata"]?["detailColumns"] as JArray ?? new JArray();
-            var columnMeta = jsonObj["reportExtendedMetadata"]?["detailColumnInfo"];
-            var columns = new List<string>();
-            foreach (var key in detailColumnKeys)
+            Logger.LogInfo("Parsing report JSON");
+            try
             {
-                var label = columnMeta?[key?.ToString()]?["label"]?.ToString();
-                columns.Add(label ?? key?.ToString() ?? "Column");
+                var jsonObj = JObject.Parse(json);
+                var detailColumnKeys = jsonObj["reportMetadata"]?["detailColumns"] as JArray ?? new JArray();
+                var columnMeta = jsonObj["reportExtendedMetadata"]?["detailColumnInfo"];
+                var columns = new List<string>();
+                foreach (var key in detailColumnKeys)
+                {
+                    var label = columnMeta?[key?.ToString()]?["label"]?.ToString();
+                    columns.Add(label ?? key?.ToString() ?? "Column");
+                }
+                var rows = jsonObj["factMap"]?["T!T"]?["rows"] as JArray ?? new JArray();
+                var dataRows = new List<List<string>>();
+                foreach (var row in rows)
+                {
+                    var rowData = row["dataCells"]?.Select(cell => cell["label"]?.ToString() ?? "").ToList() ?? new List<string>();
+                    dataRows.Add(rowData);
+                }
+                return new ReportDataModel
+                {
+                    Columns = columns,
+                    Rows = dataRows
+                };
             }
-            var rows = jsonObj["factMap"]?["T!T"]?["rows"] as JArray ?? new JArray();
-            var dataRows = new List<List<string>>();
-            foreach (var row in rows)
+            catch (Exception ex)
             {
-                var rowData = row["dataCells"]?.Select(cell => cell["label"]?.ToString() ?? "").ToList() ?? new List<string>();
-                dataRows.Add(rowData);
+                Logger.LogError("Exception occurred while parsing report JSON", ex);
+                return new ReportDataModel();
             }
-            return new ReportDataModel
-            {
-                Columns = columns,
-                Rows = dataRows
-            };
         }
         public void SaveReportToDatabase(ReportDataModel reportData)
         {
-            _db.ReportDatas.RemoveRange(_db.ReportDatas);
-            _db.SaveChanges();
-            foreach (var row in reportData.Rows!)
+            Logger.LogInfo("Saving report to database");
+            try
             {
-                string jsonRow = JsonConvert.SerializeObject(row);
-                _db.ReportDatas.Add(new ReportData { RowDataJson = jsonRow });
+                _db.ReportDatas.RemoveRange(_db.ReportDatas);
+                _db.SaveChanges();
+                foreach (var row in reportData.Rows!)
+                {
+                    string jsonRow = JsonConvert.SerializeObject(row);
+                    _db.ReportDatas.Add(new ReportData { RowDataJson = jsonRow });
+                }
+                _db.SaveChanges();
+                Logger.LogInfo($"Saved rows to the database");
             }
-            _db.SaveChanges(); 
+            catch (Exception ex)
+            {
+                Logger.LogError("Exception occurred while saving report to the database", ex);
+            }
         }
     }
 }

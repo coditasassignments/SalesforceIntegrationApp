@@ -8,10 +8,13 @@ using SalesforceIntegrationApp.Logging;
 using SalesforceIntegrationApp.Helpers;
 using SalesforceIntegrationApp.Services.Implementations;
 using SalesforceIntegrationApp.Models.DTOs;
+using SalesforceIntegrationApp.Filters;
 
 namespace SalesforceIntegrationApp.Controllers
 {
 
+    [AuthorizeSession]
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public class SalesforceController : Controller
     {
         private readonly ISalesforceService _salesforceService;
@@ -24,18 +27,25 @@ namespace SalesforceIntegrationApp.Controllers
         [HttpGet]
         public async Task<IActionResult> GetLeadMetaData()
         {
+            Logger.LogInfo("/Salesforce/GetLeadMetaData called");
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserEmail")))
             {
+                Logger.LogInfo("User session is null.Redirecting to Login");
                 return RedirectToAction("Login", "Account");
             }
             try
             {
+                Logger.LogInfo("Attempting to get a valid Salesforce token");
                 var auth = await _authService.GetValidTokenAsync();
+                Logger.LogInfo("Fetching Lead field metadata from Salesforce.");
                 var selectedFields = await _salesforceService.GetLeadFieldsAsync(auth.AccessToken, auth.InstanceUrl);
+                Logger.LogInfo("Total no. of fields retrieved");
                 var (paginatedFields, totalPages, currentPage) = PaginationHelper.ApplyPagination(selectedFields, Request);
                 ViewBag.Fields = paginatedFields;
                 ViewBag.CurrentPage = currentPage;
                 ViewBag.TotalPages = totalPages;
+
+                Logger.LogInfo("Successfully fetched and paginated Lead metadata fields");
                 return View("GetLeadMetaData");
             }
             catch (InvalidLeadDataException ex)

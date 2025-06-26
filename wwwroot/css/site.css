@@ -152,7 +152,7 @@ a.text-calm-blue {
 #updateSuccessBox {
     z-index: 10001;
 }
-#overlaySpinner {
+#spinner {
     z-index: 9999;
 }
 

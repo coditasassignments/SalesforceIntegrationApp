@@ -919,3 +919,299 @@ StackTrace:    at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean 
 [INFO]  25-06-2025 06:57:08 - Lead metadata fetch response: OK
 [INFO]  25-06-2025 07:06:32 - Started fetching lead metadata from Salesforce
 [INFO]  25-06-2025 07:06:34 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 09:09:38 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 09:09:40 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 09:09:45 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 09:09:46 - Lead metadata fetch response: OK
+[ERROR] 25-06-2025 09:11:38 - Error occurred in GetLeadData.
+Exception: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+StackTrace:    at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at SalesforceIntegrationApp.Services.Implementations.DataService.GetLeadsAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\DataService.cs:line 30
+   at DataController.GetLeadData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\DataController.cs:line 27
+[INFO]  25-06-2025 09:14:24 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 09:14:26 - Lead metadata fetch response: OK
+[ERROR] 25-06-2025 09:27:09 - Error occurred in GetLeadData.
+Exception: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+StackTrace:    at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at SalesforceIntegrationApp.Services.Implementations.DataService.GetLeadsAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\DataService.cs:line 30
+   at DataController.GetLeadData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\DataController.cs:line 27
+[INFO]  25-06-2025 11:10:28 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 11:10:31 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 11:10:53 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 11:10:55 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 11:11:08 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 11:11:10 - Lead metadata fetch response: OK
+[ERROR] 25-06-2025 15:16:30 - Error occurred in GetLeadData.
+Exception: Failed to refresh Salesforce token. Status: BadRequest. Details: {"error":"invalid_grant","error_description":"expired access/refresh token"}
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.AuthService.RefreshAccessTokenAsync(SalesforceAuth credentials) in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 49
+   at SalesforceIntegrationApp.Services.Implementations.AuthService.GetValidTokenAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 25
+   at SalesforceIntegrationApp.Services.Implementations.DataService.GetLeadsAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\DataService.cs:line 24
+   at DataController.GetLeadData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\DataController.cs:line 27
+[ERROR] 25-06-2025 15:16:36 - Error occurred in GetContactData.
+Exception: Failed to refresh Salesforce token. Status: BadRequest. Details: {"error":"invalid_grant","error_description":"expired access/refresh token"}
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.AuthService.RefreshAccessTokenAsync(SalesforceAuth credentials) in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 49
+   at SalesforceIntegrationApp.Services.Implementations.AuthService.GetValidTokenAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 25
+   at SalesforceIntegrationApp.Services.Implementations.DataService.GetContactsAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\DataService.cs:line 74
+   at DataController.GetContactData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\DataController.cs:line 119
+[ERROR] 25-06-2025 15:16:40 - Error occurred in GetLeadData.
+Exception: Failed to refresh Salesforce token. Status: BadRequest. Details: {"error":"invalid_grant","error_description":"expired access/refresh token"}
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.AuthService.RefreshAccessTokenAsync(SalesforceAuth credentials) in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 49
+   at SalesforceIntegrationApp.Services.Implementations.AuthService.GetValidTokenAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 25
+   at SalesforceIntegrationApp.Services.Implementations.DataService.GetLeadsAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\DataService.cs:line 24
+   at DataController.GetLeadData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\DataController.cs:line 27
+[ERROR] 25-06-2025 15:16:51 - Error occurred in GetLeadInProgress.
+Exception: Failed to refresh Salesforce token. Status: BadRequest. Details: {"error":"invalid_grant","error_description":"expired access/refresh token"}
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.AuthService.RefreshAccessTokenAsync(SalesforceAuth credentials) in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 49
+   at SalesforceIntegrationApp.Services.Implementations.AuthService.GetValidTokenAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 25
+   at SalesforceIntegrationApp.Services.Implementations.InProgressService.GetLeadInProgressAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\InProgressService.cs:line 22
+   at InProgressController.GetLeadInProgress() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\InProgressController.cs:line 27
+[ERROR] 25-06-2025 15:17:20 - Unexpected error in GetLeadMetaData.
+Exception: Failed to refresh Salesforce token. Status: BadRequest. Details: {"error":"invalid_grant","error_description":"expired access/refresh token"}
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.AuthService.RefreshAccessTokenAsync(SalesforceAuth credentials) in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 49
+   at SalesforceIntegrationApp.Services.Implementations.AuthService.GetValidTokenAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 25
+   at SalesforceIntegrationApp.Controllers.SalesforceController.GetLeadMetaData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\SalesforceController.cs:line 33
+[ERROR] 25-06-2025 15:17:37 - Error occurred in GetLeadData.
+Exception: Failed to refresh Salesforce token. Status: BadRequest. Details: {"error":"invalid_grant","error_description":"expired access/refresh token"}
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.AuthService.RefreshAccessTokenAsync(SalesforceAuth credentials) in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 49
+   at SalesforceIntegrationApp.Services.Implementations.AuthService.GetValidTokenAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 25
+   at SalesforceIntegrationApp.Services.Implementations.DataService.GetLeadsAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\DataService.cs:line 24
+   at DataController.GetLeadData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\DataController.cs:line 27
+[ERROR] 25-06-2025 15:17:44 - Unexpected error in FetchAndShowReports
+Exception: Failed to refresh Salesforce token. Status: BadRequest. Details: {"error":"invalid_grant","error_description":"expired access/refresh token"}
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.AuthService.RefreshAccessTokenAsync(SalesforceAuth credentials) in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 49
+   at SalesforceIntegrationApp.Services.Implementations.AuthService.GetValidTokenAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 25
+   at SalesforceIntegrationApp.Services.Implementations.ReportService.FetchAndParseReportAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\ReportService.cs:line 22
+   at SalesforceIntegrationApp.Controllers.ReportController.FetchAndShowReports() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\ReportController.cs:line 31
+[ERROR] 25-06-2025 15:19:36 - Unexpected error in GetLeadMetaData.
+Exception: Failed to refresh Salesforce token. Status: BadRequest. Details: {"error":"invalid_grant","error_description":"expired access/refresh token"}
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.AuthService.RefreshAccessTokenAsync(SalesforceAuth credentials) in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 49
+   at SalesforceIntegrationApp.Services.Implementations.AuthService.GetValidTokenAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 25
+   at SalesforceIntegrationApp.Controllers.SalesforceController.GetLeadMetaData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\SalesforceController.cs:line 33
+[ERROR] 25-06-2025 15:20:57 - Unexpected error in GetLeadMetaData.
+Exception: Failed to refresh Salesforce token. Status: BadRequest. Details: {"error":"invalid_grant","error_description":"expired access/refresh token"}
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.AuthService.RefreshAccessTokenAsync(SalesforceAuth credentials) in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 49
+   at SalesforceIntegrationApp.Services.Implementations.AuthService.GetValidTokenAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 25
+   at SalesforceIntegrationApp.Controllers.SalesforceController.GetLeadMetaData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\SalesforceController.cs:line 33
+[ERROR] 25-06-2025 15:24:30 - Unexpected error in GetLeadMetaData.
+Exception: Failed to refresh Salesforce token. Status: BadRequest. Details: {"error":"invalid_grant","error_description":"expired access/refresh token"}
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.AuthService.RefreshAccessTokenAsync(SalesforceAuth credentials) in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 49
+   at SalesforceIntegrationApp.Services.Implementations.AuthService.GetValidTokenAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 25
+   at SalesforceIntegrationApp.Controllers.SalesforceController.GetLeadMetaData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\SalesforceController.cs:line 33
+[ERROR] 25-06-2025 15:24:34 - Error occurred in GetLeadData.
+Exception: Failed to refresh Salesforce token. Status: BadRequest. Details: {"error":"invalid_grant","error_description":"expired access/refresh token"}
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.AuthService.RefreshAccessTokenAsync(SalesforceAuth credentials) in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 49
+   at SalesforceIntegrationApp.Services.Implementations.AuthService.GetValidTokenAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 25
+   at SalesforceIntegrationApp.Services.Implementations.DataService.GetLeadsAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\DataService.cs:line 24
+   at DataController.GetLeadData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\DataController.cs:line 27
+[ERROR] 25-06-2025 15:32:15 - Unexpected error in GetLeadMetaData.
+Exception: Failed to refresh Salesforce token. Status: BadRequest. Details: {"error":"invalid_grant","error_description":"expired access/refresh token"}
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.AuthService.RefreshAccessTokenAsync(SalesforceAuth credentials) in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 49
+   at SalesforceIntegrationApp.Services.Implementations.AuthService.GetValidTokenAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 25
+   at SalesforceIntegrationApp.Controllers.SalesforceController.GetLeadMetaData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\SalesforceController.cs:line 33
+[ERROR] 25-06-2025 15:44:06 - Unexpected error in GetLeadMetaData.
+Exception: Failed to refresh Salesforce token. Status: BadRequest. Details: {"error":"invalid_grant","error_description":"expired access/refresh token"}
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.AuthService.RefreshAccessTokenAsync(SalesforceAuth credentials) in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 49
+   at SalesforceIntegrationApp.Services.Implementations.AuthService.GetValidTokenAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 25
+   at SalesforceIntegrationApp.Controllers.SalesforceController.GetLeadMetaData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\SalesforceController.cs:line 33
+[ERROR] 25-06-2025 15:48:09 - Error occurred in GetLeadInProgress.
+Exception: Failed to refresh Salesforce token. Status: BadRequest. Details: {"error":"invalid_grant","error_description":"expired access/refresh token"}
+StackTrace:    at SalesforceIntegrationApp.Services.Implementations.AuthService.RefreshAccessTokenAsync(SalesforceAuth credentials) in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 49
+   at SalesforceIntegrationApp.Services.Implementations.AuthService.GetValidTokenAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\AuthService.cs:line 25
+   at SalesforceIntegrationApp.Services.Implementations.InProgressService.GetLeadInProgressAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\InProgressService.cs:line 22
+   at InProgressController.GetLeadInProgress() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\InProgressController.cs:line 27
+[INFO]  25-06-2025 15:57:00 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 15:57:02 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 16:11:58 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 16:12:00 - Lead metadata fetch response: OK
+[INFO]  25-06-2025 16:12:43 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 16:12:45 - Lead metadata fetch response: OK
+[ERROR] 25-06-2025 16:14:33 - Error occurred in GetLeadData.
+Exception: The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+StackTrace:    at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean telemetryStarted, HttpResponseMessage response, CancellationTokenSource cts, CancellationToken cancellationToken, CancellationTokenSource pendingRequestsCts)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at SalesforceIntegrationApp.Services.Implementations.DataService.GetLeadsAsync() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Services\Implementations\DataService.cs:line 29
+   at DataController.GetLeadData() in C:\Users\Coditas-Admin.5742-LAP-0185\source\repos\SalesforceIntegrationApp\SalesforceIntegrationApp\Controllers\DataController.cs:line 27
+[INFO]  25-06-2025 16:14:48 - Started fetching lead metadata from Salesforce
+[INFO]  25-06-2025 16:14:50 - Lead metadata fetch response: OK
+[INFO]  26-06-2025 06:30:01 - Login accessed
+[INFO]  26-06-2025 06:30:18 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 06:30:19 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 06:30:19 - /Home/Index accessed.
+[INFO]  26-06-2025 06:30:19 - User session valid.Displaying Index view
+[INFO]  26-06-2025 06:30:23 - /Salesforce/GetLeadMetaData called
+[INFO]  26-06-2025 06:30:23 - Attempting to get a valid Salesforce token
+[INFO]  26-06-2025 06:30:25 - Fetching Lead field metadata from Salesforce.
+[INFO]  26-06-2025 06:30:25 - Started fetching lead metadata from Salesforce
+[INFO]  26-06-2025 06:30:27 - Lead metadata fetch response: OK
+[INFO]  26-06-2025 06:30:27 - Total no. of fields retrieved
+[INFO]  26-06-2025 06:30:27 - Successfully fetched and paginated Lead metadata fields
+[INFO]  26-06-2025 06:30:30 - /Data/GetLeadData called
+[INFO]  26-06-2025 06:30:30 - Fetching leads from Salesforce.
+[INFO]  26-06-2025 06:30:30 - Starting GetLeadsAsync
+[INFO]  26-06-2025 06:30:31 - Total no. of leads fetched
+[INFO]  26-06-2025 06:30:32 - Leads saved to database.
+[INFO]  26-06-2025 06:30:41 - Accessing profile
+[INFO]  26-06-2025 06:30:43 - User logging out
+[INFO]  26-06-2025 06:30:43 - Login accessed
+[INFO]  26-06-2025 06:32:53 - Login accessed
+[INFO]  26-06-2025 06:33:05 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 06:33:06 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 06:33:06 - /Home/Index accessed.
+[INFO]  26-06-2025 06:33:06 - User session valid.Displaying Index view
+[INFO]  26-06-2025 06:33:14 - /Report/FetchAndShowReports called
+[INFO]  26-06-2025 06:33:14 - Fetching report data from Salesforce
+[INFO]  26-06-2025 06:33:14 - Starting FetchAndParseReportAsync
+[INFO]  26-06-2025 06:33:15 - Report fetched successfully from Salesforce.
+[INFO]  26-06-2025 06:33:15 - Parsing report JSON
+[INFO]  26-06-2025 06:33:15 - Saving fetched report data to database.
+[INFO]  26-06-2025 06:33:15 - Saving report to database
+[INFO]  26-06-2025 06:33:16 - Saved rows to the database
+[INFO]  26-06-2025 06:33:16 - Total no. of reports fetched and saved
+[INFO]  26-06-2025 06:33:16 - Displaying report data.
+[INFO]  26-06-2025 06:43:15 - Login accessed
+[INFO]  26-06-2025 06:43:25 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 06:43:26 - Login failed for email: okok@gmail.com
+[INFO]  26-06-2025 06:43:34 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 06:43:34 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 06:43:34 - /Home/Index accessed.
+[INFO]  26-06-2025 06:43:34 - User session valid.Displaying Index view
+[INFO]  26-06-2025 06:43:44 - Login accessed
+[INFO]  26-06-2025 06:43:53 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 06:43:53 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 06:43:53 - /Home/Index accessed.
+[INFO]  26-06-2025 06:43:53 - User session valid.Displaying Index view
+[INFO]  26-06-2025 06:43:55 - /Salesforce/GetLeadMetaData called
+[INFO]  26-06-2025 06:43:55 - Attempting to get a valid Salesforce token
+[INFO]  26-06-2025 06:43:55 - Fetching Lead field metadata from Salesforce.
+[INFO]  26-06-2025 06:43:55 - Started fetching lead metadata from Salesforce
+[INFO]  26-06-2025 06:43:57 - Lead metadata fetch response: OK
+[INFO]  26-06-2025 06:43:57 - Total no. of fields retrieved
+[INFO]  26-06-2025 06:43:57 - Successfully fetched and paginated Lead metadata fields
+[INFO]  26-06-2025 06:43:59 - /Home/Index accessed.
+[INFO]  26-06-2025 06:43:59 - User session valid.Displaying Index view
+[INFO]  26-06-2025 06:44:00 - Login accessed
+[INFO]  26-06-2025 06:44:16 - Login accessed
+[INFO]  26-06-2025 06:49:22 - Login accessed
+[INFO]  26-06-2025 06:49:32 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 06:49:33 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 06:49:33 - /Home/Index accessed.
+[INFO]  26-06-2025 06:49:33 - User session valid.Displaying Index view
+[INFO]  26-06-2025 06:49:36 - Login accessed
+[INFO]  26-06-2025 06:49:38 - Login accessed
+[INFO]  26-06-2025 06:49:48 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 06:49:48 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 06:49:48 - /Home/Index accessed.
+[INFO]  26-06-2025 06:49:48 - User session valid.Displaying Index view
+[INFO]  26-06-2025 06:49:51 - /Salesforce/GetLeadMetaData called
+[INFO]  26-06-2025 06:49:51 - Attempting to get a valid Salesforce token
+[INFO]  26-06-2025 06:49:51 - Fetching Lead field metadata from Salesforce.
+[INFO]  26-06-2025 06:49:51 - Started fetching lead metadata from Salesforce
+[INFO]  26-06-2025 06:49:53 - Lead metadata fetch response: OK
+[INFO]  26-06-2025 06:49:53 - Total no. of fields retrieved
+[INFO]  26-06-2025 06:49:53 - Successfully fetched and paginated Lead metadata fields
+[INFO]  26-06-2025 06:49:55 - /Home/Index accessed.
+[INFO]  26-06-2025 06:49:55 - User session valid.Displaying Index view
+[INFO]  26-06-2025 06:49:56 - Login accessed
+[INFO]  26-06-2025 06:49:56 - Login accessed
+[INFO]  26-06-2025 06:49:59 - Login accessed
+[INFO]  26-06-2025 06:49:59 - Login accessed
+[INFO]  26-06-2025 06:50:09 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 06:50:09 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 06:50:09 - /Home/Index accessed.
+[INFO]  26-06-2025 06:50:09 - User session valid.Displaying Index view
+[INFO]  26-06-2025 06:50:11 - /Data/GetLeadData called
+[INFO]  26-06-2025 06:50:11 - Fetching leads from Salesforce.
+[INFO]  26-06-2025 06:50:11 - Starting GetLeadsAsync
+[INFO]  26-06-2025 06:50:12 - Total no. of leads fetched
+[INFO]  26-06-2025 06:50:12 - Leads saved to database.
+[INFO]  26-06-2025 06:50:14 - /Home/Index accessed.
+[INFO]  26-06-2025 06:50:14 - User session valid.Displaying Index view
+[INFO]  26-06-2025 06:50:14 - Login accessed
+[INFO]  26-06-2025 06:50:16 - Login accessed
+[INFO]  26-06-2025 06:50:25 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 06:50:25 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 06:50:25 - /Home/Index accessed.
+[INFO]  26-06-2025 06:50:25 - User session valid.Displaying Index view
+[INFO]  26-06-2025 06:50:27 - /Report/FetchAndShowReports called
+[INFO]  26-06-2025 06:50:27 - Fetching report data from Salesforce
+[INFO]  26-06-2025 06:50:27 - Starting FetchAndParseReportAsync
+[INFO]  26-06-2025 06:50:28 - Report fetched successfully from Salesforce.
+[INFO]  26-06-2025 06:50:29 - Parsing report JSON
+[INFO]  26-06-2025 06:50:29 - Saving fetched report data to database.
+[INFO]  26-06-2025 06:50:29 - Saving report to database
+[INFO]  26-06-2025 06:50:29 - Saved rows to the database
+[INFO]  26-06-2025 06:50:29 - Total no. of reports fetched and saved
+[INFO]  26-06-2025 06:50:29 - Displaying report data.
+[INFO]  26-06-2025 06:50:31 - /Home/Index accessed.
+[INFO]  26-06-2025 06:50:31 - User session valid.Displaying Index view
+[INFO]  26-06-2025 06:50:31 - Login accessed
+[INFO]  26-06-2025 06:50:32 - Login accessed
+[INFO]  26-06-2025 06:50:41 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 06:50:41 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 06:50:41 - /Home/Index accessed.
+[INFO]  26-06-2025 06:50:41 - User session valid.Displaying Index view
+[INFO]  26-06-2025 06:50:43 - Login accessed
+[INFO]  26-06-2025 06:50:43 - Login accessed
+[INFO]  26-06-2025 06:50:45 - Login accessed
+[INFO]  26-06-2025 06:50:45 - Login accessed
+[INFO]  26-06-2025 06:51:59 - Login accessed
+[INFO]  26-06-2025 06:52:08 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 06:52:10 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 06:52:10 - /Home/Index accessed.
+[INFO]  26-06-2025 06:52:10 - User session valid.Displaying Index view
+[INFO]  26-06-2025 06:52:12 - Login accessed
+[INFO]  26-06-2025 06:52:20 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 06:52:20 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 06:52:20 - /Home/Index accessed.
+[INFO]  26-06-2025 06:52:20 - User session valid.Displaying Index view
+[INFO]  26-06-2025 06:52:22 - /Salesforce/GetLeadMetaData called
+[INFO]  26-06-2025 06:52:22 - Attempting to get a valid Salesforce token
+[INFO]  26-06-2025 06:52:22 - Fetching Lead field metadata from Salesforce.
+[INFO]  26-06-2025 06:52:22 - Started fetching lead metadata from Salesforce
+[INFO]  26-06-2025 06:52:24 - Lead metadata fetch response: OK
+[INFO]  26-06-2025 06:52:25 - Total no. of fields retrieved
+[INFO]  26-06-2025 06:52:25 - Successfully fetched and paginated Lead metadata fields
+[INFO]  26-06-2025 06:52:27 - /Home/Index accessed.
+[INFO]  26-06-2025 06:52:27 - User session valid.Displaying Index view
+[INFO]  26-06-2025 06:52:27 - Login accessed
+[INFO]  26-06-2025 06:52:28 - Login accessed
+[INFO]  26-06-2025 09:49:16 - Login accessed
+[INFO]  26-06-2025 09:50:31 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 09:50:33 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 09:50:33 - /Home/Index accessed.
+[INFO]  26-06-2025 09:50:33 - User session valid.Displaying Index view
+[INFO]  26-06-2025 09:50:34 - Login accessed
+[INFO]  26-06-2025 09:50:38 - Login accessed
+[INFO]  26-06-2025 09:50:43 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 09:50:43 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 09:50:43 - /Home/Index accessed.
+[INFO]  26-06-2025 09:50:43 - User session valid.Displaying Index view
+[INFO]  26-06-2025 09:50:46 - /Data/GetLeadData called
+[INFO]  26-06-2025 09:50:46 - Fetching leads from Salesforce.
+[INFO]  26-06-2025 09:50:46 - Starting GetLeadsAsync
+[INFO]  26-06-2025 09:50:49 - Total no. of leads fetched
+[INFO]  26-06-2025 09:50:50 - Leads saved to database.
+[INFO]  26-06-2025 09:50:52 - /Home/Index accessed.
+[INFO]  26-06-2025 09:50:52 - User session valid.Displaying Index view
+[INFO]  26-06-2025 09:50:52 - Login accessed
+[INFO]  26-06-2025 09:50:53 - Login accessed
+[INFO]  26-06-2025 09:52:34 - Login accessed
+[INFO]  26-06-2025 09:52:57 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 09:53:00 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 09:53:00 - /Home/Index accessed.
+[INFO]  26-06-2025 09:53:00 - User session valid.Displaying Index view
+[INFO]  26-06-2025 09:53:11 - /InProgress/GetLeadInProgress called
+[INFO]  26-06-2025 09:53:11 - Fetching in-progress leads from service.
+[INFO]  26-06-2025 09:53:11 - Starting GetLeadInProgressAsync
+[INFO]  26-06-2025 09:53:14 - Successfully fetched leads with open tasks.
+[INFO]  26-06-2025 09:53:14 - Total no. of leads in progress fetched
+[INFO]  26-06-2025 09:53:15 - Leads in progress saved to database.
+[INFO]  26-06-2025 09:53:22 - /Home/Index accessed.
+[INFO]  26-06-2025 09:53:22 - User session valid.Displaying Index view
+[INFO]  26-06-2025 09:53:24 - Login accessed
+[INFO]  26-06-2025 09:53:26 - Login accessed
+[INFO]  26-06-2025 09:53:27 - Login accessed
+[INFO]  26-06-2025 09:53:29 - Login accessed
+[INFO]  26-06-2025 09:53:36 - Login accessed

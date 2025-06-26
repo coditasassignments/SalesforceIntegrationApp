@@ -7,6 +7,9 @@ using SalesforceIntegrationApp.Helpers;
 using SalesforceIntegrationApp.Logging;
 using SalesforceIntegrationApp.Services.Interfaces;
 using SalesforceIntegrationApp.Services.Implementations;
+using SalesforceIntegrationApp.Filters;
+[AuthorizeSession]
+[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 public class DataController : Controller
 {
     private readonly ApplicationDbContext _context;
@@ -16,14 +19,17 @@ public class DataController : Controller
         _context = context;
         _dataService = dataService;
     }
-    public async Task<IActionResult> GetLeadData() // Controller method to fetch LeadsMetaData
+    public async Task<IActionResult> GetLeadData() // Controller method to fetch Leads Data.
     {
+        Logger.LogInfo("/Data/GetLeadData called");
         if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserEmail")))
         {
+            Logger.LogInfo("User session is null.Redirecting to Login.");
             return RedirectToAction("Login", "Account");
         }
         try
         {
+            Logger.LogInfo("Fetching leads from Salesforce.");
             var leadDtos = await _dataService.GetLeadsAsync();
             var leads = leadDtos.Select(dto => new Lead // Mapping Dto to model
             {
@@ -36,12 +42,14 @@ public class DataController : Controller
                 Title = dto.Title,
                 Phone = dto.Phone
             }).ToList();
+            Logger.LogInfo("Total no. of leads fetched");
             foreach (var lead in leads)
             {
                 if (!_context.Leads.Any(x => x.Id == lead.Id))
                     _context.Leads.Add(lead);
             }
             await _context.SaveChangesAsync();
+            Logger.LogInfo("Leads saved to database.");
             var (paginatedLeads, totalPages, currentPage) = PaginationHelper.ApplyPagination(leads, Request);
             ViewBag.CurrentPage = currentPage;
             ViewBag.TotalPages = totalPages;
@@ -60,11 +68,15 @@ public class DataController : Controller
     [HttpPost]
     public async Task<IActionResult> UpdateLead([FromBody] Lead updatedLead)
     {
+        Logger.LogInfo($"/Data/UpdateLead called for Lead ID: {updatedLead.Id}");
         try
         {
             var existingLead = _context.Leads.FirstOrDefault(l => l.Id == updatedLead.Id);
             if (existingLead == null)
+            {
+                Logger.LogInfo("Lead not found");
                 return NotFound();
+            }
             existingLead.FirstName = updatedLead.FirstName;
             existingLead.LastName = updatedLead.LastName;
             existingLead.Email = updatedLead.Email;
@@ -73,11 +85,18 @@ public class DataController : Controller
             existingLead.Status = updatedLead.Status;
             existingLead.Title = updatedLead.Title;
             await _context.SaveChangesAsync();
+            Logger.LogInfo("Lead updated in local database");
             var result = await _dataService.UpdateLeadInSalesforceAsync(updatedLead);
             if (result)
+            {
+                Logger.LogInfo($"Lead updated in Salesforce");
                 return Json(new{success = true});
+            }
             else
+            {
+                Logger.LogInfo("Salesforce update failed");
                 return Json(new{success = false, message = "Salesforce update failed"});
+            }
         }
         catch (Exception ex)
         {
@@ -88,6 +107,7 @@ public class DataController : Controller
     [HttpPost]
     public async Task<IActionResult> DeleteLead(string id)
     {
+        Logger.LogInfo("/Data/DeleteLead called");
         try
         {
             var leadInDb = _context.Leads.FirstOrDefault(l => l.Id == id);
@@ -95,12 +115,19 @@ public class DataController : Controller
             {
                 _context.Leads.Remove(leadInDb);
                 await _context.SaveChangesAsync();
+                Logger.LogInfo("Lead deleted from database");
             }
             var result = await _dataService.DeleteLeadFromSalesforceAsync(id);
             if (result)
+            {
+                Logger.LogInfo("Lead deleted from Salesforce");
                 return Json(new{success = true});
+            }
             else
-                return Json(new{success = false, message = "Salesforce delete failed"});
+            {
+                Logger.LogInfo($"Salesforce deletion failed");
+                return Json(new{success=false, message = "Salesforce delete failed" });
+            }
         }
         catch (Exception ex)
         {
@@ -110,12 +137,15 @@ public class DataController : Controller
     }
     public async Task<IActionResult> GetContactData()
     {
+        Logger.LogInfo("/Data/GetContactData called");
         if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserEmail")))
         {
+            Logger.LogInfo("User session is null.Redirecting to Login.");
             return RedirectToAction("Login", "Account");
         }
         try
         {
+            Logger.LogInfo("Fetching contacts from Salesforce");
             var contactDtos = await _dataService.GetContactsAsync();
             var contacts = contactDtos.Select(dto => new Contact
             {
@@ -127,13 +157,14 @@ public class DataController : Controller
                 Title = dto.Title,
 
             }).ToList();
+            Logger.LogInfo("Total no. of contacts fetched");
             foreach (var contact in contacts)
             {
                 if (!_context.Contacts.Any(x => x.Id == contact.Id))
                     _context.Contacts.Add(contact);
             }
             await _context.SaveChangesAsync();
-            Console.WriteLine("Db updated");
+            Logger.LogInfo("Contacts saved to database.");
             var (paginatedContacts, totalPages, currentPage) = PaginationHelper.ApplyPagination(contacts, Request);
             ViewBag.CurrentPage = currentPage;
             ViewBag.TotalPages = totalPages;
@@ -151,22 +182,33 @@ public class DataController : Controller
     [HttpPost]
     public async Task<IActionResult> UpdateContact([FromBody] Contact updatedContact)
     {
+        Logger.LogInfo("/Data/UpdateContact called");
         try
         {
             var existingContact = _context.Contacts.FirstOrDefault(c => c.Id == updatedContact.Id);
             if (existingContact == null)
+            {
+                Logger.LogInfo($"Contact not found: {updatedContact.Id}");
                 return NotFound();
+            }
             existingContact.FirstName = updatedContact.FirstName;
             existingContact.LastName = updatedContact.LastName;
             existingContact.Phone = updatedContact.Phone;
             existingContact.Email = updatedContact.Email;
             existingContact.Title = updatedContact.Title;
             await _context.SaveChangesAsync();
+            Logger.LogInfo($"Contact updated in local DB: {updatedContact.Id}");
             var result = await _dataService.UpdateContactInSalesforceAsync(updatedContact);
             if (result)
-                return Json(new {success = true});
+            {
+                Logger.LogInfo($"Contact updated in Salesforce: {updatedContact.Id}");
+                return Json(new{success = true});
+            }
             else
-                return Json(new {success = false, message = "Salesforce update failed"});
+            {
+                Logger.LogInfo($"Salesforce update failed for Contact ID: {updatedContact.Id}");
+                return Json(new{success = false, message = "Salesforce update failed" });
+            }
         }
         catch (Exception ex)
         {

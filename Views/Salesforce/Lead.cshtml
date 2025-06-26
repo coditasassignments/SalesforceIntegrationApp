@@ -5,7 +5,7 @@
     int totalPages = ViewBag.TotalPages != null ? (int)ViewBag.TotalPages : 1;
 }
 <style>
-    #overlaySpinner {
+    #spinner {
         position: fixed;
         top: 0;
         left: 0;
@@ -18,8 +18,7 @@
         align-items: center;
         z-index: 9999;
     }
-
-    .spinner {
+    .spinner{
         width: 60px;
         height: 60px;
         border: 6px solid rgba(0, 0, 0, 0.1);
@@ -27,13 +26,11 @@
         border-radius: 50%;
         animation: spin 1s linear infinite;
     }
-
     @@keyframes spin {
         to {
             transform: rotate(360deg);
         }
     }
-
     .custom-success-box {
         position: fixed;
         top: 40%;
@@ -49,7 +46,6 @@
         z-index: 10000;
         box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
-
     .dots-icon {
         text-decoration: none;
         font-size: 18px;
@@ -207,7 +203,6 @@
                                        data-bs-target="#editLeadModal">
                                         <img src="~/icons/edit.png" alt="Edit" width="15" height="15" />
                                     </a>
-
                                     <a href="#" class="delete-icon" title="Delete">
                                         <img src="~/icons/delete.png" alt="Delete" width="20" height="20" />
                                     </a>
@@ -312,7 +307,7 @@
             <div class="alert alert-info text-center">No leads to display.</div>
         }
     </div>
-    <div id="overlaySpinner" style="display: none;">
+    <div id="spinner" style="display: none;">
         <div class="spinner" role="status" aria-label="Loading"></div>
     </div>
     <div id="updateSuccessBox" class="custom-success-box" style="display: none;">
@@ -345,7 +340,7 @@
                 Title: $('#editTitle').val()
             };
 
-                $('#overlaySpinner').show();
+                $('#spinner').show();
                 $('#updateSuccessBox').hide();
                 const $submitButton = $(this).find('button[type="submit"]');
             $submitButton.prop('disabled', true);
@@ -368,7 +363,7 @@
                             row.find('td:eq(6)').text(updatedLead.Title);
                             row.find('td:eq(7)').text(updatedLead.Phone);
                             $('#editLeadModal').modal('hide');
-                                $('#overlaySpinner').hide();
+                                $('#spinner').hide();
                                 $('#updateSuccessBox').fadeIn();
                                             setTimeout(() => {
                 $('#updateSuccessBox').fadeOut();
@@ -380,13 +375,13 @@
 
                     } else {
                         alert('Update failed: ' + response.message);
-                            $('#overlaySpinner').hide();
+                            $('#spinner').hide();
                         $submitButton.prop('disabled', false);
                     }
                 },
                 error: function () {
                     alert('An error occurred while updating lead.');
-                    $('#overlaySpinner').hide();
+                    $('#spinner').hide();
                     $submitButton.prop('disabled', false);
                 }
             });
@@ -417,19 +412,17 @@
         });
     </script>
     <script>
-        function sortTable(columnIndex, ascending) {
+        function sortTable(c, asc) {
             const table = document.querySelector('.table');
             const tbody = table.querySelector('tbody');
             const rows = Array.from(tbody.querySelectorAll('tr'));
             rows.sort((a, b) => {
-                const aText = a.children[columnIndex].innerText.trim().toLowerCase();
-                const bText = b.children[columnIndex].innerText.trim().toLowerCase();
+                const aText = a.children[c].innerText.trim().toLowerCase();
+                const bText = b.children[c].innerText.trim().toLowerCase();
                 if (!isNaN(aText) && !isNaN(bText)) {
-                    return ascending ? aText - bText : bText - aText;
+                    return asc ? aText - bText : bText - aText;
                 }
-                return ascending
-                    ? aText.localeCompare(bText)
-                    : bText.localeCompare(aText);
+                return asc? aText.localeCompare(bText):bText.localeCompare(aText);
             });
             rows.forEach(row => tbody.appendChild(row));
         }

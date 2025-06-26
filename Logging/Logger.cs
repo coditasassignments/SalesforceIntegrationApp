@@ -20,7 +20,7 @@ namespace SalesforceIntegrationApp.Logging
         }
         public static void LogError(string message, Exception ex)
         {
-            var logMessage = $"[ERROR] {DateTime.Now} - {message}\nException: {ex.Message}\nStackTrace: {ex.StackTrace}";
+            var logMessage = $"[ERROR] {DateTime.Now}-{message}\nException:{ex.Message}";
             Console.WriteLine(logMessage);
             File.AppendAllText(logFilePath, logMessage + Environment.NewLine);
         }

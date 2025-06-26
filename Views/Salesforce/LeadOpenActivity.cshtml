@@ -14,7 +14,7 @@
                 <table class="table table-bordered white-table">
                     <thead class="table-white-header">
                         <tr>
-                            <th>Id</th>
+                            <th style="display:none">Id</th>
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Email</th>
@@ -24,7 +24,7 @@
                         @foreach (var lead in Model)
                         {
                             <tr>
-                                <td>@lead.Id</td>
+                                <td style="display:none">@lead.Id</td>
                                 <td>@lead.FirstName</td>
                                 <td>@lead.LastName</td>
                                 <td>@lead.Email</td>
@@ -62,3 +62,4 @@
         }
     </div>
 </div>
+

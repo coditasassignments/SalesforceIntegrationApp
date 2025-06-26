@@ -7,6 +7,10 @@ using SalesforceIntegrationApp.Helpers;
 using SalesforceIntegrationApp.Logging;
 using SalesforceIntegrationApp.Services.Interfaces;
 using SalesforceIntegrationApp.Services.Implementations;
+using SalesforceIntegrationApp.Logging;
+using SalesforceIntegrationApp.Filters;
+[AuthorizeSession]
+[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 public class InProgressController : Controller
 {
     private readonly ApplicationDbContext _context;
@@ -18,12 +22,15 @@ public class InProgressController : Controller
     }
     public async Task<IActionResult> GetLeadInProgress()
     {
+        Logger.LogInfo("/InProgress/GetLeadInProgress called");
         if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserEmail")))
         {
+            Logger.LogInfo("User session is null.Redirecting to /Account/Login.");
             return RedirectToAction("Login", "Account");
         }
         try
         {
+            Logger.LogInfo("Fetching in-progress leads from service.");
             var leadDtos = await _inProgressService.GetLeadInProgressAsync();
             var leads = leadDtos.Select(dto => new LeadOpenActivity // Mapping Dto to model
             {
@@ -32,12 +39,14 @@ public class InProgressController : Controller
                 LastName = dto.LastName,
                 Email = dto.Email
             }).ToList();
+            Logger.LogInfo("Total no. of leads in progress fetched");
             foreach (var lead in leads)
             {
                 if (!_context.LeadsOpenActivity.Any(x => x.Id == lead.Id))
                     _context.LeadsOpenActivity.Add(lead);
             }
             await _context.SaveChangesAsync();
+            Logger.LogInfo("Leads in progress saved to database.");
             var (paginatedLeads, totalPages, currentPage) = PaginationHelper.ApplyPagination(leads, Request);
             ViewBag.CurrentPage = currentPage;
             ViewBag.TotalPages = totalPages;
@@ -55,12 +64,15 @@ public class InProgressController : Controller
     }
     public async Task<IActionResult> GetContactInProgress()
     {
+        Logger.LogInfo("/InProgress/GetContactInProgress called.");
         if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserEmail")))
         {
+            Logger.LogInfo("User session is null.Redirecting to /Account/Login.");
             return RedirectToAction("Login", "Account");
         }
         try
         {
+            Logger.LogInfo("Fetching in-progress contacts from service");
             var contactDtos = await _inProgressService.GetContactInProgressAsync();
             var contacts = contactDtos.Select(dto => new ContactInProgress
             {
@@ -69,12 +81,14 @@ public class InProgressController : Controller
                 LastName = dto.LastName,
                 Email = dto.Email
             }).ToList();
+            Logger.LogInfo("Total no. of contacts in progress fetched");
             foreach (var contact in contacts)
             {
                 if (!_context.ContactsInProgress.Any(x => x.Id == contact.Id))
                     _context.ContactsInProgress.Add(contact);
             }
             await _context.SaveChangesAsync();
+            Logger.LogInfo("Contacts in progress saved to database");
             var (paginatedContacts, totalPages, currentPage) = PaginationHelper.ApplyPagination(contacts, Request);
             ViewBag.CurrentPage = currentPage;
             ViewBag.TotalPages = totalPages;
