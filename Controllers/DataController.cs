@@ -12,20 +12,20 @@ using SalesforceIntegrationApp.Filters;
 [ResponseCache(Duration=0,Location=ResponseCacheLocation.None,NoStore=true)] //to avoid caching of secured pages in the browser
 public class DataController : Controller
 {
-    private readonly ApplicationDbContext _context;
+    private readonly ApplicationDbContext _context; 
     private readonly IDataService _dataService; 
     public DataController(ApplicationDbContext context, IDataService dataService) // Injecting the Database access layer and service layer through DI(Dependency Injection)
     {
         _context = context;
         _dataService = dataService;
     }
-    public async Task<IActionResult> GetLeadData() // Controller method to fetch Leads Data.
+    public async Task<IActionResult> GetLeadData() //Controller method to fetch Leads Data.
     {
         Logger.LogInfo("/Data/GetLeadData called"); //Added logger.info method of the logger class
         try
         {
             Logger.LogInfo("Fetching leads from Salesforce.");
-            var leadDtos = await _dataService.GetLeadsAsync();
+            var leadDtos = await _dataService.GetLeadsAsync(); //fetches the lead data from the GetLeadsAsync method of dataService 
             var leads = leadDtos.Select(dto => new Lead // Mapping Dto to model
             {
                 Id = dto.Id,
@@ -37,18 +37,18 @@ public class DataController : Controller
                 Title = dto.Title,
                 Phone = dto.Phone
             }).ToList();
-            Logger.LogInfo("Total no. of leads fetched");
-            foreach (var lead in leads)
+            Logger.LogInfo("Total no. of leads fetched"); //added a logger function to fetch total no. of leads that are fetched
+            foreach (var lead in leads) //iterating through the leads data
             {
-                if (!_context.Leads.Any(x => x.Id == lead.Id))
-                    _context.Leads.Add(lead);
+                if (!_context.Leads.Any(x => x.Id == lead.Id)) //if there are no leads in the database
+                    _context.Leads.Add(lead); // add all the records to the 'Leads' table
             }
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(); // otherwise save changes in the database
             Logger.LogInfo("Leads saved to database.");
-            var (paginatedLeads, totalPages, currentPage) = PaginationHelper.ApplyPagination(leads, Request);
+            var (paginatedLeads, totalPages, currentPage) = PaginationHelper.ApplyPagination(leads, Request); // Now applying the pagination logic to the list of records fetched
             ViewBag.CurrentPage = currentPage;
             ViewBag.TotalPages = totalPages;
-            return View("~/Views/Salesforce/Lead.cshtml", paginatedLeads);
+            return View("~/Views/Salesforce/Lead.cshtml", paginatedLeads); // returns the view to display the lead records
 
         }
         catch(Exception ex)
@@ -57,11 +57,11 @@ public class DataController : Controller
             ViewBag.Error = "An error occurred while fetching lead data.";
             ViewBag.CurrentPage = 1;
             ViewBag.TotalPages = 1;
-            return View("~/Views/Salesforce/Lead.cshtml", new List<Lead>());
+            return View("~/Views/Salesforce/Lead.cshtml", new List<Lead>()); // if there is error in fetching leads,simply returns empty list
         }
     }
     [HttpPost]
-    public async Task<IActionResult> UpdateLead([FromBody] Lead updatedLead)
+    public async Task<IActionResult> UpdateLead([FromBody] Lead updatedLead) 
     {
         Logger.LogInfo($"/Data/UpdateLead called for Lead ID: {updatedLead.Id}");
         try

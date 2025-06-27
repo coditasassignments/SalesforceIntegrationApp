@@ -1543,3 +1543,95 @@ StackTrace:    at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean 
 [INFO]  26-06-2025 14:31:09 - User session valid.Displaying Index view
 [INFO]  26-06-2025 14:31:24 - Login accessed
 [INFO]  26-06-2025 14:31:28 - Login accessed
+[INFO]  27-06-2025 14:29:55 - Login accessed
+[INFO]  27-06-2025 14:39:28 - Login accessed
+[INFO]  27-06-2025 14:39:39 - Login triggered: okok@gmail.com
+[INFO]  27-06-2025 14:39:42 - User logged in successfully: okok@gmail.com
+[INFO]  27-06-2025 14:39:42 - /Home/Index accessed.
+[INFO]  27-06-2025 14:39:42 - User session valid.Displaying Index view
+[INFO]  27-06-2025 14:39:50 - /Data/GetLeadData called
+[INFO]  27-06-2025 14:39:50 - Fetching leads from Salesforce.
+[INFO]  27-06-2025 14:39:50 - Starting GetLeadsAsync
+[INFO]  27-06-2025 14:39:52 - Total no. of leads fetched
+[INFO]  27-06-2025 14:39:53 - Leads saved to database.
+[INFO]  27-06-2025 14:40:17 - /Data/UpdateLead called for Lead ID: 
+[INFO]  27-06-2025 14:40:17 - Lead not found
+[INFO]  27-06-2025 14:50:03 - Login accessed
+[INFO]  27-06-2025 14:50:14 - Login triggered: okok@gmail.com
+[INFO]  27-06-2025 14:50:18 - User logged in successfully: okok@gmail.com
+[INFO]  27-06-2025 14:50:18 - /Home/Index accessed.
+[INFO]  27-06-2025 14:50:18 - User session valid.Displaying Index view
+[INFO]  27-06-2025 14:50:21 - /Data/GetLeadData called
+[INFO]  27-06-2025 14:50:21 - Fetching leads from Salesforce.
+[INFO]  27-06-2025 14:50:21 - Starting GetLeadsAsync
+[INFO]  27-06-2025 14:50:31 - Total no. of leads fetched
+[INFO]  27-06-2025 14:50:32 - Leads saved to database.
+[INFO]  27-06-2025 14:50:57 - /Data/UpdateLead called for Lead ID: 
+[INFO]  27-06-2025 14:50:58 - Lead not found
+[INFO]  27-06-2025 15:38:31 - Login accessed
+[INFO]  27-06-2025 15:40:30 - Login accessed
+[INFO]  27-06-2025 15:43:35 - Login accessed
+[INFO]  27-06-2025 15:44:17 - Register accessed
+[INFO]  27-06-2025 15:44:20 - Login accessed
+[INFO]  27-06-2025 15:45:09 - Login triggered: okok@gmail.com
+[INFO]  27-06-2025 15:45:12 - User logged in successfully: okok@gmail.com
+[INFO]  27-06-2025 15:45:12 - /Home/Index accessed.
+[INFO]  27-06-2025 15:45:12 - User session valid.Displaying Index view
+[INFO]  27-06-2025 15:45:29 - Accessing profile
+[INFO]  27-06-2025 15:45:31 - User logging out
+[INFO]  27-06-2025 15:45:31 - Login accessed
+[INFO]  27-06-2025 15:52:58 - Login accessed
+[INFO]  27-06-2025 15:53:03 - Register accessed
+[INFO]  27-06-2025 15:53:07 - Login accessed
+[INFO]  27-06-2025 15:53:09 - Register accessed
+[INFO]  27-06-2025 15:53:10 - Login accessed
+[INFO]  27-06-2025 15:53:12 - Register accessed
+[INFO]  27-06-2025 15:53:15 - Login accessed
+[INFO]  27-06-2025 15:53:22 - Login triggered: okok@gmail.com
+[INFO]  27-06-2025 15:53:25 - User logged in successfully: okok@gmail.com
+[INFO]  27-06-2025 15:53:25 - /Home/Index accessed.
+[INFO]  27-06-2025 15:53:25 - User session valid.Displaying Index view
+[INFO]  27-06-2025 15:57:19 - Login accessed
+[INFO]  27-06-2025 15:57:27 - Register accessed
+[INFO]  27-06-2025 15:57:33 - Login accessed
+[INFO]  27-06-2025 16:12:02 - Login accessed
+[INFO]  27-06-2025 16:12:12 - Login triggered: okok@gmail.com
+[INFO]  27-06-2025 16:12:16 - User logged in successfully: okok@gmail.com
+[INFO]  27-06-2025 16:12:16 - /Home/Index accessed.
+[INFO]  27-06-2025 16:12:16 - User session valid.Displaying Index view
+[INFO]  27-06-2025 16:13:11 - Login accessed
+[INFO]  27-06-2025 16:13:22 - Login triggered: okok@gmail.com
+[INFO]  27-06-2025 16:13:25 - User logged in successfully: okok@gmail.com
+[INFO]  27-06-2025 16:13:25 - /Home/Index accessed.
+[INFO]  27-06-2025 16:13:25 - User session valid.Displaying Index view
+[INFO]  27-06-2025 16:20:22 - Login accessed
+[INFO]  27-06-2025 16:20:31 - Login triggered: okok@gmail.com
+[INFO]  27-06-2025 16:20:35 - User logged in successfully: okok@gmail.com
+[INFO]  27-06-2025 16:20:35 - /Home/Index accessed.
+[INFO]  27-06-2025 16:20:35 - User session valid.Displaying Index view
+[INFO]  27-06-2025 16:32:37 - Login accessed
+[INFO]  27-06-2025 16:45:33 - Login triggered: okok@gmail.com
+[INFO]  27-06-2025 16:45:36 - User logged in successfully: okok@gmail.com
+[INFO]  27-06-2025 16:45:36 - /Home/Index accessed.
+[INFO]  27-06-2025 16:45:36 - User session valid.Displaying Index view
+[INFO]  27-06-2025 16:47:36 - Login accessed
+[INFO]  27-06-2025 16:47:51 - Register accessed
+[INFO]  27-06-2025 16:47:53 - Login accessed
+[INFO]  27-06-2025 16:57:50 - Login accessed
+[INFO]  27-06-2025 16:58:05 - Login triggered: okok@gmail.com
+[INFO]  27-06-2025 16:58:08 - User logged in successfully: okok@gmail.com
+[INFO]  27-06-2025 16:58:08 - /Home/Index accessed.
+[INFO]  27-06-2025 16:58:08 - User session valid.Displaying Index view
+[INFO]  27-06-2025 17:33:55 - Login accessed
+[INFO]  27-06-2025 17:34:05 - Login triggered: okok@gmail.com
+[INFO]  27-06-2025 17:34:08 - User logged in successfully: okok@gmail.com
+[INFO]  27-06-2025 17:34:08 - /Home/Index accessed.
+[INFO]  27-06-2025 17:34:08 - User session valid.Displaying Index view
+[INFO]  27-06-2025 17:34:12 - Accessing profile
+[INFO]  27-06-2025 17:34:15 - User logging out
+[INFO]  27-06-2025 17:34:15 - Login accessed
+[INFO]  27-06-2025 17:35:59 - Login accessed
+[INFO]  27-06-2025 17:37:15 - Login triggered: okok@gmail.com
+[INFO]  27-06-2025 17:37:17 - User logged in successfully: okok@gmail.com
+[INFO]  27-06-2025 17:37:17 - /Home/Index accessed.
+[INFO]  27-06-2025 17:37:17 - User session valid.Displaying Index view

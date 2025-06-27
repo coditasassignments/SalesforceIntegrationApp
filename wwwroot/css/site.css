@@ -1,37 +1,32 @@
-html {
+html{
   font-size: 14px;
 }
-
-@media (min-width: 768px) {
+@media (min-width: 768px){
     html {
         font-size: 16px;
     }
 }
-
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
-
-html {
+html{
   position: relative;
   min-height: 100%;
 }
-
-body {
+body{
     margin-bottom: 60px;
     font-family: 'Poppins', sans-serif;
 }
-.app-wrapper {
+.app-wrapper{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #e6f0ff;
+    background-color: #f2f3f4 ;/*#e6f0ff;*/
 }
 .navbar{
    height:45px;
 }
-
-.navbar a {
+.navbar a{
     color: #0000FF; 
     position: relative;
     text-decoration: none;
@@ -42,8 +37,7 @@ body {
     padding: 1rem 1rem 0.25rem;
     padding-bottom: 0 !important;
 }
-
-    .navbar a:hover {
+.navbar a:hover{
         background-color: #e6f0ff; 
         color: #1d4ed8; 
         font-weight: 450 !important;
@@ -54,35 +48,35 @@ body {
         margin-bottom: -3px !important;
     }
 navbar-collapse
-.text-calm-blue {
+.text-calm-blue{
     color: #0000FF;
     font-weight: normal;
     text-decoration: none;
 }
-    .text-calm-blue:hover {
+    .text-calm-blue:hover{
         color: #0056b3; 
         font-weight: normal; 
     }
-.nav-link dropdown-toggle text-calm-blue {
+.nav-link dropdown-toggle text-calm-blue{
     color: #0000FF !important;
 }
-.lead-metadata-bg {
+.lead-metadata-bg{
     background-color: #e6f0ff;
 }
 
-.white-table {
+.white-table{
     background-color: white;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
-.scrollable-table {
+.scrollable-table{
     max-height: 450px; 
     overflow-y: auto;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     height:1200px;
 }
-.table-white-header th {
+.table-white-header th{
     background-color: white;
     color: black;
     font-weight: 600;
@@ -91,10 +85,10 @@ navbar-collapse
     font-size: 16px; 
     border-bottom: 2px solid #dee2e6;
 }
-.no-scroll-body {
+.no-scroll-body{
     overflow: hidden;
 }
-.sticky-header th {
+.sticky-header th{
     position: sticky;
     top: 0;
     background-color: white;
@@ -102,7 +96,7 @@ navbar-collapse
     text-align: center;
     border-bottom: 2px solid #dee2e6;
 }
-.sticky-top th {
+.sticky-top th{
     position: sticky;
     top: 0;
     background-color: white;
@@ -114,16 +108,16 @@ button,
 .nav-link,
 .dropdown-item,
 .scrollable-table table,
-a.text-calm-blue {
+a.text-calm-blue{
     cursor: pointer !important;
 }
-.navbar .app-title {
+.navbar .app-title{
     font-size: 1.2rem !important; 
     text-decoration: none !important;
 }
     .navbar .app-title:hover,
     .navbar .app-title:focus,
-    .navbar .app-title:active {
+    .navbar .app-title:active{
         font-size: 1.2rem !important;
         font-weight: bold !important;
         text-decoration: none !important;
@@ -134,25 +128,25 @@ a.text-calm-blue {
         outline: none !important;
         cursor: pointer; 
     }
-.navbar .dropdown-menu {
+.navbar .dropdown-menu{
     position: absolute !important;
     z-index: 1055 !important;
 }
-.table-wrapper {
+.table-wrapper{
     margin-left: 40px;
     margin-right: 40px;
     padding: 10px;
     background-color: #e9f0fb;
     border-radius: 10px;
 }
-#main-content.blurred > :not(#spinner):not(#updateSuccessBox) {
+#main-content.blurred > :not(#spinner):not(#updateSuccessBox){
     filter: blur(3px);
     pointer-events: none;
 }
-#updateSuccessBox {
+#updateSuccessBox{
     z-index: 10001;
 }
-#spinner {
+#spinner{
     z-index: 9999;
 }
 

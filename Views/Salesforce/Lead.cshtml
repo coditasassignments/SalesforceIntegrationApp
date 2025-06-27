@@ -191,7 +191,7 @@
                                 <td>@lead.Phone</td>
                                 <td class="text-center">
                                     <a href="#" class="edit-icon" title="Edit"
-                                       data-id="@lead.Id"
+                                       @*data-id="@lead.Id"*@
                                        data-firstname="@lead.FirstName"
                                        data-lastname="@lead.LastName"
                                        data-email="@lead.Email"
@@ -318,7 +318,7 @@
     <script>
         $(document).on('click', '.edit-icon, .edit-icon img', function () {
             const $el = $(this).closest('.edit-icon');
-            $('#editLeadId').val($el.data('id'));
+            //$('#editLeadId').val($el.data('id'));
             $('#editFirstName').val($el.data('firstname'));
             $('#editLastName').val($el.data('lastname'));
             $('#editEmail').val($el.data('email'));
@@ -330,7 +330,7 @@
         $('#editLeadForm').on('submit', function (e) {
             e.preventDefault();
             const updatedLead = {
-                Id: $('#editLeadId').val(),
+                //Id: $('#editLeadId').val(),
                 FirstName: $('#editFirstName').val(),
                 LastName: $('#editLastName').val(),
                 Email: $('#editEmail').val(),
