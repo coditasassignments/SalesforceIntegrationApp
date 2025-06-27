@@ -8,8 +8,8 @@ using SalesforceIntegrationApp.Logging;
 using SalesforceIntegrationApp.Services.Interfaces;
 using SalesforceIntegrationApp.Services.Implementations;
 using SalesforceIntegrationApp.Filters;
-[AuthorizeSession]
-[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+[AuthorizeSession] // custom attribute to check user is logged in or not
+[ResponseCache(Duration=0,Location=ResponseCacheLocation.None,NoStore=true)] //to avoid caching of secured pages in the browser
 public class DataController : Controller
 {
     private readonly ApplicationDbContext _context;
@@ -21,12 +21,7 @@ public class DataController : Controller
     }
     public async Task<IActionResult> GetLeadData() // Controller method to fetch Leads Data.
     {
-        Logger.LogInfo("/Data/GetLeadData called");
-        if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserEmail")))
-        {
-            Logger.LogInfo("User session is null.Redirecting to Login.");
-            return RedirectToAction("Login", "Account");
-        }
+        Logger.LogInfo("/Data/GetLeadData called"); //Added logger.info method of the logger class
         try
         {
             Logger.LogInfo("Fetching leads from Salesforce.");

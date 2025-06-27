@@ -26,9 +26,7 @@ namespace SalesforceIntegrationApp.Services.Implementations
                 var auth = await _authService.GetValidTokenAsync();
                 using var client = new HttpClient(); //Creating an object client for HttpClient() class that is used to GET, POST Http requests.
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", auth.AccessToken);
-                string query = "SELECT Id, FirstName, LastName, Email, " +
-                   "(SELECT Id, Subject, Status, ActivityDate FROM Tasks WHERE Status != 'Completed') " +
-                   "FROM Lead";
+                string query = "SELECT Id, FirstName, LastName, Email, (SELECT Id, Subject, Status, ActivityDate FROM Tasks WHERE Status!='Completed') FROM Lead";
                 string url = $"{auth.InstanceUrl}/services/data/v54.0/query?q={Uri.EscapeDataString(query)}";
                 var response = await client.GetAsync(url);
                 if (response.IsSuccessStatusCode)
@@ -54,9 +52,7 @@ namespace SalesforceIntegrationApp.Services.Implementations
                 var auth = await _authService.GetValidTokenAsync();
                 using var client = new HttpClient();
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", auth.AccessToken);
-                string query = "SELECT Id, FirstName, LastName, Email, " +
-                   "(SELECT Id, Subject, Status, ActivityDate FROM Tasks WHERE Status != 'Completed') " +
-                   "FROM Contact";
+                string query = "SELECT Id, FirstName, LastName, Email, (SELECT Id, Subject, Status, ActivityDate FROM Tasks WHERE Status!='Completed') FROM Contact";
                 string url = $"{auth.InstanceUrl!}/services/data/v54.0/query?q={Uri.EscapeDataString(query)}";
                 var response = await client.GetAsync(url);
                 if (response.IsSuccessStatusCode)

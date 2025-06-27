@@ -25,7 +25,7 @@ namespace SalesforceIntegrationApp.Services.Implementations
                     var response = await client.GetAsync(url);
                     Logger.LogInfo($"Lead metadata fetch response: {response.StatusCode}");
                     if (!response.IsSuccessStatusCode) //if-condition in case of failing to get response throws exception
-                        throw new Exception($"Error fetching lead metadata: {response.StatusCode} - {response.ReasonPhrase}");
+                        throw new Exception($"Error fetching lead metadata:{response.StatusCode} - {response.ReasonPhrase}");
                     var jsonResponse = await response.Content.ReadAsStringAsync();
                     var parsed = JsonConvert.DeserializeObject<LeadMetadataDto>(jsonResponse);
                     if (parsed?.Fields == null || parsed.Fields.Count == 0)

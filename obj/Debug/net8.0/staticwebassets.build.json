@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GZYGYUoW7QXpLAt10v2Sue8D0DrOchO/1sZdQ/5j4TE=",
+  "Hash": "MKdJyyDPKjQStt4IURJXXkcUFGTRY/dO92D3hbiYVO8=",
   "Source": "SalesforceIntegrationApp",
   "BasePath": "_content/SalesforceIntegrationApp",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "78cn1pr7d4",
-      "Integrity": "p7Lr7hjBRdoLHbm8Kd+cFgZVOgjbDdrsU6tr96XdkqA=",
+      "Fingerprint": "yyqpem4j14",
+      "Integrity": "NsUg0o8GKpnV0J6OHLGuHUiWH0oAMvyGfc5wKCWPxL8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1468,51 +1468,6 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.78cn1pr7d4.css",
-      "AssetFile": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3504"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"p7Lr7hjBRdoLHbm8Kd+cFgZVOgjbDdrsU6tr96XdkqA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 25 Jun 2025 09:45:47 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "78cn1pr7d4"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-p7Lr7hjBRdoLHbm8Kd+cFgZVOgjbDdrsU6tr96XdkqA="
-        }
-      ]
-    },
-    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -1523,7 +1478,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3504"
+          "Value": "3497"
         },
         {
           "Name": "Content-Type",
@@ -1531,11 +1486,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"p7Lr7hjBRdoLHbm8Kd+cFgZVOgjbDdrsU6tr96XdkqA=\""
+          "Value": "\"NsUg0o8GKpnV0J6OHLGuHUiWH0oAMvyGfc5wKCWPxL8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 25 Jun 2025 09:45:47 GMT"
+          "Value": "Thu, 26 Jun 2025 05:31:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1545,7 +1500,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-p7Lr7hjBRdoLHbm8Kd+cFgZVOgjbDdrsU6tr96XdkqA="
+          "Value": "sha256-NsUg0o8GKpnV0J6OHLGuHUiWH0oAMvyGfc5wKCWPxL8="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.yyqpem4j14.css",
+      "AssetFile": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3497"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NsUg0o8GKpnV0J6OHLGuHUiWH0oAMvyGfc5wKCWPxL8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 26 Jun 2025 05:31:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yyqpem4j14"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NsUg0o8GKpnV0J6OHLGuHUiWH0oAMvyGfc5wKCWPxL8="
         }
       ]
     },

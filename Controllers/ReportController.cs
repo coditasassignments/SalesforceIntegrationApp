@@ -13,7 +13,7 @@ using SalesforceIntegrationApp.Filters;
 namespace SalesforceIntegrationApp.Controllers
 {
     [AuthorizeSession]
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    [ResponseCache(Duration=0,Location=ResponseCacheLocation.None,NoStore = true)]
     public class ReportController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -26,11 +26,6 @@ namespace SalesforceIntegrationApp.Controllers
         public async Task<ActionResult> FetchAndShowReports()
         {
             Logger.LogInfo("/Report/FetchAndShowReports called");
-            if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserEmail")))
-            {
-                Logger.LogInfo("Session is null.Redirecting to Login.");
-                return RedirectToAction("Login", "Account");
-            }
             try
             {
                 Logger.LogInfo("Fetching report data from Salesforce");

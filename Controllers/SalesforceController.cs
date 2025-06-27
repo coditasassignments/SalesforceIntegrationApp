@@ -14,7 +14,7 @@ namespace SalesforceIntegrationApp.Controllers
 {
 
     [AuthorizeSession]
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    [ResponseCache(Duration=0, Location=ResponseCacheLocation.None,NoStore=true)]
     public class SalesforceController : Controller
     {
         private readonly ISalesforceService _salesforceService;
@@ -28,11 +28,6 @@ namespace SalesforceIntegrationApp.Controllers
         public async Task<IActionResult> GetLeadMetaData()
         {
             Logger.LogInfo("/Salesforce/GetLeadMetaData called");
-            if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserEmail")))
-            {
-                Logger.LogInfo("User session is null.Redirecting to Login");
-                return RedirectToAction("Login", "Account");
-            }
             try
             {
                 Logger.LogInfo("Attempting to get a valid Salesforce token");

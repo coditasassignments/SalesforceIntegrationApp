@@ -45,20 +45,20 @@ namespace SalesforceIntegrationApp.Services.Implementations
             Logger.LogInfo("Parsing report JSON");
             try
             {
-                var jsonObj = JObject.Parse(json);
-                var detailColumnKeys = jsonObj["reportMetadata"]?["detailColumns"] as JArray ?? new JArray();
-                var columnMeta = jsonObj["reportExtendedMetadata"]?["detailColumnInfo"];
+                var parse = JObject.Parse(json); //parsing the json response 
+                var columnKeys = parse["reportMetadata"]?["detailColumns"] as JArray??new JArray(); // type-cast to json array the detailColumns array of the reportMetaDataSection
+                var columnData = parse["reportExtendedMetadata"]?["detailColumnInfo"];
                 var columns = new List<string>();
-                foreach (var key in detailColumnKeys)
+                foreach(var i in columnKeys)
                 {
-                    var label = columnMeta?[key?.ToString()]?["label"]?.ToString();
-                    columns.Add(label ?? key?.ToString() ?? "Column");
+                    var tag = columnData?[i?.ToString()]?["label"]?.ToString();
+                    columns.Add(tag??i?.ToString() ?? "Column");
                 }
-                var rows = jsonObj["factMap"]?["T!T"]?["rows"] as JArray ?? new JArray();
+                var rows = parse["factMap"]?["T!T"]?["rows"] as JArray??new JArray();
                 var dataRows = new List<List<string>>();
-                foreach (var row in rows)
+                foreach (var r in rows)
                 {
-                    var rowData = row["dataCells"]?.Select(cell => cell["label"]?.ToString() ?? "").ToList() ?? new List<string>();
+                    var rowData = r["dataCells"]?.Select(cell => cell["label"]?.ToString() ?? "").ToList() ?? new List<string>();
                     dataRows.Add(rowData);
                 }
                 return new ReportDataModel
@@ -83,7 +83,7 @@ namespace SalesforceIntegrationApp.Services.Implementations
                 foreach (var row in reportData.Rows!)
                 {
                     string jsonRow = JsonConvert.SerializeObject(row);
-                    _db.ReportDatas.Add(new ReportData { RowDataJson = jsonRow });
+                    _db.ReportDatas.Add(new ReportData {RowDataJson = jsonRow});
                 }
                 _db.SaveChanges();
                 Logger.LogInfo($"Saved rows to the database");

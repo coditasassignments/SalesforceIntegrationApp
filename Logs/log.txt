@@ -1215,3 +1215,331 @@ StackTrace:    at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean 
 [INFO]  26-06-2025 09:53:27 - Login accessed
 [INFO]  26-06-2025 09:53:29 - Login accessed
 [INFO]  26-06-2025 09:53:36 - Login accessed
+[INFO]  26-06-2025 10:10:02 - Login accessed
+[INFO]  26-06-2025 10:10:20 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 10:10:22 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 10:10:22 - /Home/Index accessed.
+[INFO]  26-06-2025 10:10:22 - User session valid.Displaying Index view
+[INFO]  26-06-2025 10:10:27 - Login accessed
+[INFO]  26-06-2025 10:10:43 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 10:10:43 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 10:10:43 - /Home/Index accessed.
+[INFO]  26-06-2025 10:10:43 - User session valid.Displaying Index view
+[INFO]  26-06-2025 10:10:46 - /Salesforce/GetLeadMetaData called
+[INFO]  26-06-2025 10:10:46 - Attempting to get a valid Salesforce token
+[INFO]  26-06-2025 10:10:46 - Fetching Lead field metadata from Salesforce.
+[INFO]  26-06-2025 10:10:46 - Started fetching lead metadata from Salesforce
+[INFO]  26-06-2025 10:10:48 - Lead metadata fetch response: OK
+[INFO]  26-06-2025 10:10:48 - Total no. of fields retrieved
+[INFO]  26-06-2025 10:10:48 - Successfully fetched and paginated Lead metadata fields
+[INFO]  26-06-2025 10:10:51 - /Data/GetContactData called
+[INFO]  26-06-2025 10:10:51 - Fetching contacts from Salesforce
+[INFO]  26-06-2025 10:10:51 - Starting GetContactsAsync
+[INFO]  26-06-2025 10:11:59 - Total no. of contacts fetched
+[INFO]  26-06-2025 10:12:00 - /Home/Index accessed.
+[INFO]  26-06-2025 10:12:00 - User session valid.Displaying Index view
+[INFO]  26-06-2025 10:12:00 - Contacts saved to database.
+[INFO]  26-06-2025 10:12:00 - Login accessed
+[INFO]  26-06-2025 10:12:05 - Login accessed
+[INFO]  26-06-2025 10:12:07 - Login accessed
+[INFO]  26-06-2025 10:56:54 - Login accessed
+[INFO]  26-06-2025 10:57:06 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 10:57:09 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 10:57:09 - /Home/Index accessed.
+[INFO]  26-06-2025 10:57:09 - User session valid.Displaying Index view
+[INFO]  26-06-2025 10:57:11 - /Salesforce/GetLeadMetaData called
+[INFO]  26-06-2025 10:57:11 - Attempting to get a valid Salesforce token
+[INFO]  26-06-2025 10:57:13 - Fetching Lead field metadata from Salesforce.
+[INFO]  26-06-2025 10:57:13 - Started fetching lead metadata from Salesforce
+[INFO]  26-06-2025 10:57:15 - Lead metadata fetch response: OK
+[INFO]  26-06-2025 10:57:15 - Total no. of fields retrieved
+[INFO]  26-06-2025 10:57:15 - Successfully fetched and paginated Lead metadata fields
+[INFO]  26-06-2025 10:57:20 - /Salesforce/GetLeadMetaData called
+[INFO]  26-06-2025 10:57:20 - Attempting to get a valid Salesforce token
+[INFO]  26-06-2025 10:57:20 - Fetching Lead field metadata from Salesforce.
+[INFO]  26-06-2025 10:57:20 - Started fetching lead metadata from Salesforce
+[INFO]  26-06-2025 10:57:22 - Lead metadata fetch response: OK
+[INFO]  26-06-2025 10:57:22 - Total no. of fields retrieved
+[INFO]  26-06-2025 10:57:22 - Successfully fetched and paginated Lead metadata fields
+[INFO]  26-06-2025 10:57:25 - /Data/GetLeadData called
+[INFO]  26-06-2025 10:57:25 - Fetching leads from Salesforce.
+[INFO]  26-06-2025 10:57:25 - Starting GetLeadsAsync
+[INFO]  26-06-2025 10:58:46 - /Salesforce/GetLeadMetaData called
+[INFO]  26-06-2025 10:58:46 - Attempting to get a valid Salesforce token
+[INFO]  26-06-2025 10:58:46 - Fetching Lead field metadata from Salesforce.
+[INFO]  26-06-2025 10:58:46 - Started fetching lead metadata from Salesforce
+[INFO]  26-06-2025 10:58:47 - Total no. of leads fetched
+[INFO]  26-06-2025 10:58:48 - Leads saved to database.
+[INFO]  26-06-2025 10:58:48 - Lead metadata fetch response: OK
+[INFO]  26-06-2025 10:58:48 - Total no. of fields retrieved
+[INFO]  26-06-2025 10:58:48 - Successfully fetched and paginated Lead metadata fields
+[INFO]  26-06-2025 10:58:52 - /Data/GetLeadData called
+[INFO]  26-06-2025 10:58:52 - Fetching leads from Salesforce.
+[INFO]  26-06-2025 10:58:52 - Starting GetLeadsAsync
+[INFO]  26-06-2025 10:59:33 - Login accessed
+[INFO]  26-06-2025 10:59:47 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 10:59:50 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 10:59:50 - /Home/Index accessed.
+[INFO]  26-06-2025 10:59:50 - User session valid.Displaying Index view
+[INFO]  26-06-2025 10:59:54 - /Data/GetLeadData called
+[INFO]  26-06-2025 10:59:54 - Fetching leads from Salesforce.
+[INFO]  26-06-2025 10:59:54 - Starting GetLeadsAsync
+[INFO]  26-06-2025 10:59:59 - Total no. of leads fetched
+[INFO]  26-06-2025 11:00:00 - Leads saved to database.
+[INFO]  26-06-2025 11:00:11 - /Data/UpdateLead called for Lead ID: 00QGC00001srJkt2AE
+[INFO]  26-06-2025 11:00:11 - Lead updated in local database
+[INFO]  26-06-2025 11:00:11 - Starting UpdateLeadInSalesforceAsync
+[INFO]  26-06-2025 11:00:12 - Lead updated in Salesforce
+[INFO]  26-06-2025 11:01:16 - Login accessed
+[INFO]  26-06-2025 11:01:24 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 11:01:28 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 11:01:28 - /Home/Index accessed.
+[INFO]  26-06-2025 11:01:28 - User session valid.Displaying Index view
+[INFO]  26-06-2025 11:01:31 - /Data/GetLeadData called
+[INFO]  26-06-2025 11:01:31 - Fetching leads from Salesforce.
+[INFO]  26-06-2025 11:01:31 - Starting GetLeadsAsync
+[INFO]  26-06-2025 11:01:48 - Total no. of leads fetched
+[INFO]  26-06-2025 11:01:49 - Leads saved to database.
+[INFO]  26-06-2025 11:01:59 - /Data/UpdateLead called for Lead ID: 00QGC00001srJkt2AE
+[INFO]  26-06-2025 11:02:00 - Lead updated in local database
+[INFO]  26-06-2025 11:02:00 - Starting UpdateLeadInSalesforceAsync
+[INFO]  26-06-2025 11:02:01 - Lead updated in Salesforce
+[INFO]  26-06-2025 11:07:14 - Login accessed
+[INFO]  26-06-2025 11:07:21 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 11:07:25 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 11:07:25 - /Home/Index accessed.
+[INFO]  26-06-2025 11:07:25 - User session valid.Displaying Index view
+[INFO]  26-06-2025 11:07:29 - /Data/GetLeadData called
+[INFO]  26-06-2025 11:07:29 - Fetching leads from Salesforce.
+[INFO]  26-06-2025 11:07:29 - Starting GetLeadsAsync
+[INFO]  26-06-2025 11:07:48 - Total no. of leads fetched
+[INFO]  26-06-2025 11:07:48 - Leads saved to database.
+[INFO]  26-06-2025 11:07:58 - /Data/UpdateLead called for Lead ID: 00QGC00001srJkt2AE
+[INFO]  26-06-2025 11:07:59 - Lead updated in local database
+[INFO]  26-06-2025 11:07:59 - Starting UpdateLeadInSalesforceAsync
+[INFO]  26-06-2025 11:08:00 - Lead updated in Salesforce
+[INFO]  26-06-2025 11:08:35 - /Data/DeleteLead called
+[INFO]  26-06-2025 11:08:35 - Starting DeleteLeadFromSalesforceAsync
+[INFO]  26-06-2025 11:08:36 - Salesforce deletion failed
+[INFO]  26-06-2025 11:08:54 - /InProgress/GetLeadInProgress called
+[INFO]  26-06-2025 11:08:54 - Fetching in-progress leads from service.
+[INFO]  26-06-2025 11:08:55 - Starting GetLeadInProgressAsync
+[INFO]  26-06-2025 11:08:56 - Successfully fetched leads with open tasks.
+[INFO]  26-06-2025 11:08:56 - Total no. of leads in progress fetched
+[INFO]  26-06-2025 11:08:57 - Leads in progress saved to database.
+[INFO]  26-06-2025 11:09:03 - /InProgress/GetContactInProgress called.
+[INFO]  26-06-2025 11:09:03 - Fetching in-progress contacts from service
+[INFO]  26-06-2025 11:09:03 - Starting GetContactInProgressAsync
+[INFO]  26-06-2025 11:09:05 - Successfully fetched contacts with open tasks.
+[INFO]  26-06-2025 11:09:05 - Total no. of contacts in progress fetched
+[INFO]  26-06-2025 11:09:06 - Contacts in progress saved to database
+[INFO]  26-06-2025 11:09:13 - /InProgress/GetLeadInProgress called
+[INFO]  26-06-2025 11:09:13 - Fetching in-progress leads from service.
+[INFO]  26-06-2025 11:09:13 - Starting GetLeadInProgressAsync
+[INFO]  26-06-2025 11:09:14 - Successfully fetched leads with open tasks.
+[INFO]  26-06-2025 11:09:14 - Total no. of leads in progress fetched
+[INFO]  26-06-2025 11:09:14 - Leads in progress saved to database.
+[INFO]  26-06-2025 11:09:17 - /Report/FetchAndShowReports called
+[INFO]  26-06-2025 11:09:17 - Fetching report data from Salesforce
+[INFO]  26-06-2025 11:09:17 - Starting FetchAndParseReportAsync
+[INFO]  26-06-2025 11:09:18 - Report fetched successfully from Salesforce.
+[INFO]  26-06-2025 11:09:18 - Parsing report JSON
+[INFO]  26-06-2025 11:09:18 - Saving fetched report data to database.
+[INFO]  26-06-2025 11:09:18 - Saving report to database
+[INFO]  26-06-2025 11:09:19 - Saved rows to the database
+[INFO]  26-06-2025 11:09:19 - Total no. of reports fetched and saved
+[INFO]  26-06-2025 11:09:19 - Displaying report data.
+[INFO]  26-06-2025 11:11:09 - /Report/FetchAndShowReports called
+[INFO]  26-06-2025 11:11:09 - Fetching report data from Salesforce
+[INFO]  26-06-2025 11:11:09 - Starting FetchAndParseReportAsync
+[INFO]  26-06-2025 11:11:10 - Report fetched successfully from Salesforce.
+[INFO]  26-06-2025 11:11:10 - Parsing report JSON
+[INFO]  26-06-2025 11:11:11 - Saving fetched report data to database.
+[INFO]  26-06-2025 11:11:11 - Saving report to database
+[INFO]  26-06-2025 11:11:11 - Saved rows to the database
+[INFO]  26-06-2025 11:11:11 - Total no. of reports fetched and saved
+[INFO]  26-06-2025 11:11:11 - Displaying report data.
+[INFO]  26-06-2025 11:11:15 - /Report/FetchAndShowReports called
+[INFO]  26-06-2025 11:11:15 - Fetching report data from Salesforce
+[INFO]  26-06-2025 11:11:15 - Starting FetchAndParseReportAsync
+[INFO]  26-06-2025 11:11:16 - Report fetched successfully from Salesforce.
+[INFO]  26-06-2025 11:11:16 - Parsing report JSON
+[INFO]  26-06-2025 11:11:16 - Saving fetched report data to database.
+[INFO]  26-06-2025 11:11:16 - Saving report to database
+[INFO]  26-06-2025 11:11:16 - Saved rows to the database
+[INFO]  26-06-2025 11:11:16 - Total no. of reports fetched and saved
+[INFO]  26-06-2025 11:11:16 - Displaying report data.
+[INFO]  26-06-2025 11:11:19 - /Report/FetchAndShowReports called
+[INFO]  26-06-2025 11:11:19 - Fetching report data from Salesforce
+[INFO]  26-06-2025 11:11:19 - Starting FetchAndParseReportAsync
+[INFO]  26-06-2025 11:11:21 - Report fetched successfully from Salesforce.
+[INFO]  26-06-2025 11:11:21 - Parsing report JSON
+[INFO]  26-06-2025 11:11:21 - Saving fetched report data to database.
+[INFO]  26-06-2025 11:11:21 - Saving report to database
+[INFO]  26-06-2025 11:11:21 - Saved rows to the database
+[INFO]  26-06-2025 11:11:21 - Total no. of reports fetched and saved
+[INFO]  26-06-2025 11:11:21 - Displaying report data.
+[INFO]  26-06-2025 11:11:23 - /Report/FetchAndShowReports called
+[INFO]  26-06-2025 11:11:23 - Fetching report data from Salesforce
+[INFO]  26-06-2025 11:11:23 - Starting FetchAndParseReportAsync
+[INFO]  26-06-2025 11:11:24 - Report fetched successfully from Salesforce.
+[INFO]  26-06-2025 11:11:24 - Parsing report JSON
+[INFO]  26-06-2025 11:11:24 - Saving fetched report data to database.
+[INFO]  26-06-2025 11:11:24 - Saving report to database
+[INFO]  26-06-2025 11:11:24 - Saved rows to the database
+[INFO]  26-06-2025 11:11:24 - Total no. of reports fetched and saved
+[INFO]  26-06-2025 11:11:24 - Displaying report data.
+[INFO]  26-06-2025 11:12:07 - Login accessed
+[INFO]  26-06-2025 11:12:16 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 11:12:20 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 11:12:20 - /Home/Index accessed.
+[INFO]  26-06-2025 11:12:20 - User session valid.Displaying Index view
+[INFO]  26-06-2025 11:12:22 - /Report/FetchAndShowReports called
+[INFO]  26-06-2025 11:12:22 - Fetching report data from Salesforce
+[INFO]  26-06-2025 11:12:22 - Starting FetchAndParseReportAsync
+[INFO]  26-06-2025 11:12:24 - Report fetched successfully from Salesforce.
+[INFO]  26-06-2025 11:12:24 - Parsing report JSON
+[INFO]  26-06-2025 11:12:24 - Saving fetched report data to database.
+[INFO]  26-06-2025 11:12:24 - Saving report to database
+[INFO]  26-06-2025 11:12:25 - Saved rows to the database
+[INFO]  26-06-2025 11:12:25 - Total no. of reports fetched and saved
+[INFO]  26-06-2025 11:12:25 - Displaying report data.
+[INFO]  26-06-2025 11:34:05 - Login accessed
+[INFO]  26-06-2025 11:34:13 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 11:34:16 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 11:34:16 - /Home/Index accessed.
+[INFO]  26-06-2025 11:34:16 - User session valid.Displaying Index view
+[INFO]  26-06-2025 11:34:18 - Login accessed
+[INFO]  26-06-2025 11:34:22 - Login accessed
+[INFO]  26-06-2025 11:34:22 - Login accessed
+[INFO]  26-06-2025 11:34:23 - Login accessed
+[INFO]  26-06-2025 11:41:37 - Login accessed
+[INFO]  26-06-2025 11:41:44 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 11:41:48 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 11:41:48 - /Home/Index accessed.
+[INFO]  26-06-2025 11:41:48 - User session valid.Displaying Index view
+[INFO]  26-06-2025 11:41:50 - Login accessed
+[INFO]  26-06-2025 11:41:53 - Login accessed
+[INFO]  26-06-2025 11:42:13 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 11:42:13 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 11:42:13 - /Home/Index accessed.
+[INFO]  26-06-2025 11:42:13 - User session valid.Displaying Index view
+[INFO]  26-06-2025 11:42:16 - /Data/GetLeadData called
+[INFO]  26-06-2025 11:42:16 - Fetching leads from Salesforce.
+[INFO]  26-06-2025 11:42:16 - Starting GetLeadsAsync
+[INFO]  26-06-2025 11:42:30 - Total no. of leads fetched
+[INFO]  26-06-2025 11:42:31 - Leads saved to database.
+[INFO]  26-06-2025 11:42:33 - /Home/Index accessed.
+[INFO]  26-06-2025 11:42:33 - User session valid.Displaying Index view
+[INFO]  26-06-2025 11:42:33 - Login accessed
+[INFO]  26-06-2025 11:42:35 - Login accessed
+[INFO]  26-06-2025 11:42:36 - Login accessed
+[INFO]  26-06-2025 11:42:36 - Login accessed
+[INFO]  26-06-2025 11:42:38 - Login accessed
+[INFO]  26-06-2025 13:19:32 - Login accessed
+[INFO]  26-06-2025 13:19:41 - Login triggered: okok@gmail.com
+[INFO]  26-06-2025 13:19:45 - User logged in successfully: okok@gmail.com
+[INFO]  26-06-2025 13:19:45 - /Home/Index accessed.
+[INFO]  26-06-2025 13:19:45 - User session valid.Displaying Index view
+[INFO]  26-06-2025 13:19:49 - /Salesforce/GetLeadMetaData called
+[INFO]  26-06-2025 13:19:49 - Attempting to get a valid Salesforce token
+[INFO]  26-06-2025 13:19:51 - Fetching Lead field metadata from Salesforce.
+[INFO]  26-06-2025 13:19:51 - Started fetching lead metadata from Salesforce
+[INFO]  26-06-2025 13:19:52 - Lead metadata fetch response: OK
+[INFO]  26-06-2025 13:19:52 - Total no. of fields retrieved
+[INFO]  26-06-2025 13:19:52 - Successfully fetched and paginated Lead metadata fields
+[INFO]  26-06-2025 13:19:56 - /Data/GetLeadData called
+[INFO]  26-06-2025 13:19:56 - Fetching leads from Salesforce.
+[INFO]  26-06-2025 13:19:56 - Starting GetLeadsAsync
+[INFO]  26-06-2025 13:21:25 - Total no. of leads fetched
+[INFO]  26-06-2025 13:21:26 - Leads saved to database.
+[INFO]  26-06-2025 14:21:39 - Login accessed
+[INFO]  26-06-2025 14:22:21 - Register accessed
+[INFO]  26-06-2025 14:22:43 - Register triggered
+[INFO]  26-06-2025 14:22:46 - User registered successfully
+[INFO]  26-06-2025 14:22:53 - Login accessed
+[INFO]  26-06-2025 14:23:04 - Login triggered: mno@gmail.com
+[INFO]  26-06-2025 14:23:05 - User logged in successfully: mno@gmail.com
+[INFO]  26-06-2025 14:23:05 - /Home/Index accessed.
+[INFO]  26-06-2025 14:23:05 - User session valid.Displaying Index view
+[INFO]  26-06-2025 14:23:09 - /Salesforce/GetLeadMetaData called
+[INFO]  26-06-2025 14:23:09 - Attempting to get a valid Salesforce token
+[INFO]  26-06-2025 14:23:11 - Fetching Lead field metadata from Salesforce.
+[INFO]  26-06-2025 14:23:11 - Started fetching lead metadata from Salesforce
+[INFO]  26-06-2025 14:23:13 - Lead metadata fetch response: OK
+[INFO]  26-06-2025 14:23:13 - Total no. of fields retrieved
+[INFO]  26-06-2025 14:23:13 - Successfully fetched and paginated Lead metadata fields
+[INFO]  26-06-2025 14:23:19 - /Salesforce/GetLeadMetaData called
+[INFO]  26-06-2025 14:23:19 - Attempting to get a valid Salesforce token
+[INFO]  26-06-2025 14:23:19 - Fetching Lead field metadata from Salesforce.
+[INFO]  26-06-2025 14:23:19 - Started fetching lead metadata from Salesforce
+[INFO]  26-06-2025 14:23:21 - Lead metadata fetch response: OK
+[INFO]  26-06-2025 14:23:21 - Total no. of fields retrieved
+[INFO]  26-06-2025 14:23:21 - Successfully fetched and paginated Lead metadata fields
+[INFO]  26-06-2025 14:23:29 - /Salesforce/GetLeadMetaData called
+[INFO]  26-06-2025 14:23:29 - Attempting to get a valid Salesforce token
+[INFO]  26-06-2025 14:23:29 - Fetching Lead field metadata from Salesforce.
+[INFO]  26-06-2025 14:23:29 - Started fetching lead metadata from Salesforce
+[INFO]  26-06-2025 14:23:31 - Lead metadata fetch response: OK
+[INFO]  26-06-2025 14:23:31 - Total no. of fields retrieved
+[INFO]  26-06-2025 14:23:31 - Successfully fetched and paginated Lead metadata fields
+[INFO]  26-06-2025 14:23:35 - /Data/GetLeadData called
+[INFO]  26-06-2025 14:23:35 - Fetching leads from Salesforce.
+[INFO]  26-06-2025 14:23:35 - Starting GetLeadsAsync
+[INFO]  26-06-2025 14:23:36 - Total no. of leads fetched
+[INFO]  26-06-2025 14:23:37 - Leads saved to database.
+[INFO]  26-06-2025 14:24:16 - /Data/UpdateLead called for Lead ID: 00QGC00001srJkt2AE
+[INFO]  26-06-2025 14:24:16 - Lead updated in local database
+[INFO]  26-06-2025 14:24:16 - Starting UpdateLeadInSalesforceAsync
+[INFO]  26-06-2025 14:24:17 - Lead updated in Salesforce
+[INFO]  26-06-2025 14:24:54 - /Data/GetContactData called
+[INFO]  26-06-2025 14:24:54 - Fetching contacts from Salesforce
+[INFO]  26-06-2025 14:24:54 - Starting GetContactsAsync
+[INFO]  26-06-2025 14:25:14 - Total no. of contacts fetched
+[INFO]  26-06-2025 14:25:15 - Contacts saved to database.
+[INFO]  26-06-2025 14:25:42 - /InProgress/GetLeadInProgress called
+[INFO]  26-06-2025 14:25:42 - Fetching in-progress leads from service.
+[INFO]  26-06-2025 14:25:42 - Starting GetLeadInProgressAsync
+[INFO]  26-06-2025 14:25:58 - Successfully fetched leads with open tasks.
+[INFO]  26-06-2025 14:25:58 - Total no. of leads in progress fetched
+[INFO]  26-06-2025 14:25:59 - Leads in progress saved to database.
+[INFO]  26-06-2025 14:26:05 - /InProgress/GetContactInProgress called.
+[INFO]  26-06-2025 14:26:05 - Fetching in-progress contacts from service
+[INFO]  26-06-2025 14:26:05 - Starting GetContactInProgressAsync
+[INFO]  26-06-2025 14:26:06 - Successfully fetched contacts with open tasks.
+[INFO]  26-06-2025 14:26:06 - Total no. of contacts in progress fetched
+[INFO]  26-06-2025 14:26:07 - Contacts in progress saved to database
+[INFO]  26-06-2025 14:26:12 - /Report/FetchAndShowReports called
+[INFO]  26-06-2025 14:26:13 - Fetching report data from Salesforce
+[INFO]  26-06-2025 14:26:13 - Starting FetchAndParseReportAsync
+[INFO]  26-06-2025 14:26:14 - Report fetched successfully from Salesforce.
+[INFO]  26-06-2025 14:26:14 - Parsing report JSON
+[INFO]  26-06-2025 14:26:14 - Saving fetched report data to database.
+[INFO]  26-06-2025 14:26:14 - Saving report to database
+[INFO]  26-06-2025 14:26:14 - Saved rows to the database
+[INFO]  26-06-2025 14:26:14 - Total no. of reports fetched and saved
+[INFO]  26-06-2025 14:26:14 - Displaying report data.
+[INFO]  26-06-2025 14:26:29 - Accessing profile
+[INFO]  26-06-2025 14:26:34 - User logging out
+[INFO]  26-06-2025 14:26:34 - Login accessed
+[INFO]  26-06-2025 14:26:49 - Login triggered: mno@gmail.com
+[INFO]  26-06-2025 14:26:49 - User logged in successfully: mno@gmail.com
+[INFO]  26-06-2025 14:26:49 - /Home/Index accessed.
+[INFO]  26-06-2025 14:26:49 - User session valid.Displaying Index view
+[INFO]  26-06-2025 14:26:52 - /Report/FetchAndShowReports called
+[INFO]  26-06-2025 14:26:52 - Fetching report data from Salesforce
+[INFO]  26-06-2025 14:26:52 - Starting FetchAndParseReportAsync
+[INFO]  26-06-2025 14:26:54 - Report fetched successfully from Salesforce.
+[INFO]  26-06-2025 14:26:54 - Parsing report JSON
+[INFO]  26-06-2025 14:26:54 - Saving fetched report data to database.
+[INFO]  26-06-2025 14:26:54 - Saving report to database
+[INFO]  26-06-2025 14:26:54 - Saved rows to the database
+[INFO]  26-06-2025 14:26:54 - Total no. of reports fetched and saved
+[INFO]  26-06-2025 14:26:54 - Displaying report data.
+[INFO]  26-06-2025 14:30:54 - Login accessed
+[INFO]  26-06-2025 14:31:05 - Login triggered: mno@gmail.com
+[INFO]  26-06-2025 14:31:09 - User logged in successfully: mno@gmail.com
+[INFO]  26-06-2025 14:31:09 - /Home/Index accessed.
+[INFO]  26-06-2025 14:31:09 - User session valid.Displaying Index view
+[INFO]  26-06-2025 14:31:24 - Login accessed
+[INFO]  26-06-2025 14:31:28 - Login accessed

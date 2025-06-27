@@ -10,7 +10,7 @@ using SalesforceIntegrationApp.Services.Implementations;
 using SalesforceIntegrationApp.Logging;
 using SalesforceIntegrationApp.Filters;
 [AuthorizeSession]
-[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+[ResponseCache(Duration=0, Location=ResponseCacheLocation.None,NoStore = true)]
 public class InProgressController : Controller
 {
     private readonly ApplicationDbContext _context;
@@ -23,11 +23,6 @@ public class InProgressController : Controller
     public async Task<IActionResult> GetLeadInProgress()
     {
         Logger.LogInfo("/InProgress/GetLeadInProgress called");
-        if (string.IsNullOrEmpty(HttpContext.Session.GetString("UserEmail")))
-        {
-            Logger.LogInfo("User session is null.Redirecting to /Account/Login.");
-            return RedirectToAction("Login", "Account");
-        }
         try
         {
             Logger.LogInfo("Fetching in-progress leads from service.");
