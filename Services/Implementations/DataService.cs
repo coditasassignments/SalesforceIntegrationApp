@@ -159,5 +159,22 @@ namespace SalesforceIntegrationApp.Services.Implementations
                 return false;
             }
         }
+        public async Task<bool> DeleteContactFromSalesforceAsync(string id)
+        {
+            Logger.LogInfo("Starting DeleteContactFromSalesforceAsync");
+            try
+            {
+                var token = await _authService.GetValidTokenAsync();
+                var client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.AccessToken);
+                var response = await client.DeleteAsync($"{token.InstanceUrl}/services/data/v54.0/sobjects/Contact/{id}");
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("Exception in DeleteContactFromSalesforceAsync", ex);
+                return false;
+            }
+        }
     }
 }

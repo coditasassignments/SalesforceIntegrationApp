@@ -12,6 +12,7 @@ namespace SalesforceIntegrationApp.Services.Interfaces
         Task<bool> DeleteLeadFromSalesforceAsync(string id);
         Task<List<ContactDto>> GetContactsAsync();
         Task<bool> UpdateContactInSalesforceAsync(Contact contact);
+        Task<bool> DeleteContactFromSalesforceAsync(string id);
     }
 }
 

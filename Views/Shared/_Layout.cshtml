@@ -99,8 +99,6 @@
     document.addEventListener("DOMContentLoaded", function () {
         const loader = document.getElementById("loader");
         const mainContent = document.getElementById("main-content");
-
-    
         function isOverlaySpinnerVisible() {
             const spinner = document.getElementById("spinner");
             return spinner && spinner.style.display !== "none";
@@ -110,7 +108,6 @@
                 const href = link.getAttribute("href");
                 if (!href || href.startsWith("#") || href.startsWith("javascript")) return;
                 if (isOverlaySpinnerVisible()) return;
-
                 loader.style.display = "block";
                 mainContent.classList.add("blurred");
             });
@@ -118,7 +115,6 @@
         document.querySelectorAll("form").forEach(form => {
             form.addEventListener("submit", function () {
                 if (isOverlaySpinnerVisible()) return;
-
                 loader.style.display = "block";
                 mainContent.classList.add("blurred");
             });

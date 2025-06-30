@@ -191,7 +191,7 @@
                                 <td>@lead.Phone</td>
                                 <td class="text-center">
                                     <a href="#" class="edit-icon" title="Edit"
-                                       @*data-id="@lead.Id"*@
+                                       data-id="@lead.Id"
                                        data-firstname="@lead.FirstName"
                                        data-lastname="@lead.LastName"
                                        data-email="@lead.Email"
@@ -203,7 +203,7 @@
                                        data-bs-target="#editLeadModal">
                                         <img src="~/icons/edit.png" alt="Edit" width="15" height="15" />
                                     </a>
-                                    <a href="#" class="delete-icon" title="Delete">
+                                    <a href="#" class="delete-icon" title="Delete" data-id="@(lead.Id)">
                                         <img src="~/icons/delete.png" alt="Delete" width="20" height="20" />
                                     </a>
                                 </td>
@@ -300,7 +300,15 @@
                     </div>
                 </div>
             </div>
-
+            <div class="modal fade" id="deletePopup" tabindex="-1" role="dialog" aria-labelledby="deletePopupLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content text-center p-4" style="background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb;">
+                        <div class="modal-body">
+                            <h5 class="mb-0">Record deleted successfully!</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
         }
         else
         {
@@ -318,7 +326,7 @@
     <script>
         $(document).on('click', '.edit-icon, .edit-icon img', function () {
             const $el = $(this).closest('.edit-icon');
-            //$('#editLeadId').val($el.data('id'));
+            $('#editLeadId').val($el.data('id'));
             $('#editFirstName').val($el.data('firstname'));
             $('#editLastName').val($el.data('lastname'));
             $('#editEmail').val($el.data('email'));
@@ -330,7 +338,7 @@
         $('#editLeadForm').on('submit', function (e) {
             e.preventDefault();
             const updatedLead = {
-                //Id: $('#editLeadId').val(),
+                Id: $('#editLeadId').val(),
                 FirstName: $('#editFirstName').val(),
                 LastName: $('#editLastName').val(),
                 Email: $('#editEmail').val(),
@@ -389,26 +397,35 @@
         $(document).on('click', '.delete-icon', function (e) {
             e.preventDefault();
             const $row = $(this).closest('tr');
-            const leadId = $(this).data('id');
+                    const leadId = $(this).data('id');
+                    if (confirm("Are you sure you want to delete this lead?")){
+            $('#spinner').show(); 
 
-            if (confirm("Are you sure you want to delete this lead?")) {
-                $.ajax({
-                    url: '/Data/DeleteLead',
-                    type: 'POST',
-                    data: { id: leadId },
-                    success: function (response) {
-                        if (response.success) {
-                            $row.remove();
-                            alert("Lead deleted successfully.");
-                        } else {
-                            alert("Delete failed: " + response.message);
-                        }
-                    },
-                    error: function () {
-                        alert("An error occurred while deleting the lead.");
+            $.ajax({
+                url: '/Data/DeleteLead',
+                type: 'POST',
+                data: { id: leadId },
+                success: function (response) {
+                    $('#spinner').hide(); 
+
+                    if (response.success) {
+                        $row.remove();
+                        $('#deletePopup').modal('show');
+                        setTimeout(() => {
+                            $('#deletePopup').modal('hide');
+                        }, 2500);
+                    } else {
+                        alert("Delete failed: " + response.message);
                     }
-                });
-            }
+                },
+                error: function () {
+                    $('#spinner').hide(); 
+                    alert("An error occurred while deleting the lead.");
+                }
+            });
+        }
+
+
         });
     </script>
     <script>

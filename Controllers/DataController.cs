@@ -8,13 +8,13 @@ using SalesforceIntegrationApp.Logging;
 using SalesforceIntegrationApp.Services.Interfaces;
 using SalesforceIntegrationApp.Services.Implementations;
 using SalesforceIntegrationApp.Filters;
-[AuthorizeSession] // custom attribute to check user is logged in or not
+[AuthorizeSession] //custom attribute to check user is logged in or not
 [ResponseCache(Duration=0,Location=ResponseCacheLocation.None,NoStore=true)] //to avoid caching of secured pages in the browser
 public class DataController : Controller
 {
     private readonly ApplicationDbContext _context; 
     private readonly IDataService _dataService; 
-    public DataController(ApplicationDbContext context, IDataService dataService) // Injecting the Database access layer and service layer through DI(Dependency Injection)
+    public DataController(ApplicationDbContext context, IDataService dataService) //Injecting the Database access layer and service layer through DI(Dependency Injection)
     {
         _context = context;
         _dataService = dataService;
@@ -26,7 +26,7 @@ public class DataController : Controller
         {
             Logger.LogInfo("Fetching leads from Salesforce.");
             var leadDtos = await _dataService.GetLeadsAsync(); //fetches the lead data from the GetLeadsAsync method of dataService 
-            var leads = leadDtos.Select(dto => new Lead // Mapping Dto to model
+            var leads = leadDtos.Select(dto => new Lead //Mapping Dto to model
             {
                 Id = dto.Id,
                 FirstName = dto.FirstName,
@@ -41,14 +41,14 @@ public class DataController : Controller
             foreach (var lead in leads) //iterating through the leads data
             {
                 if (!_context.Leads.Any(x => x.Id == lead.Id)) //if there are no leads in the database
-                    _context.Leads.Add(lead); // add all the records to the 'Leads' table
+                    _context.Leads.Add(lead); //add all the records to the 'Leads' table
             }
-            await _context.SaveChangesAsync(); // otherwise save changes in the database
+            await _context.SaveChangesAsync(); //otherwise save changes in the database
             Logger.LogInfo("Leads saved to database.");
-            var (paginatedLeads, totalPages, currentPage) = PaginationHelper.ApplyPagination(leads, Request); // Now applying the pagination logic to the list of records fetched
+            var (paginatedLeads, totalPages, currentPage) = PaginationHelper.ApplyPagination(leads, Request); //Now applying the pagination logic to the list of records fetched
             ViewBag.CurrentPage = currentPage;
             ViewBag.TotalPages = totalPages;
-            return View("~/Views/Salesforce/Lead.cshtml", paginatedLeads); // returns the view to display the lead records
+            return View("~/Views/Salesforce/Lead.cshtml", paginatedLeads); //returns the view to display the lead records
 
         }
         catch(Exception ex)
@@ -57,7 +57,7 @@ public class DataController : Controller
             ViewBag.Error = "An error occurred while fetching lead data.";
             ViewBag.CurrentPage = 1;
             ViewBag.TotalPages = 1;
-            return View("~/Views/Salesforce/Lead.cshtml", new List<Lead>()); // if there is error in fetching leads,simply returns empty list
+            return View("~/Views/Salesforce/Lead.cshtml", new List<Lead>()); //if there is error in fetching leads,simply returns empty list
         }
     }
     [HttpPost]
@@ -99,7 +99,7 @@ public class DataController : Controller
             return Json(new{success = false, message = ex.Message});
         }
     }
-    [HttpPost]
+    /*[HttpPost]
     public async Task<IActionResult> DeleteLead(string id)
     {
         Logger.LogInfo("/Data/DeleteLead called");
@@ -128,6 +128,38 @@ public class DataController : Controller
         {
             Logger.LogError("Error in DeleteLead", ex);
             return Json(new {success = false, message = ex.Message});
+        }
+    }*/
+    [HttpPost]
+    public async Task<IActionResult> DeleteLead(string id)
+    {
+        Logger.LogInfo("/Data/DeleteLead called");
+
+        try
+        {
+            var result = await _dataService.DeleteLeadFromSalesforceAsync(id);
+            if (result)
+            {
+                Logger.LogInfo("Lead deleted from Salesforce");
+                var leadInDb = _context.Leads.FirstOrDefault(l => l.Id == id);
+                if (leadInDb != null)
+                {
+                    _context.Leads.Remove(leadInDb);
+                    await _context.SaveChangesAsync();
+                    Logger.LogInfo("Lead deleted from database");
+                }
+                return Json(new { success = true });
+            }
+            else
+            {
+                Logger.LogInfo("Salesforce deletion failed");
+                return Json(new { success = false, message = "Salesforce delete failed" });
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError("Error in DeleteLead", ex);
+            return Json(new { success = false, message = ex.Message });
         }
     }
     public async Task<IActionResult> GetContactData()
@@ -209,6 +241,38 @@ public class DataController : Controller
         {
             Logger.LogError("Error in UpdateContact", ex);
             return Json(new {success = false, message = ex.Message});
+        }
+    }
+    [HttpPost]
+    public async Task<IActionResult> DeleteContact(string id)
+    {
+        Logger.LogInfo("/Data/DeleteContact called");
+
+        try
+        {
+            var result = await _dataService.DeleteContactFromSalesforceAsync(id);
+            if (result)
+            {
+                Logger.LogInfo("Contact deleted from Salesforce");
+                var contactInDb = _context.Contacts.FirstOrDefault(l => l.Id == id);
+                if (contactInDb != null)
+                {
+                    _context.Contacts.Remove(contactInDb);
+                    await _context.SaveChangesAsync();
+                    Logger.LogInfo("Contact deleted from database");
+                }
+                return Json(new { success = true });
+            }
+            else
+            {
+                Logger.LogInfo("Salesforce deletion failed");
+                return Json(new { success = false, message = "Salesforce delete failed" });
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError("Error in DeleteLead", ex);
+            return Json(new { success = false, message = ex.Message });
         }
     }
 }
