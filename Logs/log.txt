@@ -1896,3 +1896,225 @@ StackTrace:    at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean 
 [INFO]  30-06-2025 14:20:27 - User session valid.Displaying Index view
 [INFO]  30-06-2025 14:20:29 - Login accessed
 [INFO]  30-06-2025 14:20:30 - Login accessed
+[INFO]  30-06-2025 15:16:08 - Login accessed
+[INFO]  30-06-2025 15:16:19 - Login triggered: okok@gmail.com
+[INFO]  30-06-2025 15:16:20 - User logged in successfully: okok@gmail.com
+[INFO]  30-06-2025 15:16:20 - /Home/Index accessed.
+[INFO]  30-06-2025 15:16:20 - User session valid.Displaying Index view
+[INFO]  30-06-2025 15:16:32 - /Salesforce/GetLeadMetaData called
+[INFO]  30-06-2025 15:16:32 - Attempting to get a valid Salesforce token
+[INFO]  30-06-2025 15:16:34 - Fetching Lead field metadata from Salesforce.
+[INFO]  30-06-2025 15:16:34 - Started fetching lead metadata from Salesforce
+[INFO]  30-06-2025 15:16:35 - Lead metadata fetch response: OK
+[INFO]  30-06-2025 15:16:35 - Total no. of fields retrieved
+[INFO]  30-06-2025 15:16:35 - Successfully fetched and paginated Lead metadata fields
+[INFO]  30-06-2025 15:20:40 - Login accessed
+[INFO]  30-06-2025 15:21:09 - Login triggered: okok@gmail.com
+[INFO]  30-06-2025 15:21:10 - User logged in successfully: okok@gmail.com
+[INFO]  30-06-2025 15:21:10 - /Home/Index accessed.
+[INFO]  30-06-2025 15:21:10 - User session valid.Displaying Index view
+[INFO]  30-06-2025 15:21:14 - /Salesforce/GetLeadMetaData called
+[INFO]  30-06-2025 15:21:14 - Attempting to get a valid Salesforce token
+[INFO]  30-06-2025 15:21:14 - Fetching Lead field metadata from Salesforce.
+[INFO]  30-06-2025 15:21:14 - Started fetching lead metadata from Salesforce
+[INFO]  30-06-2025 15:21:16 - Lead metadata fetch response: OK
+[INFO]  30-06-2025 15:21:16 - Successfully fetched Lead metadata fields
+[INFO]  30-06-2025 15:21:26 - /Home/Index accessed.
+[INFO]  30-06-2025 15:21:26 - User session valid.Displaying Index view
+[INFO]  30-06-2025 15:21:28 - /Data/GetLeadData called
+[INFO]  30-06-2025 15:21:28 - Fetching leads from Salesforce.
+[INFO]  30-06-2025 15:21:28 - Starting GetLeadsAsync
+[INFO]  30-06-2025 15:21:29 - Total no. of leads fetched
+[INFO]  30-06-2025 15:21:30 - Leads saved to database.
+[INFO]  30-06-2025 15:21:41 - /Salesforce/GetLeadMetaData called
+[INFO]  30-06-2025 15:21:41 - Attempting to get a valid Salesforce token
+[INFO]  30-06-2025 15:21:41 - Fetching Lead field metadata from Salesforce.
+[INFO]  30-06-2025 15:21:41 - Started fetching lead metadata from Salesforce
+[INFO]  30-06-2025 15:21:42 - Lead metadata fetch response: OK
+[INFO]  30-06-2025 15:21:42 - Successfully fetched Lead metadata fields
+[INFO]  30-06-2025 15:25:36 - Login accessed
+[INFO]  30-06-2025 15:25:47 - Login triggered: okok@gmail.com
+[INFO]  30-06-2025 15:25:48 - User logged in successfully: okok@gmail.com
+[INFO]  30-06-2025 15:25:48 - /Home/Index accessed.
+[INFO]  30-06-2025 15:25:48 - User session valid.Displaying Index view
+[INFO]  30-06-2025 15:25:53 - /Salesforce/GetLeadMetaData called
+[INFO]  30-06-2025 15:25:53 - Attempting to get a valid Salesforce token
+[INFO]  30-06-2025 15:25:53 - Fetching Lead field metadata from Salesforce.
+[INFO]  30-06-2025 15:25:53 - Started fetching lead metadata from Salesforce
+[INFO]  30-06-2025 15:25:55 - Lead metadata fetch response: OK
+[INFO]  30-06-2025 15:25:55 - Successfully fetched Lead metadata fields
+[INFO]  30-06-2025 15:30:01 - Login accessed
+[INFO]  30-06-2025 15:30:10 - Login triggered: okok@gmail.com
+[INFO]  30-06-2025 15:30:12 - User logged in successfully: okok@gmail.com
+[INFO]  30-06-2025 15:30:12 - /Home/Index accessed.
+[INFO]  30-06-2025 15:30:12 - User session valid.Displaying Index view
+[INFO]  30-06-2025 15:30:15 - /Salesforce/GetLeadMetaData called
+[INFO]  30-06-2025 15:30:15 - Attempting to get a valid Salesforce token
+[INFO]  30-06-2025 15:30:15 - Fetching Lead field metadata from Salesforce.
+[INFO]  30-06-2025 15:30:15 - Started fetching lead metadata from Salesforce
+[INFO]  30-06-2025 15:30:17 - Lead metadata fetch response: OK
+[INFO]  30-06-2025 15:30:17 - Successfully fetched Lead metadata fields
+[INFO]  30-06-2025 15:33:11 - Login accessed
+[INFO]  30-06-2025 15:33:25 - Login triggered: okok@gmail.com
+[INFO]  30-06-2025 15:33:26 - User logged in successfully: okok@gmail.com
+[INFO]  30-06-2025 15:33:26 - /Home/Index accessed.
+[INFO]  30-06-2025 15:33:26 - User session valid.Displaying Index view
+[INFO]  30-06-2025 15:33:29 - /Salesforce/GetLeadMetaData called
+[INFO]  30-06-2025 15:33:29 - Attempting to get a valid Salesforce token
+[INFO]  30-06-2025 15:33:29 - Fetching Lead field metadata from Salesforce.
+[INFO]  30-06-2025 15:33:29 - Started fetching lead metadata from Salesforce
+[INFO]  30-06-2025 15:33:40 - Lead metadata fetch response: OK
+[INFO]  30-06-2025 15:33:40 - Total no. of fields retrieved
+[INFO]  30-06-2025 15:33:41 - Successfully fetched and paginated Lead metadata fields
+[INFO]  02-07-2025 11:55:28 - Login accessed
+[INFO]  02-07-2025 11:55:38 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 11:55:43 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 11:55:43 - /Home/Index accessed.
+[INFO]  02-07-2025 11:55:43 - User session valid.Displaying Index view
+[INFO]  02-07-2025 11:57:26 - Login accessed
+[INFO]  02-07-2025 11:57:41 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 11:57:44 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 11:57:44 - /Home/Index accessed.
+[INFO]  02-07-2025 11:57:44 - User session valid.Displaying Index view
+[INFO]  02-07-2025 12:00:39 - Login accessed
+[INFO]  02-07-2025 12:00:47 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 12:00:51 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 12:00:51 - /Home/Index accessed.
+[INFO]  02-07-2025 12:00:51 - User session valid.Displaying Index view
+[INFO]  02-07-2025 12:10:07 - Login accessed
+[INFO]  02-07-2025 12:10:16 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 12:10:19 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 12:10:19 - /Home/Index accessed.
+[INFO]  02-07-2025 12:10:19 - User session valid.Displaying Index view
+[INFO]  02-07-2025 12:12:22 - Login accessed
+[INFO]  02-07-2025 12:12:30 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 12:12:33 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 12:12:33 - /Home/Index accessed.
+[INFO]  02-07-2025 12:12:33 - User session valid.Displaying Index view
+[INFO]  02-07-2025 12:13:45 - Login accessed
+[INFO]  02-07-2025 12:13:53 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 12:13:56 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 12:13:56 - /Home/Index accessed.
+[INFO]  02-07-2025 12:13:56 - User session valid.Displaying Index view
+[INFO]  02-07-2025 12:18:13 - Login accessed
+[INFO]  02-07-2025 12:18:22 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 12:18:25 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 12:18:25 - /Home/Index accessed.
+[INFO]  02-07-2025 12:18:25 - User session valid.Displaying Index view
+[INFO]  02-07-2025 12:21:43 - Login accessed
+[INFO]  02-07-2025 12:21:52 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 12:21:54 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 12:21:54 - /Home/Index accessed.
+[INFO]  02-07-2025 12:21:54 - User session valid.Displaying Index view
+[INFO]  02-07-2025 12:24:40 - Login accessed
+[INFO]  02-07-2025 12:24:50 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 12:24:53 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 12:24:53 - /Home/Index accessed.
+[INFO]  02-07-2025 12:24:53 - User session valid.Displaying Index view
+[INFO]  02-07-2025 12:28:26 - Login accessed
+[INFO]  02-07-2025 12:28:35 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 12:28:38 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 12:28:38 - /Home/Index accessed.
+[INFO]  02-07-2025 12:28:38 - User session valid.Displaying Index view
+[INFO]  02-07-2025 12:30:31 - Login accessed
+[INFO]  02-07-2025 12:30:45 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 12:30:48 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 12:30:48 - /Home/Index accessed.
+[INFO]  02-07-2025 12:30:48 - User session valid.Displaying Index view
+[INFO]  02-07-2025 12:41:00 - Login accessed
+[INFO]  02-07-2025 12:41:09 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 12:41:10 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 12:41:10 - /Home/Index accessed.
+[INFO]  02-07-2025 12:41:10 - User session valid.Displaying Index view
+[INFO]  02-07-2025 12:46:37 - Login accessed
+[INFO]  02-07-2025 12:46:45 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 12:46:47 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 12:46:47 - /Home/Index accessed.
+[INFO]  02-07-2025 12:46:47 - User session valid.Displaying Index view
+[INFO]  02-07-2025 12:47:39 - Login accessed
+[INFO]  02-07-2025 12:47:46 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 12:47:49 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 12:47:49 - /Home/Index accessed.
+[INFO]  02-07-2025 12:47:49 - User session valid.Displaying Index view
+[INFO]  02-07-2025 12:49:36 - Login accessed
+[INFO]  02-07-2025 12:49:43 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 12:49:45 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 12:49:45 - /Home/Index accessed.
+[INFO]  02-07-2025 12:49:45 - User session valid.Displaying Index view
+[INFO]  02-07-2025 12:51:00 - Login accessed
+[INFO]  02-07-2025 12:51:07 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 12:51:09 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 12:51:10 - /Home/Index accessed.
+[INFO]  02-07-2025 12:51:10 - User session valid.Displaying Index view
+[INFO]  02-07-2025 14:23:40 - Login accessed
+[INFO]  02-07-2025 14:23:49 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 14:23:52 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 14:23:52 - /Home/Index accessed.
+[INFO]  02-07-2025 14:23:52 - User session valid.Displaying Index view
+[INFO]  02-07-2025 14:26:27 - Login accessed
+[INFO]  02-07-2025 14:26:36 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 14:26:38 - Login failed for email: okok@gmail.com
+[INFO]  02-07-2025 14:26:46 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 14:26:46 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 14:26:46 - /Home/Index accessed.
+[INFO]  02-07-2025 14:26:46 - User session valid.Displaying Index view
+[INFO]  02-07-2025 14:30:10 - Login accessed
+[INFO]  02-07-2025 14:30:21 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 14:30:24 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 14:30:24 - /Home/Index accessed.
+[INFO]  02-07-2025 14:30:24 - User session valid.Displaying Index view
+[INFO]  02-07-2025 14:40:02 - Login accessed
+[INFO]  02-07-2025 14:40:09 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 14:40:12 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 14:40:12 - /Home/Index accessed.
+[INFO]  02-07-2025 14:40:12 - User session valid.Displaying Index view
+[INFO]  02-07-2025 14:43:57 - Login accessed
+[INFO]  02-07-2025 14:44:06 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 14:44:09 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 14:44:09 - /Home/Index accessed.
+[INFO]  02-07-2025 14:44:09 - User session valid.Displaying Index view
+[INFO]  02-07-2025 15:10:46 - Login accessed
+[INFO]  02-07-2025 15:10:55 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 15:10:57 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 15:10:58 - /Home/Index accessed.
+[INFO]  02-07-2025 15:10:58 - User session valid.Displaying Index view
+[INFO]  02-07-2025 15:12:46 - Login accessed
+[INFO]  02-07-2025 15:12:57 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 15:13:00 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 15:13:00 - /Home/Index accessed.
+[INFO]  02-07-2025 15:13:00 - User session valid.Displaying Index view
+[INFO]  02-07-2025 15:18:57 - Login accessed
+[INFO]  02-07-2025 15:19:06 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 15:19:09 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 15:19:09 - /Home/Index accessed.
+[INFO]  02-07-2025 15:19:09 - User session valid.Displaying Index view
+[INFO]  02-07-2025 15:20:24 - Login accessed
+[INFO]  02-07-2025 15:20:43 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 15:20:45 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 15:20:45 - /Home/Index accessed.
+[INFO]  02-07-2025 15:20:45 - User session valid.Displaying Index view
+[INFO]  02-07-2025 15:28:43 - Login accessed
+[INFO]  02-07-2025 15:28:53 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 15:28:56 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 15:28:57 - /Home/Index accessed.
+[INFO]  02-07-2025 15:28:57 - User session valid.Displaying Index view
+[INFO]  02-07-2025 15:29:38 - Login accessed
+[INFO]  02-07-2025 15:29:49 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 15:29:52 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 15:29:52 - /Home/Index accessed.
+[INFO]  02-07-2025 15:29:52 - User session valid.Displaying Index view
+[INFO]  02-07-2025 16:36:20 - Login accessed
+[INFO]  02-07-2025 16:36:30 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 16:36:33 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 16:36:33 - /Home/Index accessed.
+[INFO]  02-07-2025 16:36:33 - User session valid.Displaying Index view
+[INFO]  02-07-2025 16:36:54 - Login accessed
+[INFO]  02-07-2025 16:37:02 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 16:37:05 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 16:37:05 - /Home/Index accessed.
+[INFO]  02-07-2025 16:37:05 - User session valid.Displaying Index view
+[INFO]  02-07-2025 16:39:55 - Login accessed
+[INFO]  02-07-2025 16:40:04 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 16:40:07 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 16:40:07 - /Home/Index accessed.
+[INFO]  02-07-2025 16:40:07 - User session valid.Displaying Index view

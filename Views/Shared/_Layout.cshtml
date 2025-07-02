@@ -26,14 +26,6 @@
                     </button>
                     <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                         <ul class="navbar-nav flex-grow-1">
-                            @*
-                            <li class="nav-item">
-                                <a class="nav-link text-calm-blue" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-calm-blue" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>
-                            *@
                             <li class="nav-item">
                                 <a class="nav-link text-calm-blue" asp-controller="Salesforce" asp-action="GetLeadMetaData">Metadata</a>
                             </li>
@@ -75,6 +67,100 @@
                     </div>
                 </div>
             </nav>
+                <div class="container mt-3">
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#addListModal">+ Add List</button>
+                    </div>
+                </div>
+                <div class="modal fade" id="addListModal" tabindex="-1" aria-labelledby="addListModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content shadow-lg">
+                            <div class="modal-header bg-info text-white">
+                                <h5 class="modal-title" id="addListModalLabel">New Call List</h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body p-4">
+                                <form id="addListForm">
+                                    <div class="mb-4">
+                                        <label for="listName" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="listName" name="listName" placeholder="Enter name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label d-block mb-2">Data Source</label>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="radio" name="dataSource" id="csvFile" value="CSV File">
+                                            <label class="form-check-label" for="csvFile">
+                                                CSV File
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="radio" name="dataSource" id="salesforce" value="Salesforce" checked>
+                                            <label class="form-check-label" for="salesforce">
+                                                Salesforce
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="dataSource" id="listIntelligence" value="List Intelligence">
+                                            <label class="form-check-label" for="listIntelligence">
+                                                List Intelligence
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="modal-footer px-4 pb-4">
+                                <button type="button" class="btn btn-primary" id="nextStepBtn">Next</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="salesforceStepModal" tabindex="-1" aria-labelledby="salesforceStepModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header bg-info text-white">
+                                <h5 class="modal-title" id="salesforceStepModalLabel">New Call List</h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body p-4">
+                                <h5 class="mb-3">Salesforce List Selection</h5>
+                                <label class="form-label d-block mb-2">Retrieve contacts from:</label>
+
+                                <div class="d-flex gap-4 align-items-center mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="sfType" id="sfReport" value="report" checked>
+                                        <label class="form-check-label" for="sfReport">Salesforce Report</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="sfType" id="sfObject" value="object">
+                                        <label class="form-check-label" for="sfObject">Salesforce Objects</label>
+                                    </div>
+                                </div>
+                                <div id="selectionTitle" class="mt-4 fw-semibold fs-5 text-primary">
+                                    Salesforce Report Selection
+                                </div>
+                                <p id="objectInstruction" class="mt-2 text-muted ">
+                                    Select the object you want to use and press Next
+                                </p>
+                                <div id="objectDropdownContainer" class="mt-3">
+                                    <select class="form-select" id="salesforceObjectDropdown">
+                                        <option value="Lead">Lead</option>
+                                        <option value="Contact">Contact</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="modal-footer px-4 pb-4">
+                                <button type="button" class="btn btn-primary">Continue</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
         </header>
         <div class="w-100 px-0">
             <main role="main" class="pb-3">
@@ -93,6 +179,7 @@
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
+
 </body>
 </html>
 <script>
@@ -121,6 +208,44 @@
         });
     });
 </script>
+<script>
+    $(document).ready(function () {
+      $('#nextStepBtn').click(function () {
+        const listName = $('#listName').val().trim();
+        if (!listName) {
+          alert("Please enter a list name.");
+          return;
+        }
+
+        $('#addListModal').modal('hide');
+        setTimeout(() => $('#salesforceStepModal').modal('show'), 300);
+      });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $('#nextStepBtn').click(function () {
+            const listName = $('#listName').val().trim();
+            if (!listName) {
+                alert("Please enter a list name.");
+                return;
+            }
+            window.selectedListName = listName;
+
+            $('#addListModal').modal('hide');
+            setTimeout(() => {
+                $('#salesforceStepModal').modal('show');
+            }, 300);
+        });
+
+        $('input[name="sfType"]').on('change', function () {
+            const selected = $('input[name="sfType"]:checked').val();
+            const title = selected === 'report' ? 'Salesforce Report Selection' : 'Salesforce Object Selection';
+            $('#selectionTitle').text(title);
+        });
+    });
+</script>
+
 
 
 

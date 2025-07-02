@@ -99,37 +99,6 @@ public class DataController : Controller
             return Json(new{success = false, message = ex.Message});
         }
     }
-    /*[HttpPost]
-    public async Task<IActionResult> DeleteLead(string id)
-    {
-        Logger.LogInfo("/Data/DeleteLead called");
-        try
-        {
-            var leadInDb = _context.Leads.FirstOrDefault(l => l.Id == id);
-            if (leadInDb != null)
-            {
-                _context.Leads.Remove(leadInDb);
-                await _context.SaveChangesAsync();
-                Logger.LogInfo("Lead deleted from database");
-            }
-            var result = await _dataService.DeleteLeadFromSalesforceAsync(id);
-            if (result)
-            {
-                Logger.LogInfo("Lead deleted from Salesforce");
-                return Json(new{success = true});
-            }
-            else
-            {
-                Logger.LogInfo($"Salesforce deletion failed");
-                return Json(new{success=false, message = "Salesforce delete failed" });
-            }
-        }
-        catch (Exception ex)
-        {
-            Logger.LogError("Error in DeleteLead", ex);
-            return Json(new {success = false, message = ex.Message});
-        }
-    }*/
     [HttpPost]
     public async Task<IActionResult> DeleteLead(string id)
     {

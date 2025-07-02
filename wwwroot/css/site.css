@@ -149,6 +149,12 @@ a.text-calm-blue{
 #spinner{
     z-index: 9999;
 }
+.modal-body input,
+.modal-body select {
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
 
 
 
