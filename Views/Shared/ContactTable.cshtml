@@ -1,0 +1,29 @@
+﻿@model List<SalesforceIntegrationApp.Models.Contact>
+@if(Model!=null && Model.Any())
+{
+    <table class="table table-bordered table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var contact in Model)
+            {
+                <tr>
+                    <td>@contact.FirstName @contact.LastName</td>
+                    <td>@contact.Phone</td>
+                    <td>@contact.Email</td>
+                    <td>@contact.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p class="text-warning">No Contact records found.</p>
+}

@@ -2118,3 +2118,158 @@ StackTrace:    at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean 
 [INFO]  02-07-2025 16:40:07 - User logged in successfully: okok@gmail.com
 [INFO]  02-07-2025 16:40:07 - /Home/Index accessed.
 [INFO]  02-07-2025 16:40:07 - User session valid.Displaying Index view
+[INFO]  02-07-2025 17:42:32 - Login accessed
+[INFO]  02-07-2025 17:42:39 - Register accessed
+[INFO]  02-07-2025 17:42:40 - Login accessed
+[INFO]  02-07-2025 17:42:49 - Login triggered: okok@gmail.com
+[INFO]  02-07-2025 17:42:52 - User logged in successfully: okok@gmail.com
+[INFO]  02-07-2025 17:42:52 - /Home/Index accessed.
+[INFO]  02-07-2025 17:42:52 - User session valid.Displaying Index view
+[INFO]  02-07-2025 17:42:56 - /Salesforce/GetLeadMetaData called
+[INFO]  02-07-2025 17:42:56 - Attempting to get a valid Salesforce token
+[INFO]  02-07-2025 17:42:58 - Fetching Lead field metadata from Salesforce.
+[INFO]  02-07-2025 17:42:58 - Started fetching lead metadata from Salesforce
+[INFO]  02-07-2025 17:42:59 - Lead metadata fetch response: OK
+[INFO]  02-07-2025 17:43:00 - Total no. of fields retrieved
+[INFO]  02-07-2025 17:43:00 - Successfully fetched and paginated Lead metadata fields
+[INFO]  02-07-2025 17:43:05 - /Data/GetLeadData called
+[INFO]  02-07-2025 17:43:05 - Fetching leads from Salesforce.
+[INFO]  02-07-2025 17:43:05 - Starting GetLeadsAsync
+[INFO]  02-07-2025 17:44:38 - Total no. of leads fetched
+[INFO]  02-07-2025 17:44:40 - Leads saved to database.
+[INFO]  02-07-2025 17:44:55 - /Data/UpdateLead called for Lead ID: 00QGC00001ssGJb2AM
+[INFO]  02-07-2025 17:44:55 - Lead updated in local database
+[INFO]  02-07-2025 17:44:55 - Starting UpdateLeadInSalesforceAsync
+[INFO]  02-07-2025 17:44:56 - Lead updated in Salesforce
+[INFO]  02-07-2025 18:04:45 - /Data/GetLeadData called
+[INFO]  02-07-2025 18:04:45 - Fetching leads from Salesforce.
+[INFO]  02-07-2025 18:04:45 - Starting GetLeadsAsync
+[INFO]  02-07-2025 18:04:48 - Total no. of leads fetched
+[INFO]  02-07-2025 18:04:49 - Leads saved to database.
+[INFO]  02-07-2025 18:04:57 - /Data/UpdateLead called for Lead ID: 00QGC00001ssGJb2AM
+[INFO]  02-07-2025 18:04:57 - Lead updated in local database
+[INFO]  02-07-2025 18:04:57 - Starting UpdateLeadInSalesforceAsync
+[INFO]  02-07-2025 18:04:58 - Lead updated in Salesforce
+[INFO]  04-07-2025 06:03:35 - Login accessed
+[INFO]  04-07-2025 06:03:57 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 06:03:59 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 06:03:59 - /Home/Index accessed.
+[INFO]  04-07-2025 06:03:59 - User session valid.Displaying Index view
+[INFO]  04-07-2025 06:10:59 - Login accessed
+[INFO]  04-07-2025 06:11:08 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 06:11:09 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 06:11:09 - /Home/Index accessed.
+[INFO]  04-07-2025 06:11:09 - User session valid.Displaying Index view
+[INFO]  04-07-2025 06:11:53 - Login accessed
+[INFO]  04-07-2025 06:12:04 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 06:12:05 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 06:12:05 - /Home/Index accessed.
+[INFO]  04-07-2025 06:12:05 - User session valid.Displaying Index view
+[INFO]  04-07-2025 06:24:09 - Login accessed
+[INFO]  04-07-2025 06:24:19 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 06:24:20 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 06:24:20 - /Home/Index accessed.
+[INFO]  04-07-2025 06:24:20 - User session valid.Displaying Index view
+[INFO]  04-07-2025 06:24:32 - Starting GetLeadsAsync
+[INFO]  04-07-2025 06:28:36 - Login accessed
+[INFO]  04-07-2025 06:28:50 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 06:28:51 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 06:28:51 - /Home/Index accessed.
+[INFO]  04-07-2025 06:28:51 - User session valid.Displaying Index view
+[INFO]  04-07-2025 06:29:08 - Starting GetLeadsAsync
+[INFO]  04-07-2025 06:35:07 - Login accessed
+[INFO]  04-07-2025 06:35:17 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 06:35:18 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 06:35:18 - /Home/Index accessed.
+[INFO]  04-07-2025 06:35:18 - User session valid.Displaying Index view
+[INFO]  04-07-2025 06:35:32 - Starting GetLeadsAsync
+[INFO]  04-07-2025 10:54:29 - Login accessed
+[INFO]  04-07-2025 10:54:38 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 10:54:40 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 10:54:40 - /Home/Index accessed.
+[INFO]  04-07-2025 10:54:40 - User session valid.Displaying Index view
+[INFO]  04-07-2025 10:55:30 - Login accessed
+[INFO]  04-07-2025 10:55:39 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 10:55:41 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 10:55:41 - /Home/Index accessed.
+[INFO]  04-07-2025 10:55:41 - User session valid.Displaying Index view
+[INFO]  04-07-2025 11:02:46 - Login accessed
+[INFO]  04-07-2025 11:02:55 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 11:02:56 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 11:02:56 - /Home/Index accessed.
+[INFO]  04-07-2025 11:02:56 - User session valid.Displaying Index view
+[INFO]  04-07-2025 11:06:53 - Login accessed
+[INFO]  04-07-2025 11:07:00 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 11:07:02 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 11:07:02 - /Home/Index accessed.
+[INFO]  04-07-2025 11:07:02 - User session valid.Displaying Index view
+[INFO]  04-07-2025 11:07:13 - Starting GetLeadsAsync
+[INFO]  04-07-2025 11:29:58 - Login accessed
+[INFO]  04-07-2025 11:30:14 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 11:30:15 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 11:30:15 - /Home/Index accessed.
+[INFO]  04-07-2025 11:30:15 - User session valid.Displaying Index view
+[INFO]  04-07-2025 11:30:28 - Starting GetLeadsAsync
+[INFO]  04-07-2025 11:44:55 - Login accessed
+[INFO]  04-07-2025 11:45:04 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 11:45:06 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 11:45:06 - /Home/Index accessed.
+[INFO]  04-07-2025 11:45:06 - User session valid.Displaying Index view
+[INFO]  04-07-2025 11:45:17 - Starting GetLeadsAsync
+[INFO]  04-07-2025 11:47:29 - Login accessed
+[INFO]  04-07-2025 11:47:37 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 11:47:39 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 11:47:39 - /Home/Index accessed.
+[INFO]  04-07-2025 11:47:39 - User session valid.Displaying Index view
+[INFO]  04-07-2025 11:52:38 - Login accessed
+[INFO]  04-07-2025 11:52:45 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 11:52:47 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 11:52:47 - /Home/Index accessed.
+[INFO]  04-07-2025 11:52:47 - User session valid.Displaying Index view
+[INFO]  04-07-2025 11:53:07 - Starting GetContactsAsync
+[INFO]  04-07-2025 11:53:27 - Starting GetLeadsAsync
+[INFO]  04-07-2025 12:45:48 - Login accessed
+[INFO]  04-07-2025 12:45:56 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 12:45:57 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 12:45:57 - /Home/Index accessed.
+[INFO]  04-07-2025 12:45:57 - User session valid.Displaying Index view
+[INFO]  04-07-2025 12:46:57 - Login accessed
+[INFO]  04-07-2025 12:47:04 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 12:47:06 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 12:47:06 - /Home/Index accessed.
+[INFO]  04-07-2025 12:47:06 - User session valid.Displaying Index view
+[INFO]  04-07-2025 12:53:27 - Login accessed
+[INFO]  04-07-2025 12:53:36 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 12:53:37 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 12:53:37 - /Home/Index accessed.
+[INFO]  04-07-2025 12:53:37 - User session valid.Displaying Index view
+[INFO]  04-07-2025 14:56:25 - Login accessed
+[INFO]  04-07-2025 14:56:53 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 14:56:54 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 14:56:54 - /Home/Index accessed.
+[INFO]  04-07-2025 14:56:54 - User session valid.Displaying Index view
+[INFO]  04-07-2025 15:46:29 - Login accessed
+[INFO]  04-07-2025 15:46:42 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 15:46:44 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 15:46:44 - /Home/Index accessed.
+[INFO]  04-07-2025 15:46:44 - User session valid.Displaying Index view
+[INFO]  04-07-2025 16:04:12 - Login accessed
+[INFO]  04-07-2025 16:04:21 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 16:04:22 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 16:04:22 - /Home/Index accessed.
+[INFO]  04-07-2025 16:04:22 - User session valid.Displaying Index view
+[INFO]  04-07-2025 16:04:36 - Starting GetLeadsAsync
+[INFO]  04-07-2025 16:07:01 - Starting GetContactsAsync
+[INFO]  04-07-2025 16:13:34 - Login accessed
+[INFO]  04-07-2025 16:13:43 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 16:13:46 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 16:13:46 - /Home/Index accessed.
+[INFO]  04-07-2025 16:13:46 - User session valid.Displaying Index view
+[INFO]  04-07-2025 16:14:31 - Starting GetLeadsAsync
+[INFO]  04-07-2025 16:14:58 - Starting GetContactsAsync
+[INFO]  04-07-2025 16:29:26 - Starting GetLeadsAsync
+[INFO]  04-07-2025 16:59:31 - Login accessed
+[INFO]  04-07-2025 16:59:39 - Login triggered: okok@gmail.com
+[INFO]  04-07-2025 16:59:42 - User logged in successfully: okok@gmail.com
+[INFO]  04-07-2025 16:59:42 - /Home/Index accessed.
+[INFO]  04-07-2025 16:59:42 - User session valid.Displaying Index view

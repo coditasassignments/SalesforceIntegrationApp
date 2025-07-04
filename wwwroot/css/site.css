@@ -154,6 +154,14 @@ a.text-calm-blue{
     font-size: 1rem;
     padding: 0.5rem;
 }
+.scroll{
+    max-height: 400px; /* limit height of table */
+    overflow-y: auto; /* enable vertical scroll */
+    overflow-x: auto; /* enable horizontal scroll */
+    border: 1px solid #ddd; /* optional: make it neat */
+    padding: 0.5rem;
+    background-color: #fff;
+}
 
 
 

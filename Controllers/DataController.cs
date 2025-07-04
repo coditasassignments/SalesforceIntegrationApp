@@ -8,8 +8,10 @@ using SalesforceIntegrationApp.Logging;
 using SalesforceIntegrationApp.Services.Interfaces;
 using SalesforceIntegrationApp.Services.Implementations;
 using SalesforceIntegrationApp.Filters;
+using SalesforceIntegrationApp.Migrations;
 [AuthorizeSession] //custom attribute to check user is logged in or not
 [ResponseCache(Duration=0,Location=ResponseCacheLocation.None,NoStore=true)] //to avoid caching of secured pages in the browser
+[Route("[controller]/[action]")]
 public class DataController : Controller
 {
     private readonly ApplicationDbContext _context; 
@@ -58,6 +60,55 @@ public class DataController : Controller
             ViewBag.CurrentPage = 1;
             ViewBag.TotalPages = 1;
             return View("~/Views/Salesforce/Lead.cshtml", new List<Lead>()); //if there is error in fetching leads,simply returns empty list
+        }
+    }
+    [HttpGet("/Data/GetLeadTablePartial")]
+    public async Task<IActionResult> GetLeadTablePartial()
+    {
+        try
+        {
+            var leadrecords = await _dataService.GetLeadsAsync();
+            var leads = leadrecords.Select(dto => new Lead
+            {
+                Id = dto.Id,
+                FirstName = dto.FirstName,
+                LastName = dto.LastName,
+                Company = dto.Company,
+                Email = dto.Email,
+                Status = dto.Status,
+                Title = dto.Title,
+                Phone = dto.Phone
+            }).ToList();
+            return PartialView("~/Views/Shared/LeadTable.cshtml", leads);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError("Error occurred in GetLeadTablePartial.", ex);
+            return Content("<p class='text-danger'>Error loading leads.</p>");
+        }
+    }
+    [HttpGet("/Data/GetContactTablePartial")]
+    public async Task<IActionResult> GetContactTablePartial()
+    {
+        try
+        {
+            var contactrecords = await _dataService.GetContactsAsync();
+            var contacts = contactrecords.Select(dto => new Contact
+            {
+                Id = dto.Id,
+                FirstName = dto.FirstName,
+                LastName = dto.LastName,
+                Phone = dto.Phone,
+                Email = dto.Email,
+                Title = dto.Title
+            }).ToList();
+            return PartialView("~/Views/Shared/ContactTable.cshtml", contacts);
+        }
+        catch(Exception ex)
+        {
+            Logger.LogError("Error occured while fetching contacts", ex);
+            return Content("<p class='text-danger'>Error loading contacts</p>");
+
         }
     }
     [HttpPost]
