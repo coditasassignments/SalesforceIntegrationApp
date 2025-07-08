@@ -162,8 +162,19 @@ a.text-calm-blue{
     padding: 0.5rem;
     background-color: #fff;
 }
+#salesforceStepModal .modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+.custom-modal-height {
+    height: 90vh; /* or 95vh, adjust as needed */
+}
 
-
+    .custom-modal-height .modal-content {
+        height: 100%;
+        overflow: visible; /* very important for dropdowns */
+    }
 
 
 

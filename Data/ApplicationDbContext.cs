@@ -13,6 +13,7 @@ namespace SalesforceIntegrationApp.Data
         public DbSet<Lead> Leads { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         //public DbSet<LeadAndContactWithOpenTask> LeadAndContactWithOpenTasks { get; set; }
+        public DbSet<Campaign> Campaigns { get; set; }
         public DbSet<ReportData> ReportDatas { get; set; }
         //public DbSet<LeadInProgress> LeadsInProgress { get; set; }
         public DbSet<ContactInProgress> ContactsInProgress { get; set; }

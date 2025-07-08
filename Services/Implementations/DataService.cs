@@ -11,6 +11,9 @@ using System.Net.Http.Headers; //namespace to manage the headers of the Http req
 using System.Text;
 using System.Threading.Tasks;  //provides async methods and Task<T>
 using SalesforceIntegrationApp.Logging;
+using System.Text.Json;
+using Microsoft.AspNetCore.Razor.Language.Intermediate;
+using Microsoft.AspNetCore.JsonPatch.Internal;
 namespace SalesforceIntegrationApp.Services.Implementations
 {
     public class DataService : IDataService //inheriting the IDataService interface
@@ -22,7 +25,7 @@ namespace SalesforceIntegrationApp.Services.Implementations
         }
         public async Task<List<LeadDto>> GetLeadsAsync() //method to make an api call for retrieving Leads data
         {
-            Logger.LogInfo("Starting GetLeadsAsync");
+            Logger.LogInfo("Fetching Leads");
             try
             {
                 var auth = await _authService.GetValidTokenAsync(); //storing credentials that are retrieved from authService
@@ -44,6 +47,34 @@ namespace SalesforceIntegrationApp.Services.Implementations
             {
                 Logger.LogError("Exception in GetLeadsAsync", ex);
                 return new List<LeadDto>();
+            }
+        }
+        public async Task<List<CampaignDto>> GetCampaignAsync()
+        {
+            Logger.LogInfo("Fetching Campaigns");
+            try
+            {
+                var auth = await _authService.GetValidTokenAsync();
+                using var client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", auth.AccessToken);
+                string query = "SELECT Id, Name, Type, Status, StartDate, EndDate FROM Campaign";
+                string url = $"{auth.InstanceUrl}/services/data/v54.0/query?q={Uri.EscapeDataString(query)}";
+                var response = await client.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    var text = await response.Content.ReadAsStringAsync();
+                    var json = JsonConvert.DeserializeObject<CampaignWrapDto>(text);
+                    return json?.Records ?? new List<CampaignDto>();
+
+                }
+                Logger.LogError($"Failed to fetch Campaign records. Status Code:{response.StatusCode}", new Exception("Salesforce API fails to fetch campaign records"));
+                return new List<CampaignDto>();
+
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("Exception in Getting Campaign records", ex);
+                return new List<CampaignDto>();
             }
         }
         public async Task<bool> UpdateLeadInSalesforceAsync(Lead lead)

@@ -8,116 +8,72 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SalesforceIntegrationApp.styles.css" asp-append-version="true" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://kendo.cdn.telerik.com/2024.1.319/styles/kendo.default-v2.min.css" rel="stylesheet" />
+    <script src="https://kendo.cdn.telerik.com/2024.1.319/js/kendo.all.min.js"></script>
+
 </head>
 <body class="no-scroll-body">
     <div id="main-content">
-    <div class="app-wrapper">
-        <header>
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-4">
-                <div class="container-fluid">
-                    <div>
-                        <a class="navbar-brand app-title" asp-area="" asp-controller="Home" asp-action="Index">
-                            <span style="color: red;">Salesforce</span><span style="color: black;">Integration</span><span style="color: red;">App</span>
-                        </a>
-                    </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-calm-blue" asp-controller="Salesforce" asp-action="GetLeadMetaData">Metadata</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-calm-blue" href="#" id="getDataDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Lead/Contact Info
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="getDataDropdown">
-                                    <li><a class="dropdown-item" href="/Data/GetLeadData">Lead Info</a></li>
-                                    <li><a class="dropdown-item" href="/Data/GetContactData">Contact Info</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-calm-blue" href="#" id="getDataDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Open Task
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="getDataDropdown">
-                                    <li><a class="dropdown-item" href="/InProgress/GetLeadInProgress">Lead Open Task</a></li>
-                                    <li><a class="dropdown-item" href="/InProgress/GetContactInProgress">Contact Open Task</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-calm-blue" asp-controller="Report" asp-action="FetchAndShowReports">Reports</a>
-                            </li>
-                            <li>
-                                <a class="nav-link text-calm-blue" data-bs-toggle="modal" data-bs-target="#addListModal">+ Add List</a>
-                            </li>
-                        </ul>
-                        @if (!string.IsNullOrEmpty(Context.Session.GetString("UserEmail")))
-                        {
-                            <ul class="navbar-nav ms-auto d-flex align-items-center">
+        <div class="app-wrapper">
+            <header>
+                <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-4">
+                    <div class="container-fluid">
+                        <div>
+                            <a class="navbar-brand app-title" asp-area="" asp-controller="Home" asp-action="Index">
+                                <span style="color: red;">Salesforce</span><span style="color: black;">Integration</span><span style="color: red;">App</span>
+                            </a>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                            <ul class="navbar-nav flex-grow-1">
+                                <li class="nav-item">
+                                    <a class="nav-link text-calm-blue" asp-controller="Salesforce" asp-action="GetLeadMetaData">Metadata</a>
+                                </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle p-0" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src="~/icons/troopicon.png" alt="Profile" class="rounded-circle border border-secondary" width="40" height="40" />
+                                    <a class="nav-link dropdown-toggle text-calm-blue" href="#" id="getDataDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Lead/Contact Info
                                     </a>
-                                    <ul class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="profileDropdown">
-                                        <li><a class="dropdown-item" asp-controller="Account" asp-action="Profile">Profile</a></li>
+                                    <ul class="dropdown-menu" aria-labelledby="getDataDropdown">
+                                        <li><a class="dropdown-item" href="/Data/GetLeadData">Lead Info</a></li>
+                                        <li><a class="dropdown-item" href="/Data/GetContactData">Contact Info</a></li>
                                     </ul>
                                 </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-calm-blue" href="#" id="getDataDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Open Task
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="getDataDropdown">
+                                        <li><a class="dropdown-item" href="/InProgress/GetLeadInProgress">Lead Open Task</a></li>
+                                        <li><a class="dropdown-item" href="/InProgress/GetContactInProgress">Contact Open Task</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-calm-blue" asp-controller="Report" asp-action="FetchAndShowReports">Reports</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-calm-blue" data-bs-toggle="modal" data-bs-target="#addListModal">+ Add List</a>
+                                </li>
                             </ul>
-                        }
-                    </div>
-                </div>
-            </nav>
-                <!--<div class="modal fade" id="addButtonModal" aria-labelledby="addButtonModalLabel">
-                    <div class="modal-dialog modal-lg model-dialog-centered">
-                        <div class="model-content shadow-lg">
-                            <div class="model-header bg-info text-white">
-                                <h5 class="modal-title" id="addButtonModel">Button List</h5>
-                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body p-4">
-                                <form>
-                                    <div class="mb-4">
-                                        <label for="buttonName" class="form-label">Name</label>
-                                        <input type="text" class="form-control" id="buttonName" placeholder="Enter Name" required>
-                                    </div>
-                                    <div>
-                                        <label for="listName" class="form-label">Name</label>
-                                        <input type="text" class="form-control" id="listName" name="listName" placeholder="Enter name" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label d-block mb-2">Data Source</label>
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" type="radio" name="dataSource" id="csvFile" value="CSV File">
-                                            <label class="form-check-label" for="csvFile">
-                                                CSV File
-                                            </label>
-                                        </div>
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" type="radio" name="dataSource" id="salesforce" value="Salesforce" checked>
-                                            <label class="form-check-label" for="salesforce">
-                                                Salesforce
-                                            </label>
-                                        </div>
-                                        <div class="form-check mb-2">
-                                            <input class="form-check-input" type="radio" name="datasource" id="listIntelligence" value="List Intelligence">
-                                            <label class="form-check-label" for="listIntelligence">
-                                                List Intelligence
-                                            </label>
-                                        </div>
-
-                                    </div>
-                                </form>
-                                <div class="modal-footer px-4 pb-4">
-                                    <button type="button" class="btn btn-primary" id="nextStepBtn">Next</button>
-                                </div>
-                            </div>
-
+                            @if (!string.IsNullOrEmpty(Context.Session.GetString("UserEmail")))
+                            {
+                                <ul class="navbar-nav ms-auto d-flex align-items-center">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle p-0" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <img src="~/icons/troopicon.png" alt="Profile" class="rounded-circle border border-secondary" width="40" height="40" />
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="profileDropdown">
+                                            <li><a class="dropdown-item" asp-controller="Account" asp-action="Profile">Profile</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            }
                         </div>
                     </div>
-                </div>-->
+                </nav>
                 <div class="modal fade" id="addListModal" aria-labelledby="addListModalLabel">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content shadow-lg">
@@ -165,55 +121,56 @@
                     </div>
                 </div>
                 <div class="modal fade" id="salesforceStepModal" tabindex="-1" aria-labelledby="salesforceStepModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-dialog modal-xl modal-dialog-centered custom-modal-height">
                         <div class="modal-content">
-                            <div class="modal-header bg-info text-white">
-                                <h5 class="modal-title" id="salesforceStepModalLabel">New Call List</h5>
+                            <div class="modal-header bg-primary text-white">
+                                <h5 class="modal-title">Salesforce List Selection</h5>
                                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-
-                            <div class="modal-body p-4">
-                                <h5 class="mb-3">Salesforce List Selection</h5>
-                                <label class="form-label d-block mb-2">Retrieve contacts from:</label>
-                                <div class="d-flex gap-4 align-items-center mb-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sfType" id="sfReport" value="report" checked>
-                                        <label class="form-check-label" for="sfReport">Salesforce Report</label>
+                            <div class="modal-body">
+                                <div id="kendoTabstrip">
+                                    <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+                                        <div class="dropdown">
+                                            <button class="btn btn-primary dropdown-toggle" type="button" id="objectDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Objects
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="objectDropdownBtn">
+                                                <li><a class="dropdown-item object-item" data-object="Lead" href="#">Lead</a></li>
+                                                <li><a class="dropdown-item object-item" data-object="Contact" href="#">Contact</a></li>
+                                                <li><a class="dropdown-item object-item" data-object="Task" href="#">Task</a></li>
+                                                <li><a class="dropdown-item object-item" data-object="Campaign" href="#">Campaign</a></li>
+                                            </ul>
+                                        </div>
+                                        <button class="btn btn-success sf-tag" data-type="Reports">Reports</button>
+                                        <button class="btn btn-warning sf-tag" data-type="Views">Views</button>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sfType" id="sfObject" value="object">
-                                        <label class="form-check-label" for="sfObject">Salesforce Objects</label>
-                                    </div>
-                                </div>
-                                <div id="selectionTitle" class="mt-4 fw-semibold fs-5 text-primary">
-                                    Salesforce Report Selection
-                                </div>
-                                <p id="objectInstruction" class="mt-2 text-muted d-none">
-                                    Select the object you want to use and press Next
-                                </p>
-                                <div id="objectDropdownContainer" class="mt-3 d-none">
-                                    <label for="salesforceObjectDropdown" class="form-label">Please Select...</label>
-                                    <select class="form-select" id="salesforceObjectDropdown">
-                                        <option selected disabled>Please Select...</option>
-                                        <option value="Lead">Lead</option>
-                                        <option value="Contact">Contact</option>
-                                    </select>
-                                    <div id="leadTableWrapper" class="scroll d-none mt-4">
-                                        <div id="leadTableContainer"></div>
-                                    </div>
-                                    <div id="contactTableWrapper" class="scroll d-none mt-4">
-                                        <div id="contactTableContainer"></div>
+                                    <div id="kendoSelectionContent" class="text-center text-muted">
+                                        Please select a type to proceed.
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="modal-footer px-4 pb-4">
-                                <button type="button" class="btn btn-primary">Continue</button>
                             </div>
                         </div>
                     </div>
                 </div>
-          </header>
+                <div class="modal fade" id="displayData" tabindex="-1" aria-labelledby="salesforceDisplayData" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header bg-primary text-white">
+                                <h5>Showing Lead Records.</h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="filters">
+                                    <div class="d-flex flex-wrap justify-content gap-3 mb-4"></div>
+
+                                </div>
+                                <div>
+                        </div>
+                    </div>
+
+                </div>
+
+                </header>
         <div class="w-100 px-0">
             <main role="main" class="pb-3">
                 @RenderBody()
@@ -261,93 +218,42 @@
     });
 </script>
 <script>
-    $(document).ready(function(){
-      $('#nextStepBtn').click(function () {
-        const listName = $('#listName').val().trim();
-        if (!listName) {
-          alert("Please enter a list name.");
-          return;
-        }
-
-        $('#addListModal').modal('hide');
-        setTimeout(() => $('#salesforceStepModal').modal('show'), 300);
-      });
-    });
-</script>
-<script>
-    $(document).ready(function(){
-        $('#nextStepBtn').click(function(){
+        $(document).ready(function () {
+        $('#nextStepBtn').click(function () {
             const listName = $('#listName').val().trim();
             if (!listName) {
                 alert("Please enter a list name.");
                 return;
             }
-            window.selectedListName = listName;
 
             $('#addListModal').modal('hide');
             setTimeout(() => {
                 $('#salesforceStepModal').modal('show');
             }, 300);
         });
+        $(document).on('click', '.object-item', function (e) {
+            e.preventDefault();
+            const selectedObject = $(this).data("object");
+            $('#kendoSelectionContent').html(`<p class='text-muted'>Loading ${selectedObject} records...</p>`);
 
-        $('input[name="sfType"]').on('change', function () {
-            const selected = $('input[name="sfType"]:checked').val();
-            const title = selected === 'report' ? 'Salesforce Report Selection' : 'Salesforce Object Selection';
-            $('#selectionTitle').text(title);
-        });
-    });
-</script>
-<script>
-    $(document).ready(function () {
-        $('input[name="sfType"]').change(function(){
-            if ($('#sfObject').is(':checked')) {
-                $('#selectionTitle').text('Salesforce Object Selection');
-                $('#objectInstruction').removeClass('d-none');
-                $('#objectDropdownContainer').removeClass('d-none');
-            } else {
-                $('#selectionTitle').text('Salesforce Report Selection');
-                $('#objectInstruction').addClass('d-none');
-                $('#objectDropdownContainer').addClass('d-none');
+            let url = '';
+            switch (selectedObject) {
+                case 'Lead': url = '/Data/GetLeadTablePartial'; break;
+                case 'Contact': url = '/Data/GetContactTablePartial'; break;
+                case 'Task': url = '/Data/GetTaskTablePartial'; break;
+                case 'Campaign': url = '/Data/GetCampaignTablePartial'; break;
+            }
+
+            if (url) {
+                $('#kendoSelectionContent').load(url);
             }
         });
-    });
-</script>
-<script>
-    $(document).ready(function(){
-        $('#salesforceObjectDropdown').change(function(){
-            const selected = $(this).val();
-
-            if (selected === "Lead") {
-                $('#leadTableWrapper').removeClass('d-none');
-                $('#leadTableContainer').html('<p class="text-muted">Loading lead records...</p>');
-                $('#leadTableContainer').load('/Data/GetLeadTablePartial');
-            } else {
-                $('#leadTableWrapper').addClass('d-none');
-                $('#leadTableContainer').empty();
-            }
+        $(document).on('click', '.sf-tag', function () {
+            const selected = $(this).data("type");
+            let html = `<p class="mt-3 text-muted">${selected} content will be shown here.</p>`;
+            $('#kendoSelectionContent').html(html);
         });
     });
+
 </script>
-<script>
-    $(document).ready(function(){
-        $('#salesforceObjectDropdown').change(function(){
-            const selected = $(this).val();
-            if(selected === "Contact"){
-                $('#contactTableWrapper').removeClass('d-none');
-                $('#contactTableContainer').html('<p class="text-muted">Loading contact records...</p>');
-                $('#contactTableContainer').load('/Data/GetContactTablePartial');
-            } else{
-                $('#contactTableWrapper').addClass('d-none');
-                $('#contactTableContainer').empty();
-            }
-        });
-    });
-</script>
-
-
-
-
-
-
-
-
+           

@@ -2273,3 +2273,227 @@ StackTrace:    at System.Net.Http.HttpClient.HandleFailure(Exception e, Boolean 
 [INFO]  04-07-2025 16:59:42 - User logged in successfully: okok@gmail.com
 [INFO]  04-07-2025 16:59:42 - /Home/Index accessed.
 [INFO]  04-07-2025 16:59:42 - User session valid.Displaying Index view
+[INFO]  07-07-2025 06:44:35 - Login accessed
+[INFO]  07-07-2025 06:44:47 - Login triggered: okok@gmail.com
+[INFO]  07-07-2025 06:44:50 - User logged in successfully: okok@gmail.com
+[INFO]  07-07-2025 06:44:50 - /Home/Index accessed.
+[INFO]  07-07-2025 06:44:50 - User session valid.Displaying Index view
+[INFO]  07-07-2025 06:45:01 - /Home/Index accessed.
+[INFO]  07-07-2025 06:45:01 - User session valid.Displaying Index view
+[INFO]  07-07-2025 06:45:57 - Login accessed
+[INFO]  07-07-2025 06:46:09 - Login triggered: okok@gmail.com
+[INFO]  07-07-2025 06:46:11 - User logged in successfully: okok@gmail.com
+[INFO]  07-07-2025 06:46:11 - /Home/Index accessed.
+[INFO]  07-07-2025 06:46:11 - User session valid.Displaying Index view
+[INFO]  07-07-2025 06:56:50 - Login accessed
+[INFO]  07-07-2025 06:57:04 - Login triggered: okok@gmail.com
+[INFO]  07-07-2025 06:57:07 - User logged in successfully: okok@gmail.com
+[INFO]  07-07-2025 06:57:07 - /Home/Index accessed.
+[INFO]  07-07-2025 06:57:07 - User session valid.Displaying Index view
+[INFO]  07-07-2025 07:00:28 - Login accessed
+[INFO]  07-07-2025 07:00:38 - Login triggered: okok@gmail.com
+[INFO]  07-07-2025 07:00:41 - User logged in successfully: okok@gmail.com
+[INFO]  07-07-2025 07:00:41 - /Home/Index accessed.
+[INFO]  07-07-2025 07:00:41 - User session valid.Displaying Index view
+[INFO]  07-07-2025 07:00:44 - /Home/Index accessed.
+[INFO]  07-07-2025 07:00:44 - User session valid.Displaying Index view
+[INFO]  07-07-2025 07:06:05 - Login accessed
+[INFO]  07-07-2025 07:06:15 - Login triggered: okok@gmail.com
+[INFO]  07-07-2025 07:06:18 - User logged in successfully: okok@gmail.com
+[INFO]  07-07-2025 07:06:18 - /Home/Index accessed.
+[INFO]  07-07-2025 07:06:18 - User session valid.Displaying Index view
+[INFO]  07-07-2025 09:03:38 - Login accessed
+[INFO]  07-07-2025 09:03:48 - Login triggered: okok@gmail.com
+[INFO]  07-07-2025 09:03:51 - User logged in successfully: okok@gmail.com
+[INFO]  07-07-2025 09:03:51 - /Home/Index accessed.
+[INFO]  07-07-2025 09:03:51 - User session valid.Displaying Index view
+[INFO]  07-07-2025 09:07:47 - Login accessed
+[INFO]  07-07-2025 09:07:56 - Login triggered: okok@gmail.com
+[INFO]  07-07-2025 09:07:58 - User logged in successfully: okok@gmail.com
+[INFO]  07-07-2025 09:07:58 - /Home/Index accessed.
+[INFO]  07-07-2025 09:07:58 - User session valid.Displaying Index view
+[INFO]  07-07-2025 09:12:24 - Login accessed
+[INFO]  07-07-2025 09:12:52 - Login triggered: okok@gmail.com
+[INFO]  07-07-2025 09:12:55 - User logged in successfully: okok@gmail.com
+[INFO]  07-07-2025 09:12:55 - /Home/Index accessed.
+[INFO]  07-07-2025 09:12:55 - User session valid.Displaying Index view
+[INFO]  07-07-2025 09:36:05 - Login accessed
+[INFO]  07-07-2025 09:36:17 - Login triggered: okok@gmail.com
+[INFO]  07-07-2025 09:36:20 - User logged in successfully: okok@gmail.com
+[INFO]  07-07-2025 09:36:20 - /Home/Index accessed.
+[INFO]  07-07-2025 09:36:20 - User session valid.Displaying Index view
+[INFO]  07-07-2025 09:37:11 - Login accessed
+[INFO]  07-07-2025 09:37:19 - Login triggered: okok@gmail.com
+[INFO]  07-07-2025 09:37:22 - User logged in successfully: okok@gmail.com
+[INFO]  07-07-2025 09:37:22 - /Home/Index accessed.
+[INFO]  07-07-2025 09:37:22 - User session valid.Displaying Index view
+[INFO]  07-07-2025 09:58:26 - Login accessed
+[INFO]  07-07-2025 09:58:35 - Login triggered: okok@gmail.com
+[INFO]  07-07-2025 09:58:38 - User logged in successfully: okok@gmail.com
+[INFO]  07-07-2025 09:58:38 - /Home/Index accessed.
+[INFO]  07-07-2025 09:58:38 - User session valid.Displaying Index view
+[INFO]  07-07-2025 10:16:48 - Login accessed
+[INFO]  07-07-2025 10:16:57 - Login triggered: okok@gmail.com
+[INFO]  07-07-2025 10:17:00 - User logged in successfully: okok@gmail.com
+[INFO]  07-07-2025 10:17:00 - /Home/Index accessed.
+[INFO]  07-07-2025 10:17:00 - User session valid.Displaying Index view
+[INFO]  08-07-2025 09:02:46 - Login accessed
+[INFO]  08-07-2025 09:02:57 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 09:02:59 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 09:02:59 - /Home/Index accessed.
+[INFO]  08-07-2025 09:02:59 - User session valid.Displaying Index view
+[INFO]  08-07-2025 09:03:19 - Login accessed
+[INFO]  08-07-2025 09:07:12 - Login accessed
+[INFO]  08-07-2025 09:07:20 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 09:07:22 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 09:07:22 - /Home/Index accessed.
+[INFO]  08-07-2025 09:07:22 - User session valid.Displaying Index view
+[INFO]  08-07-2025 09:08:52 - Login accessed
+[INFO]  08-07-2025 09:08:59 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 09:09:01 - Login failed for email: okok@gmail.com
+[INFO]  08-07-2025 09:09:08 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 09:09:08 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 09:09:08 - /Home/Index accessed.
+[INFO]  08-07-2025 09:09:08 - User session valid.Displaying Index view
+[INFO]  08-07-2025 09:09:43 - Login accessed
+[INFO]  08-07-2025 09:09:50 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 09:09:52 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 09:09:52 - /Home/Index accessed.
+[INFO]  08-07-2025 09:09:52 - User session valid.Displaying Index view
+[INFO]  08-07-2025 09:12:38 - Login accessed
+[INFO]  08-07-2025 09:12:46 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 09:12:47 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 09:12:47 - /Home/Index accessed.
+[INFO]  08-07-2025 09:12:47 - User session valid.Displaying Index view
+[INFO]  08-07-2025 09:49:46 - Login accessed
+[INFO]  08-07-2025 09:49:55 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 09:49:56 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 09:49:56 - /Home/Index accessed.
+[INFO]  08-07-2025 09:49:56 - User session valid.Displaying Index view
+[INFO]  08-07-2025 09:52:00 - Login accessed
+[INFO]  08-07-2025 09:52:08 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 09:52:10 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 09:52:10 - /Home/Index accessed.
+[INFO]  08-07-2025 09:52:10 - User session valid.Displaying Index view
+[INFO]  08-07-2025 09:54:01 - Login accessed
+[INFO]  08-07-2025 09:54:11 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 09:54:12 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 09:54:12 - /Home/Index accessed.
+[INFO]  08-07-2025 09:54:12 - User session valid.Displaying Index view
+[INFO]  08-07-2025 09:56:26 - Login accessed
+[INFO]  08-07-2025 09:56:35 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 09:56:37 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 09:56:37 - /Home/Index accessed.
+[INFO]  08-07-2025 09:56:37 - User session valid.Displaying Index view
+[INFO]  08-07-2025 09:57:00 - Starting GetLeadsAsync
+[INFO]  08-07-2025 09:57:15 - Starting GetContactsAsync
+[INFO]  08-07-2025 12:04:19 - Login accessed
+[INFO]  08-07-2025 12:04:29 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 12:04:30 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 12:04:30 - /Home/Index accessed.
+[INFO]  08-07-2025 12:04:30 - User session valid.Displaying Index view
+[INFO]  08-07-2025 12:04:41 - Fetching Campaigns
+[ERROR] 08-07-2025 12:04:43-Failed to fetch Campaign records. Status Code:BadRequest
+Exception:Salesforce API fails to fetch campaign records
+[INFO]  08-07-2025 12:06:41 - Login accessed
+[INFO]  08-07-2025 12:06:51 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 12:06:53 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 12:06:53 - /Home/Index accessed.
+[INFO]  08-07-2025 12:06:53 - User session valid.Displaying Index view
+[INFO]  08-07-2025 12:07:05 - Fetching Campaigns
+[ERROR] 08-07-2025 12:07:06-Failed to fetch Campaign records. Status Code:BadRequest
+Exception:Salesforce API fails to fetch campaign records
+[INFO]  08-07-2025 12:07:11 - Fetching Leads
+[INFO]  08-07-2025 12:07:30 - Starting GetContactsAsync
+[INFO]  08-07-2025 12:13:33 - Login accessed
+[INFO]  08-07-2025 12:13:44 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 12:13:46 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 12:13:46 - /Home/Index accessed.
+[INFO]  08-07-2025 12:13:46 - User session valid.Displaying Index view
+[INFO]  08-07-2025 12:13:56 - Fetching Campaigns
+[ERROR] 08-07-2025 12:13:57-Failed to fetch Campaign records. Status Code:BadRequest
+Exception:Salesforce API fails to fetch campaign records
+[INFO]  08-07-2025 12:16:15 - Login accessed
+[INFO]  08-07-2025 12:16:24 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 12:16:25 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 12:16:25 - /Home/Index accessed.
+[INFO]  08-07-2025 12:16:25 - User session valid.Displaying Index view
+[INFO]  08-07-2025 12:16:36 - Fetching Campaigns
+[ERROR] 08-07-2025 12:16:37-Failed to fetch Campaign records. Status Code:BadRequest
+Exception:Salesforce API fails to fetch campaign records
+[INFO]  08-07-2025 14:18:39 - Login accessed
+[INFO]  08-07-2025 14:18:48 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 14:18:50 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 14:18:50 - /Home/Index accessed.
+[INFO]  08-07-2025 14:18:50 - User session valid.Displaying Index view
+[INFO]  08-07-2025 14:19:34 - Login accessed
+[INFO]  08-07-2025 14:19:44 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 14:19:45 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 14:19:45 - /Home/Index accessed.
+[INFO]  08-07-2025 14:19:45 - User session valid.Displaying Index view
+[INFO]  08-07-2025 14:19:48 - /Data/GetCampaignData called
+[INFO]  08-07-2025 14:19:48 - Fetching Campaigns
+[ERROR] 08-07-2025 14:19:50-Failed to fetch Campaign records. Status Code:BadRequest
+Exception:Salesforce API fails to fetch campaign records
+[INFO]  08-07-2025 14:19:50 - Total no. of campaigns fetched
+[INFO]  08-07-2025 14:19:50 - Campaigns data saved to database
+[INFO]  08-07-2025 14:21:51 - Login accessed
+[INFO]  08-07-2025 14:21:59 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 14:22:01 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 14:22:01 - /Home/Index accessed.
+[INFO]  08-07-2025 14:22:01 - User session valid.Displaying Index view
+[INFO]  08-07-2025 14:22:03 - /Data/GetCampaignData called
+[INFO]  08-07-2025 14:22:04 - Fetching Campaigns
+[ERROR] 08-07-2025 14:22:05-Failed to fetch Campaign records. Status Code:BadRequest
+Exception:Salesforce API fails to fetch campaign records
+[INFO]  08-07-2025 14:22:05 - Total no. of campaigns fetched
+[INFO]  08-07-2025 14:22:05 - Campaigns data saved to database
+[INFO]  08-07-2025 14:30:19 - Login accessed
+[INFO]  08-07-2025 14:30:29 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 14:30:30 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 14:30:30 - /Home/Index accessed.
+[INFO]  08-07-2025 14:30:30 - User session valid.Displaying Index view
+[INFO]  08-07-2025 14:30:33 - /Data/GetCampaignData called
+[INFO]  08-07-2025 14:30:33 - Fetching Campaigns
+[ERROR] 08-07-2025 14:30:34-Failed to fetch Campaign records. Status Code:BadRequest
+Exception:Salesforce API fails to fetch campaign records
+[INFO]  08-07-2025 14:30:34 - Total no. of campaigns fetched
+[INFO]  08-07-2025 14:30:34 - Campaigns data saved to database
+[INFO]  08-07-2025 14:43:11 - Login accessed
+[INFO]  08-07-2025 14:44:29 - Login accessed
+[INFO]  08-07-2025 14:44:38 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 14:44:40 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 14:44:40 - /Home/Index accessed.
+[INFO]  08-07-2025 14:44:40 - User session valid.Displaying Index view
+[INFO]  08-07-2025 14:44:43 - /Data/GetCampaignData called
+[INFO]  08-07-2025 14:44:43 - Fetching Campaigns
+[INFO]  08-07-2025 14:44:45 - Total no. of campaigns fetched
+[INFO]  08-07-2025 14:44:45 - Campaigns data saved to database
+[INFO]  08-07-2025 15:54:03 - Login accessed
+[INFO]  08-07-2025 15:54:13 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 15:54:15 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 15:54:15 - /Home/Index accessed.
+[INFO]  08-07-2025 15:54:15 - User session valid.Displaying Index view
+[INFO]  08-07-2025 15:54:18 - /Data/GetCampaignData called
+[INFO]  08-07-2025 15:54:18 - Fetching Campaigns
+[INFO]  08-07-2025 15:54:21 - Total no. of campaigns fetched
+[INFO]  08-07-2025 15:54:21 - Campaigns data saved to database
+[INFO]  08-07-2025 15:54:38 - Fetching Leads
+[INFO]  08-07-2025 15:54:48 - Starting GetContactsAsync
+[INFO]  08-07-2025 15:54:59 - Fetching Campaigns
+[INFO]  08-07-2025 16:07:52 - Fetching Leads
+[INFO]  08-07-2025 16:08:25 - Fetching Campaigns
+[INFO]  08-07-2025 16:09:14 - Login accessed
+[INFO]  08-07-2025 16:09:23 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 16:09:24 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 16:09:24 - /Home/Index accessed.
+[INFO]  08-07-2025 16:09:24 - User session valid.Displaying Index view
+[INFO]  08-07-2025 16:09:35 - Fetching Leads
+[INFO]  08-07-2025 16:09:44 - Fetching Campaigns
+[INFO]  08-07-2025 16:09:52 - Fetching Leads
+[INFO]  08-07-2025 17:20:59 - Login accessed
+[INFO]  08-07-2025 17:21:07 - Login triggered: okok@gmail.com
+[INFO]  08-07-2025 17:21:09 - User logged in successfully: okok@gmail.com
+[INFO]  08-07-2025 17:21:09 - /Home/Index accessed.
+[INFO]  08-07-2025 17:21:09 - User session valid.Displaying Index view
+[INFO]  08-07-2025 17:21:21 - Fetching Campaigns

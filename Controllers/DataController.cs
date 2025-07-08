@@ -62,6 +62,36 @@ public class DataController : Controller
             return View("~/Views/Salesforce/Lead.cshtml", new List<Lead>()); //if there is error in fetching leads,simply returns empty list
         }
     }
+    public async Task<IActionResult> GetCampaignData() // controller method to fetch campaign data.
+    {
+        Logger.LogInfo("/Data/GetCampaignData called");
+        var campaignDtos = await _dataService.GetCampaignAsync();
+        var campaigns = campaignDtos.Select(dto => new Campaign
+        {
+            Id = dto.Id,
+            Name = dto.Name,
+            Type = dto.Type,
+            Status = dto.Status,
+            StartDate = dto.StartDate,
+            EndDate = dto.EndDate
+        }).ToList();
+        Logger.LogInfo("Total no. of campaigns fetched");
+        foreach(var campaign in campaigns)
+        {
+            if(!_context.Campaigns.Any(x => x.Id == campaign.Id))
+            {
+                _context.Campaigns.Add(campaign);
+
+            }
+        }
+        Console.WriteLine("Saving to db");
+        await _context.SaveChangesAsync();
+        Logger.LogInfo("Campaigns data saved to database");
+        var (paginatedCampaigns, totalPages, currentPage) = PaginationHelper.ApplyPagination(campaigns, Request); //Now applying the pagination logic to the list of records fetched
+        ViewBag.CurrentPage = currentPage;
+        ViewBag.TotalPages = totalPages;
+        return View("~/Views/Salesforce/Campaign.cshtml", paginatedCampaigns);
+    }
     [HttpGet("/Data/GetLeadTablePartial")]
     public async Task<IActionResult> GetLeadTablePartial()
     {
@@ -111,6 +141,41 @@ public class DataController : Controller
 
         }
     }
+    [HttpGet("/Data/GetCampaignTablePartial")]
+    public async Task<IActionResult> GetCampaignTablePartial()
+    {
+        try
+        {
+            var campaignrecords = await _dataService.GetCampaignAsync();
+            var campaigns = campaignrecords.Select(dto => new Campaign
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Type = dto.Type,
+                Status = dto.Status,
+                StartDate = dto.StartDate,
+                EndDate = dto.EndDate
+            }).ToList();
+            return PartialView("~/Views/Shared/CampaignTable.cshtml", campaigns);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError("Error occured while fetching Campaigns", ex);
+            return Content("<p class='text-danger'>Error loading contacts</p>");
+        }
+    }
+    /*public async Task<IActionResult> GetTaskTablePartial()
+    {
+        var records = await _data.GetRecordsAsync("Task");
+        return PartialView("_TaskTablePartial", records);
+    }
+
+    public async Task<IActionResult> GetCampaignTablePartial()
+    {
+        var records = await _salesforceService.GetRecordsAsync("Campaign");
+        return PartialView("_CampaignTablePartial", records);
+    }*/
+
     [HttpPost]
     public async Task<IActionResult> UpdateLead([FromBody] Lead updatedLead) 
     {
