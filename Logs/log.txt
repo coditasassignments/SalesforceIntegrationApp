@@ -2497,3 +2497,348 @@ Exception:Salesforce API fails to fetch campaign records
 [INFO]  08-07-2025 17:21:09 - /Home/Index accessed.
 [INFO]  08-07-2025 17:21:09 - User session valid.Displaying Index view
 [INFO]  08-07-2025 17:21:21 - Fetching Campaigns
+[INFO]  09-07-2025 07:50:24 - Login accessed
+[INFO]  09-07-2025 07:50:34 - Login triggered: okok@gmail.com
+[INFO]  09-07-2025 07:50:38 - User logged in successfully: okok@gmail.com
+[INFO]  09-07-2025 07:50:38 - /Home/Index accessed.
+[INFO]  09-07-2025 07:50:38 - User session valid.Displaying Index view
+[INFO]  09-07-2025 07:51:36 - Login accessed
+[INFO]  09-07-2025 07:51:46 - Login triggered: okok@gmail.com
+[INFO]  09-07-2025 07:51:49 - User logged in successfully: okok@gmail.com
+[INFO]  09-07-2025 07:51:49 - /Home/Index accessed.
+[INFO]  09-07-2025 07:51:49 - User session valid.Displaying Index view
+[INFO]  09-07-2025 07:52:02 - Fetching Leads
+[INFO]  09-07-2025 07:56:17 - Login accessed
+[INFO]  09-07-2025 07:56:27 - Login triggered: okok@gmail.com
+[INFO]  09-07-2025 07:56:31 - User logged in successfully: okok@gmail.com
+[INFO]  09-07-2025 07:56:31 - /Home/Index accessed.
+[INFO]  09-07-2025 07:56:31 - User session valid.Displaying Index view
+[INFO]  09-07-2025 07:58:46 - Login accessed
+[INFO]  09-07-2025 07:59:10 - Login triggered: okok@gmail.com
+[INFO]  09-07-2025 07:59:13 - User logged in successfully: okok@gmail.com
+[INFO]  09-07-2025 07:59:13 - /Home/Index accessed.
+[INFO]  09-07-2025 07:59:13 - User session valid.Displaying Index view
+[INFO]  09-07-2025 07:59:26 - Fetching Leads
+[INFO]  09-07-2025 07:59:37 - Starting GetContactsAsync
+[INFO]  09-07-2025 08:02:51 - Login accessed
+[INFO]  09-07-2025 08:02:58 - Login triggered: okok@gmail.com
+[INFO]  09-07-2025 08:03:02 - User logged in successfully: okok@gmail.com
+[INFO]  09-07-2025 08:03:02 - /Home/Index accessed.
+[INFO]  09-07-2025 08:03:02 - User session valid.Displaying Index view
+[INFO]  09-07-2025 10:57:37 - Login accessed
+[INFO]  09-07-2025 10:57:46 - Login triggered: okok@gmail.com
+[INFO]  09-07-2025 10:57:50 - User logged in successfully: okok@gmail.com
+[INFO]  09-07-2025 10:57:50 - /Home/Index accessed.
+[INFO]  09-07-2025 10:57:50 - User session valid.Displaying Index view
+[INFO]  09-07-2025 10:58:02 - Fetching Campaigns
+[INFO]  09-07-2025 10:58:26 - Fetching Leads
+[INFO]  09-07-2025 10:58:38 - Starting GetContactsAsync
+[INFO]  09-07-2025 10:58:59 - Fetching task records from crm
+[ERROR] 09-07-2025 10:59:45-Exception in Getting Campaign records
+Exception:The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+[INFO]  09-07-2025 10:59:45 - Fetching Campaigns
+[INFO]  09-07-2025 11:00:09 - Fetching Campaigns
+[ERROR] 09-07-2025 11:01:25-Exception in Getting Campaign records
+Exception:The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+[ERROR] 09-07-2025 11:01:49-Exception in Getting Campaign records
+Exception:The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+[INFO]  09-07-2025 12:05:22 - Login accessed
+[INFO]  09-07-2025 12:08:06 - Login accessed
+[INFO]  09-07-2025 12:27:50 - Login accessed
+[INFO]  09-07-2025 12:27:59 - Login triggered: okok@gmail.com
+[INFO]  09-07-2025 12:28:03 - User logged in successfully: okok@gmail.com
+[INFO]  09-07-2025 12:28:03 - /Home/Index accessed.
+[INFO]  09-07-2025 12:28:03 - User session valid.Displaying Index view
+[INFO]  09-07-2025 12:30:52 - Fetching task records from crm
+[INFO]  09-07-2025 12:31:38 - Login accessed
+[INFO]  09-07-2025 12:31:48 - Login triggered: okok@gmail.com
+[INFO]  09-07-2025 12:31:52 - User logged in successfully: okok@gmail.com
+[INFO]  09-07-2025 12:31:52 - /Home/Index accessed.
+[INFO]  09-07-2025 12:31:52 - User session valid.Displaying Index view
+[INFO]  09-07-2025 12:32:04 - Fetching Leads
+[INFO]  09-07-2025 12:32:13 - Starting GetContactsAsync
+[INFO]  09-07-2025 12:32:28 - Fetching task records from crm
+[INFO]  09-07-2025 12:32:48 - Fetching Campaigns
+[INFO]  09-07-2025 12:33:56 - Fetching task records from crm
+[INFO]  09-07-2025 12:34:28 - Fetching task records from crm
+[INFO]  09-07-2025 12:35:27 - Fetching task records from crm
+[INFO]  09-07-2025 12:37:00 - Fetching task records from crm
+[INFO]  09-07-2025 12:37:10 - Fetching Leads
+[INFO]  09-07-2025 12:41:32 - Fetching Campaigns
+[ERROR] 09-07-2025 12:42:36-Exception in Getting Campaign records
+Exception:Error while copying content to a stream.
+[INFO]  09-07-2025 15:16:33 - Login accessed
+[INFO]  09-07-2025 15:16:42 - Login triggered: okok@gmail.com
+[INFO]  09-07-2025 15:16:46 - User logged in successfully: okok@gmail.com
+[INFO]  09-07-2025 15:16:46 - /Home/Index accessed.
+[INFO]  09-07-2025 15:16:46 - User session valid.Displaying Index view
+[INFO]  09-07-2025 15:17:38 - Login accessed
+[INFO]  09-07-2025 15:17:50 - Login triggered: okok@gmail.com
+[INFO]  09-07-2025 15:17:52 - User logged in successfully: okok@gmail.com
+[INFO]  09-07-2025 15:17:52 - /Home/Index accessed.
+[INFO]  09-07-2025 15:17:52 - User session valid.Displaying Index view
+[INFO]  09-07-2025 15:18:05 - Fetching Leads
+[INFO]  09-07-2025 15:20:00 - Login accessed
+[INFO]  09-07-2025 15:20:12 - Login triggered: okok@gmail.com
+[INFO]  09-07-2025 15:20:14 - User logged in successfully: okok@gmail.com
+[INFO]  09-07-2025 15:20:14 - /Home/Index accessed.
+[INFO]  09-07-2025 15:20:14 - User session valid.Displaying Index view
+[INFO]  09-07-2025 15:23:05 - Login accessed
+[INFO]  09-07-2025 15:23:13 - Login triggered: okok@gmail.com
+[ERROR] 09-07-2025 15:23:32-Exception occurred during login.
+Exception:A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+[INFO]  09-07-2025 15:23:40 - Login triggered: okok@gmail.com
+[ERROR] 09-07-2025 15:23:49-Exception occurred during login.
+Exception:Login failed for user '5742-LAP-0611\pranjali.bajpai_codi'. Reason: Server is in single user mode. Only one administrator can connect at this time.
+[INFO]  09-07-2025 15:24:06 - Login triggered: okok@gmail.com
+[ERROR] 09-07-2025 15:24:06-Exception occurred during login.
+Exception:Login failed for user '5742-LAP-0611\pranjali.bajpai_codi'. Reason: Server is in single user mode. Only one administrator can connect at this time.
+[INFO]  09-07-2025 15:24:29 - Login accessed
+[INFO]  09-07-2025 15:24:38 - Login triggered: okok@gmail.com
+[INFO]  09-07-2025 15:24:40 - User logged in successfully: okok@gmail.com
+[INFO]  09-07-2025 15:24:40 - /Home/Index accessed.
+[INFO]  09-07-2025 15:24:40 - User session valid.Displaying Index view
+[INFO]  09-07-2025 15:24:53 - Fetching task records from crm
+[ERROR] 09-07-2025 15:24:56-Failed to fetch task records. Status Code:NotFound
+Exception:Salesforce API fails to fetch Task records
+[INFO]  09-07-2025 15:25:01 - Fetching Campaigns
+[INFO]  09-07-2025 15:25:13 - Fetching Leads
+[INFO]  10-07-2025 13:31:43 - Login accessed
+[INFO]  10-07-2025 13:31:55 - Login triggered: okok@gmail.com
+[INFO]  10-07-2025 13:31:59 - User logged in successfully: okok@gmail.com
+[INFO]  10-07-2025 13:31:59 - /Home/Index accessed.
+[INFO]  10-07-2025 13:31:59 - User session valid.Displaying Index view
+[INFO]  10-07-2025 13:32:09 - Started fetching report folders from Salesforce CRM
+[INFO]  10-07-2025 13:32:15 - Retrieving reports from folder: 
+[INFO]  10-07-2025 13:32:15 - Fetching reports from folder: 
+[ERROR] 10-07-2025 13:32:15-Failed to fetch reports from folder: . Status Code:BadRequest
+Exception:Salesforce API failure
+[INFO]  10-07-2025 13:32:15 - Successfully fetched 0 reports.
+[INFO]  10-07-2025 13:32:31 - Started fetching report folders from Salesforce CRM
+[INFO]  10-07-2025 13:32:38 - Retrieving reports from folder: EinsteinBotReports_v2
+[INFO]  10-07-2025 13:32:38 - Fetching reports from folder: EinsteinBotReports_v2
+[ERROR] 10-07-2025 13:32:39-Failed to fetch reports from folder: EinsteinBotReports_v2. Status Code:BadRequest
+Exception:Salesforce API failure
+[INFO]  10-07-2025 13:32:39 - Successfully fetched 0 reports.
+[INFO]  10-07-2025 14:10:38 - Login accessed
+[INFO]  10-07-2025 14:10:46 - Login triggered: okok@gmail.com
+[INFO]  10-07-2025 14:10:49 - User logged in successfully: okok@gmail.com
+[INFO]  10-07-2025 14:10:49 - /Home/Index accessed.
+[INFO]  10-07-2025 14:10:49 - User session valid.Displaying Index view
+[INFO]  10-07-2025 14:11:10 - /Salesforce/GetLeadMetaData called
+[INFO]  10-07-2025 14:11:10 - Attempting to get a valid Salesforce token
+[INFO]  10-07-2025 14:11:10 - Fetching Lead field metadata from Salesforce.
+[INFO]  10-07-2025 14:11:10 - Started fetching lead metadata from Salesforce
+[INFO]  10-07-2025 14:11:12 - Lead metadata fetch response: OK
+[INFO]  10-07-2025 14:11:13 - Total no. of fields retrieved
+[INFO]  10-07-2025 14:11:13 - Successfully fetched and paginated Lead metadata fields
+[INFO]  10-07-2025 14:12:23 - Login accessed
+[INFO]  10-07-2025 14:12:34 - Login triggered: okok@gmail.com
+[INFO]  10-07-2025 14:12:36 - User logged in successfully: okok@gmail.com
+[INFO]  10-07-2025 14:12:37 - /Home/Index accessed.
+[INFO]  10-07-2025 14:12:37 - User session valid.Displaying Index view
+[INFO]  10-07-2025 14:13:43 - /Salesforce/GetLeadMetaData called
+[INFO]  10-07-2025 14:13:43 - Attempting to get a valid Salesforce token
+[INFO]  10-07-2025 14:13:43 - Fetching Lead field metadata from Salesforce.
+[INFO]  10-07-2025 14:13:43 - Started fetching lead metadata from Salesforce
+[INFO]  10-07-2025 14:13:46 - Lead metadata fetch response: OK
+[INFO]  10-07-2025 14:14:59 - Login accessed
+[INFO]  10-07-2025 14:15:13 - Login triggered: okok@gmail.com
+[INFO]  10-07-2025 14:15:16 - User logged in successfully: okok@gmail.com
+[INFO]  10-07-2025 14:15:16 - /Home/Index accessed.
+[INFO]  10-07-2025 14:15:16 - User session valid.Displaying Index view
+[INFO]  10-07-2025 14:15:35 - /Salesforce/GetLeadMetaData called
+[INFO]  10-07-2025 14:16:24 - Attempting to get a valid Salesforce token
+[INFO]  10-07-2025 14:16:24 - Fetching Lead field metadata from Salesforce.
+[INFO]  10-07-2025 14:16:24 - Started fetching lead metadata from Salesforce
+[INFO]  10-07-2025 14:16:27 - Lead metadata fetch response: OK
+[INFO]  10-07-2025 14:16:27 - Total no. of fields retrieved
+[INFO]  10-07-2025 14:16:27 - Successfully fetched and paginated Lead metadata fields
+[INFO]  10-07-2025 14:16:40 - /Data/GetLeadData called
+[INFO]  10-07-2025 14:16:40 - Fetching leads from Salesforce.
+[INFO]  10-07-2025 14:16:40 - Fetching Leads
+[ERROR] 10-07-2025 14:18:20-Exception in GetLeadsAsync
+Exception:The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+[INFO]  10-07-2025 14:18:20 - Total no. of leads fetched
+[INFO]  10-07-2025 14:18:21 - Leads saved to database.
+[INFO]  10-07-2025 14:18:27 - /Data/GetContactData called
+[INFO]  10-07-2025 14:18:27 - Fetching contacts from Salesforce
+[INFO]  10-07-2025 14:18:27 - Starting GetContactsAsync
+[INFO]  11-07-2025 02:24:45 - Login accessed
+[INFO]  11-07-2025 02:25:00 - Login triggered: okok@gmail.com
+[INFO]  11-07-2025 02:25:03 - User logged in successfully: okok@gmail.com
+[INFO]  11-07-2025 02:25:03 - /Home/Index accessed.
+[INFO]  11-07-2025 02:25:03 - User session valid.Displaying Index view
+[INFO]  11-07-2025 02:25:14 - Started fetching report folders from Salesforce CRM
+[INFO]  11-07-2025 02:25:17 - Fetched 36 report folders from Salesforce.
+[INFO]  11-07-2025 02:25:23 - Retrieving reports from folder: ConnectAndSell_Insights_Reports
+[INFO]  11-07-2025 02:25:23 - Fetching reports from folder: ConnectAndSell_Insights_Reports
+[ERROR] 11-07-2025 02:25:23-Failed to fetch reports from folder: ConnectAndSell_Insights_Reports. Status: BadRequest, Response: [{"message":"\nSELECT Id, Name, DeveloperName, Type FROM Report WHERE FolderName='ConnectAndSell_Insights_Reports'\n                                ^\nERROR at Row:1:Column:33\nNo such column 'Type' on entity 'Report'. If you are attempting to use a custom field, be sure to append the '__c' after the custom field name. Please reference your WSDL or the describe call for the appropriate names.","errorCode":"INVALID_FIELD"}]
+Exception:Salesforce API failure
+[INFO]  11-07-2025 02:25:23 - Successfully fetched 0 reports.
+[INFO]  11-07-2025 02:25:36 - /Home/Index accessed.
+[INFO]  11-07-2025 02:25:36 - User session valid.Displaying Index view
+[INFO]  11-07-2025 02:25:43 - Started fetching report folders from Salesforce CRM
+[INFO]  11-07-2025 02:25:43 - Fetched 36 report folders from Salesforce.
+[INFO]  11-07-2025 02:26:35 - Retrieving reports from folder: 
+[INFO]  11-07-2025 02:26:35 - Fetching reports from folder: 
+[ERROR] 11-07-2025 02:26:36-Failed to fetch reports from folder: . Status: BadRequest, Response: [{"message":"\nSELECT Id, Name, DeveloperName, Type FROM Report WHERE FolderName=''\n                                ^\nERROR at Row:1:Column:33\nNo such column 'Type' on entity 'Report'. If you are attempting to use a custom field, be sure to append the '__c' after the custom field name. Please reference your WSDL or the describe call for the appropriate names.","errorCode":"INVALID_FIELD"}]
+Exception:Salesforce API failure
+[INFO]  11-07-2025 02:26:36 - Successfully fetched 0 reports.
+[INFO]  11-07-2025 02:36:56 - Login accessed
+[INFO]  11-07-2025 02:37:09 - Login triggered: okok@gmail.com
+[INFO]  11-07-2025 02:37:11 - User logged in successfully: okok@gmail.com
+[INFO]  11-07-2025 02:37:11 - /Home/Index accessed.
+[INFO]  11-07-2025 02:37:11 - User session valid.Displaying Index view
+[INFO]  11-07-2025 02:37:21 - Started fetching report folders from Salesforce CRM
+[INFO]  11-07-2025 02:37:22 - Fetched 36 report folders from Salesforce.
+[INFO]  11-07-2025 02:37:34 - Retrieving reports from folder: 
+[INFO]  11-07-2025 02:37:34 - Fetching reports from folder: 
+[ERROR] 11-07-2025 02:37:34-Failed to fetch reports from folder: . Status: BadRequest, Response: [{"message":"\nSELECT Id, Name, DeveloperName, Type FROM Report WHERE FolderName=''\n                                ^\nERROR at Row:1:Column:33\nNo such column 'Type' on entity 'Report'. If you are attempting to use a custom field, be sure to append the '__c' after the custom field name. Please reference your WSDL or the describe call for the appropriate names.","errorCode":"INVALID_FIELD"}]
+Exception:Salesforce API failure
+[INFO]  11-07-2025 02:37:34 - Successfully fetched 0 reports.
+[INFO]  11-07-2025 02:37:48 - /Home/Index accessed.
+[INFO]  11-07-2025 02:37:48 - User session valid.Displaying Index view
+[INFO]  11-07-2025 02:37:55 - Started fetching report folders from Salesforce CRM
+[INFO]  11-07-2025 02:37:56 - Fetched 36 report folders from Salesforce.
+[INFO]  11-07-2025 02:38:00 - Retrieving reports from folder: ConnectAndSell_Quicklist_Report_Template
+[INFO]  11-07-2025 02:38:00 - Fetching reports from folder: ConnectAndSell_Quicklist_Report_Template
+[ERROR] 11-07-2025 02:38:00-Failed to fetch reports from folder: ConnectAndSell_Quicklist_Report_Template. Status: BadRequest, Response: [{"message":"\nSELECT Id, Name, DeveloperName, Type FROM Report WHERE FolderName='ConnectAndSell_Quicklist_Report_Template'\n                                ^\nERROR at Row:1:Column:33\nNo such column 'Type' on entity 'Report'. If you are attempting to use a custom field, be sure to append the '__c' after the custom field name. Please reference your WSDL or the describe call for the appropriate names.","errorCode":"INVALID_FIELD"}]
+Exception:Salesforce API failure
+[INFO]  11-07-2025 02:38:00 - Successfully fetched 0 reports.
+[INFO]  14-07-2025 10:08:42 - Login accessed
+[INFO]  14-07-2025 10:09:37 - Login accessed
+[INFO]  14-07-2025 10:09:47 - Login triggered: okok@gmail.com
+[INFO]  14-07-2025 10:09:51 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 10:09:51 - /Home/Index accessed.
+[INFO]  14-07-2025 10:09:51 - User session valid.Displaying Index view
+[INFO]  14-07-2025 10:10:11 - Fetching task records from crm
+[INFO]  14-07-2025 10:10:20 - Fetching Campaigns
+[INFO]  14-07-2025 10:10:47 - Starting GetContactsAsync
+[INFO]  14-07-2025 10:11:59 - Fetching Leads
+[INFO]  14-07-2025 10:12:30 - Login accessed
+[INFO]  14-07-2025 10:13:41 - Login accessed
+[INFO]  14-07-2025 10:13:58 - Login triggered: okok@gmail.com
+[INFO]  14-07-2025 10:14:01 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 10:14:01 - /Home/Index accessed.
+[INFO]  14-07-2025 10:14:01 - User session valid.Displaying Index view
+[INFO]  14-07-2025 10:14:24 - Fetching Leads
+[INFO]  14-07-2025 10:14:40 - Fetching Leads
+[INFO]  14-07-2025 10:14:56 - Fetching task records from crm
+[INFO]  14-07-2025 10:15:04 - Fetching Campaigns
+[INFO]  14-07-2025 10:52:49 - Login accessed
+[INFO]  14-07-2025 10:53:04 - Login triggered: okok@gmail.com
+[INFO]  14-07-2025 10:53:07 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 10:53:07 - /Home/Index accessed.
+[INFO]  14-07-2025 10:53:07 - User session valid.Displaying Index view
+[INFO]  14-07-2025 11:19:46 - Login accessed
+[INFO]  14-07-2025 11:19:57 - Login triggered: okok@gmail.com
+[INFO]  14-07-2025 11:20:00 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 11:20:00 - /Home/Index accessed.
+[INFO]  14-07-2025 11:20:00 - User session valid.Displaying Index view
+[INFO]  14-07-2025 11:29:38 - Login accessed
+[INFO]  14-07-2025 11:42:51 - Login accessed
+[INFO]  14-07-2025 12:05:03 - Login accessed
+[INFO]  14-07-2025 12:05:54 - Login accessed
+[INFO]  14-07-2025 12:06:06 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 12:06:06 - /Home/Index accessed.
+[INFO]  14-07-2025 12:06:06 - User session valid.Displaying Index view
+[INFO]  14-07-2025 12:16:34 - Login accessed
+[INFO]  14-07-2025 12:16:45 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 12:16:45 - /Home/Index accessed.
+[INFO]  14-07-2025 12:16:45 - User session valid.Displaying Index view
+[INFO]  14-07-2025 12:18:20 - Login accessed
+[INFO]  14-07-2025 12:18:31 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 12:18:31 - /Home/Index accessed.
+[INFO]  14-07-2025 12:18:31 - User session valid.Displaying Index view
+[INFO]  14-07-2025 12:50:53 - Login accessed
+[INFO]  14-07-2025 12:51:03 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 12:51:03 - /Home/Index accessed.
+[INFO]  14-07-2025 12:51:03 - User session valid.Displaying Index view
+[INFO]  14-07-2025 12:58:59 - Login accessed
+[INFO]  14-07-2025 12:59:08 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 12:59:09 - /Home/Index accessed.
+[INFO]  14-07-2025 12:59:09 - User session valid.Displaying Index view
+[INFO]  14-07-2025 13:07:53 - Login accessed
+[INFO]  14-07-2025 13:08:02 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 13:08:02 - /Home/Index accessed.
+[INFO]  14-07-2025 13:08:02 - User session valid.Displaying Index view
+[INFO]  14-07-2025 13:12:44 - Login accessed
+[INFO]  14-07-2025 13:12:55 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 13:12:55 - /Home/Index accessed.
+[INFO]  14-07-2025 13:12:55 - User session valid.Displaying Index view
+[INFO]  14-07-2025 13:19:11 - Login accessed
+[INFO]  14-07-2025 13:19:20 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 13:19:20 - /Home/Index accessed.
+[INFO]  14-07-2025 13:19:20 - User session valid.Displaying Index view
+[INFO]  14-07-2025 13:24:11 - Login accessed
+[INFO]  14-07-2025 13:24:20 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 13:24:20 - /Home/Index accessed.
+[INFO]  14-07-2025 13:24:20 - User session valid.Displaying Index view
+[INFO]  14-07-2025 13:26:22 - Login accessed
+[INFO]  14-07-2025 13:26:32 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 13:26:32 - /Home/Index accessed.
+[INFO]  14-07-2025 13:26:32 - User session valid.Displaying Index view
+[INFO]  14-07-2025 13:30:20 - Login accessed
+[INFO]  14-07-2025 13:30:29 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 13:30:29 - /Home/Index accessed.
+[INFO]  14-07-2025 13:30:29 - User session valid.Displaying Index view
+[INFO]  14-07-2025 13:30:37 - Fetching Leads
+[INFO]  14-07-2025 13:35:40 - Login accessed
+[INFO]  14-07-2025 13:41:43 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 13:41:43 - /Home/Index accessed.
+[INFO]  14-07-2025 13:41:43 - User session valid.Displaying Index view
+[INFO]  14-07-2025 13:41:55 - Fetching Leads
+[INFO]  14-07-2025 14:17:19 - Login accessed
+[INFO]  14-07-2025 14:17:29 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 14:17:29 - /Home/Index accessed.
+[INFO]  14-07-2025 14:17:29 - User session valid.Displaying Index view
+[INFO]  14-07-2025 14:17:37 - Fetching Leads
+[INFO]  14-07-2025 14:17:42 - Fetching Leads
+[INFO]  14-07-2025 14:59:36 - Login accessed
+[INFO]  14-07-2025 14:59:46 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 14:59:46 - /Home/Index accessed.
+[INFO]  14-07-2025 14:59:46 - User session valid.Displaying Index view
+[INFO]  14-07-2025 14:59:56 - Fetching Leads
+[INFO]  14-07-2025 15:00:00 - Starting GetContactsAsync
+[INFO]  14-07-2025 15:14:42 - Login accessed
+[INFO]  14-07-2025 15:15:19 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 15:15:19 - /Home/Index accessed.
+[INFO]  14-07-2025 15:15:19 - User session valid.Displaying Index view
+[INFO]  14-07-2025 15:18:57 - Login accessed
+[INFO]  14-07-2025 15:19:06 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 15:19:06 - /Home/Index accessed.
+[INFO]  14-07-2025 15:19:06 - User session valid.Displaying Index view
+[INFO]  14-07-2025 15:19:14 - Fetching Leads
+[INFO]  14-07-2025 15:19:52 - Starting GetContactsAsync
+[INFO]  14-07-2025 15:19:56 - Fetching task records from crm
+[INFO]  14-07-2025 16:38:35 - Login accessed
+[INFO]  14-07-2025 16:38:46 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 16:38:46 - /Home/Index accessed.
+[INFO]  14-07-2025 16:38:46 - User session valid.Displaying Index view
+[INFO]  14-07-2025 16:40:37 - Login accessed
+[INFO]  14-07-2025 16:40:48 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 16:40:48 - /Home/Index accessed.
+[INFO]  14-07-2025 16:40:48 - User session valid.Displaying Index view
+[INFO]  14-07-2025 16:43:44 - Login accessed
+[INFO]  14-07-2025 16:43:54 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 16:43:54 - /Home/Index accessed.
+[INFO]  14-07-2025 16:43:54 - User session valid.Displaying Index view
+[INFO]  14-07-2025 16:45:16 - Login accessed
+[INFO]  14-07-2025 16:45:26 - User logged in successfully: okok@gmail.com
+[INFO]  14-07-2025 16:45:26 - /Home/Index accessed.
+[INFO]  14-07-2025 16:45:26 - User session valid.Displaying Index view
+[INFO]  14-07-2025 16:45:36 - Fetching Leads
+[INFO]  15-07-2025 10:08:00 - Login accessed
+[INFO]  15-07-2025 10:19:28 - Login accessed
+[INFO]  15-07-2025 10:19:42 - User logged in successfully: okok@gmail.com
+[INFO]  15-07-2025 10:19:42 - /Home/Index accessed.
+[INFO]  15-07-2025 10:19:42 - User session valid.Displaying Index view
+[INFO]  15-07-2025 10:19:54 - Fetching Leads
+[INFO]  15-07-2025 10:21:49 - Login accessed
+[INFO]  15-07-2025 10:22:00 - User logged in successfully: okok@gmail.com
+[INFO]  15-07-2025 10:22:00 - /Home/Index accessed.
+[INFO]  15-07-2025 10:22:00 - User session valid.Displaying Index view
+[INFO]  15-07-2025 10:22:15 - Fetching Leads
+[INFO]  15-07-2025 10:22:27 - Starting GetContactsAsync
+[INFO]  15-07-2025 10:22:30 - Fetching task records from crm

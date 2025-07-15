@@ -175,6 +175,108 @@ a.text-calm-blue{
         height: 100%;
         overflow: visible; /* very important for dropdowns */
     }
+.sf-tag:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.object-item:hover {
+    background-color: #f0f8ff;
+}
+/* Remove any default rounded corners globally in modal */
+.modal-content, .btn, .dropdown-menu, .form-control {
+    border-radius: 0 !important;
+}
+
+    /* Improve hover feedback */
+    .btn:hover {
+        background-color: #e2e2e2;
+        color: #000;
+    }
+
+/* Dropdown item hover 
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+    font-weight: 500;
+}
+.tabstrip {
+    display: flex;
+    background-color: #e9ecef;
+    font-weight: 500;
+}
+
+.tab-link {
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+    .tab-link:hover {
+        background-color: #dee2e6;
+    }
+
+    .tab-link.active {
+        background-color: #dee2e6;
+        border-bottom: 3px solid #0d6efd;
+        color: #000;
+    }*/
+
+/*.tab-content {
+    margin-top: 15px;
+}
+.k-tabstrip {
+    margin-top: -1rem;
+}
+
+.form-check-label {
+    margin-left: 5px;
+}*/
+.k-tabstrip-items {
+    list-style-type: none !important;
+    padding-left: 0 !important;
+    margin-bottom: 0;
+    background-color: transparent;
+    display: flex !important;
+    border-bottom: 1px solid #dee2e6;
+}
+
+    .k-tabstrip-items li {
+        flex: 1;
+        text-align: center;
+        padding: 12px 0;
+        font-weight: 500;
+        border-bottom: 3px solid transparent;
+        cursor: pointer;
+    }
+
+        .k-tabstrip-items li.k-state-active {
+            border-bottom: 3px solid #0d6efd;
+            background-color: #f8f9fa;
+        }
+
+        .k-tabstrip-items li:hover {
+            background-color: #e9ecef;
+        }
+
+.form-check {
+    margin-bottom: 0.5rem;
+}
+.position-sticky {
+    background-color: #f8f9fa;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#verticalTabstrip .k-tabstrip-items {
+    width: 100% !important;
+}
+
+#verticalTabstrip {
+    min-height: 300px;
+    max-height: 400px;
+}
+
+
 
 
 

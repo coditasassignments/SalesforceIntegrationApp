@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5rEomXx91yjbLG8gOnNf9Vnre53ETQUIeZYBIpz2Hzs=",
+  "Hash": "CaAeh/4lrEpd81RBKKajWJK7TlAUqoTsj+cbXHnDhHM=",
   "Source": "SalesforceIntegrationApp",
   "BasePath": "_content/SalesforceIntegrationApp",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "dr4hvv2x32",
-      "Integrity": "pxKgOEqE27+oSYG5Trv5ydnnIp6w5cEGhR/BugsT6C0=",
+      "Fingerprint": "5nou7wmgbt",
+      "Integrity": "QR/scuNiqyhGkeLKmcFrLGVGA/r1lpKF6W9ICrgVI7I=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1468,6 +1468,51 @@
   ],
   "Endpoints": [
     {
+      "Route": "css/site.5nou7wmgbt.css",
+      "AssetFile": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6268"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QR/scuNiqyhGkeLKmcFrLGVGA/r1lpKF6W9ICrgVI7I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 14 Jul 2025 11:10:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5nou7wmgbt"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QR/scuNiqyhGkeLKmcFrLGVGA/r1lpKF6W9ICrgVI7I="
+        }
+      ]
+    },
+    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -1478,7 +1523,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4160"
+          "Value": "6268"
         },
         {
           "Name": "Content-Type",
@@ -1486,11 +1531,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pxKgOEqE27+oSYG5Trv5ydnnIp6w5cEGhR/BugsT6C0=\""
+          "Value": "\"QR/scuNiqyhGkeLKmcFrLGVGA/r1lpKF6W9ICrgVI7I=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 08 Jul 2025 04:26:19 GMT"
+          "Value": "Mon, 14 Jul 2025 11:10:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1500,52 +1545,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-pxKgOEqE27+oSYG5Trv5ydnnIp6w5cEGhR/BugsT6C0="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.dr4hvv2x32.css",
-      "AssetFile": "C:\\Users\\Coditas-Admin.5742-LAP-0185\\source\\repos\\SalesforceIntegrationApp\\SalesforceIntegrationApp\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4160"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"pxKgOEqE27+oSYG5Trv5ydnnIp6w5cEGhR/BugsT6C0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 08 Jul 2025 04:26:19 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "dr4hvv2x32"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-pxKgOEqE27+oSYG5Trv5ydnnIp6w5cEGhR/BugsT6C0="
+          "Value": "sha256-QR/scuNiqyhGkeLKmcFrLGVGA/r1lpKF6W9ICrgVI7I="
         }
       ]
     },
@@ -6984,7 +6984,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 08 Jul 2025 03:32:30 GMT"
+          "Value": "Fri, 11 Jul 2025 05:02:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7021,7 +7021,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 08 Jul 2025 03:32:30 GMT"
+          "Value": "Fri, 11 Jul 2025 05:02:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7066,7 +7066,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 08 Jul 2025 03:32:30 GMT"
+          "Value": "Fri, 11 Jul 2025 05:02:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7111,7 +7111,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 08 Jul 2025 03:32:30 GMT"
+          "Value": "Fri, 11 Jul 2025 05:02:48 GMT"
         },
         {
           "Name": "Cache-Control",

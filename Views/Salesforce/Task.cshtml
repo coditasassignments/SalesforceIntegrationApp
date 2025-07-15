@@ -1,34 +1,34 @@
 ﻿@{
-    ViewData["Title"] = "Campaign Info";
+    ViewData["Title"] = "Task Info";
     var fields = ViewBag.Fields as List<dynamic>;
     int currentPage = ViewBag.CurrentPage != null ? (int)ViewBag.CurrentPage : 1;
     int totalPages = ViewBag.TotalPages != null ? (int)ViewBag.TotalPages : 1;
 }
 <div class="lead-metadata-bg">
     <div class="table-wrapper">
-        <h4 class="text-center mb-2">Campaign Info</h4>
+        <h4 class="text-center mb-2">Task Info</h4>
         @if (fields != null && fields.Count > 0)
         {
             <div class="scrollable-table">
                 <table class="table table-bordered white-table">
                     <thead class="table-white-header">
                         <tr>
-                            <th>Campaign Name</th>
-                            <th>Type</th>
                             <th>Status</th>
-                            <th>Start Date</th>
-                            <th>End Date</th>
+                            <th>Subject</th>
+                            <th>ActivityDate</th>
+                            <th>Description</th>
+                            <th>Priority</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var field in fields)
                         {
                             <tr>
-                                <td>@field.name</td>
-                                <td>@field.type</td>
                                 <td>@field.status</td>
-                                <td>@field.startdate</td>
-                                <td>@field.enddate</td>
+                                <td>@field.subject</td>
+                                <td>@field.activitydate</td>
+                                <td>@field.description</td>
+                                <td>@field.priority</td>
                             </tr>
                         }
                     </tbody>
@@ -57,7 +57,7 @@
         }
         else
         {
-            <div class="alert alert-info text-center">No fields to display.</div>
+            <div class="alert alert-info text-center">No tasks to display.</div>
         }
     </div>
 </div>

@@ -92,6 +92,35 @@ public class DataController : Controller
         ViewBag.TotalPages = totalPages;
         return View("~/Views/Salesforce/Campaign.cshtml", paginatedCampaigns);
     }
+    public async Task<IActionResult> GetTaskData()
+    {
+        Logger.LogInfo("/Data/GetTaskData called");
+        var taskDtos = await _dataService.GetTaskAsync();
+        var tasks = taskDtos.Select(dto => new Tasks
+        {
+            Id = dto.Id,
+            Subject = dto.Subject,
+            Status = dto.Status,
+            ActivityDate = dto.ActivityDate,
+            Description = dto.Description,
+            Priority = dto.Priority
+        }).ToList();
+        Logger.LogInfo("Total no. of tasks fetched");
+        foreach(var task in tasks)
+        {
+            if(!_context.Tasks.Any(x => x.Id == task.Id))
+            {
+                _context.Tasks.Add(task);
+            }
+        }
+        await _context.SaveChangesAsync();
+        Logger.LogInfo("Tasks data saved to database");
+        var (paginatedTasks, totalPages, currentPage) = PaginationHelper.ApplyPagination(tasks, Request); //Now applying the pagination logic to the list of records fetched
+        ViewBag.CurrentPage = currentPage;
+        ViewBag.TotalPages = totalPages;
+        return View("~/Views/Salesforce/Task.cshtml", paginatedTasks);
+
+    }
     [HttpGet("/Data/GetLeadTablePartial")]
     public async Task<IActionResult> GetLeadTablePartial()
     {
@@ -164,17 +193,31 @@ public class DataController : Controller
             return Content("<p class='text-danger'>Error loading contacts</p>");
         }
     }
-    /*public async Task<IActionResult> GetTaskTablePartial()
+    [HttpGet("/Data/GetTaskTablePartial")]
+    public async Task<IActionResult> GetTaskTablePartial()
     {
-        var records = await _data.GetRecordsAsync("Task");
-        return PartialView("_TaskTablePartial", records);
-    }
+        try
+        {
+            var taskrecords = await _dataService.GetTaskAsync();
+            var tasks = taskrecords.Select(dto => new Tasks
+            {
+                Id = dto.Id,
+                Subject = dto.Subject,
+                Status = dto.Status,
+                ActivityDate = dto.ActivityDate,
+                Description = dto.Description,
+                Priority = dto.Priority
 
-    public async Task<IActionResult> GetCampaignTablePartial()
-    {
-        var records = await _salesforceService.GetRecordsAsync("Campaign");
-        return PartialView("_CampaignTablePartial", records);
-    }*/
+            }).ToList();
+            return PartialView("~/Views/Shared/TaskTable.cshtml", tasks);
+
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError("Error occured while fetching Tasks", ex);
+            return Content("<p class='text-danger'>Error loading tasks</p>");
+        }
+    }
 
     [HttpPost]
     public async Task<IActionResult> UpdateLead([FromBody] Lead updatedLead) 
@@ -361,3 +404,4 @@ public class DataController : Controller
         }
     }
 }
+

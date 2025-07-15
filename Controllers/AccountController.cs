@@ -65,7 +65,6 @@ namespace SalesforceIntegrationApp.Controllers //importing namespace
         [HttpPost]
         public IActionResult Login(User user) // When user fill all the login details 
         {
-            Logger.LogInfo($"Login triggered: {user.Email}");
             try
             {
                 var matchedUser = _context.Users.FirstOrDefault(u => u.Email == user.Email && u.Password == user.Password); // checks in the users table if the user is already registered or not 
@@ -117,3 +116,5 @@ namespace SalesforceIntegrationApp.Controllers //importing namespace
         }
     }
 }
+//string query = "SELECT Id, Subject, Status, ActivityDate, Description, Priority FROM Task";
+

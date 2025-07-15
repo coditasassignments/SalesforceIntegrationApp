@@ -21,7 +21,6 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 builder.Services.AddScoped<ISalesforceService, SalesforceIntegrationApp.Services.Implementations.SalesforceService>();
 builder.Services.AddScoped<IDataService, DataService>();
 builder.Services.AddScoped<IInProgressService, InProgressService>();
-builder.Services.AddScoped<IReportService, ReportService>();
 builder.Services.AddScoped<AuthService>();
 var app = builder.Build();
 // Configure the HTTP request pipeline.

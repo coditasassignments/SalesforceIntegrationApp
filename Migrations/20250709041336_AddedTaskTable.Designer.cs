@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SalesforceIntegrationApp.Data;
 
@@ -11,9 +12,11 @@ using SalesforceIntegrationApp.Data;
 namespace SalesforceIntegrationApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250709041336_AddedTaskTable")]
+    partial class AddedTaskTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -141,49 +144,6 @@ namespace SalesforceIntegrationApp.Migrations
                     b.ToTable("LeadsOpenActivity");
                 });
 
-            modelBuilder.Entity("SalesforceIntegrationApp.Models.RepFolder", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("DeveloperName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Folders");
-                });
-
-            modelBuilder.Entity("SalesforceIntegrationApp.Models.Report", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("DeveloperName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FolderDeveloperName")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("FolderDeveloperName");
-
-                    b.ToTable("Reports");
-                });
-
             modelBuilder.Entity("SalesforceIntegrationApp.Models.ReportData", b =>
                 {
                     b.Property<int>("Id")
@@ -283,20 +243,6 @@ namespace SalesforceIntegrationApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("SalesforceIntegrationApp.Models.Report", b =>
-                {
-                    b.HasOne("SalesforceIntegrationApp.Models.RepFolder", "Folder")
-                        .WithMany("Reports")
-                        .HasForeignKey("FolderDeveloperName");
-
-                    b.Navigation("Folder");
-                });
-
-            modelBuilder.Entity("SalesforceIntegrationApp.Models.RepFolder", b =>
-                {
-                    b.Navigation("Reports");
                 });
 #pragma warning restore 612, 618
         }

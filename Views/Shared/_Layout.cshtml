@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SalesforceIntegrationApp.styles.css" asp-append-version="true" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link href="https://kendo.cdn.telerik.com/2024.1.319/styles/kendo.default-v2.min.css" rel="stylesheet" />
-    <script src="https://kendo.cdn.telerik.com/2024.1.319/js/kendo.all.min.js"></script>
+    <link href="https://kendo.cdn.telerik.com/2024.1.130/styles/kendo.default-v2.min.css" rel="stylesheet" />
+    <script src="https://kendo.cdn.telerik.com/2024.1.130/js/kendo.all.min.js"></script>
 
 </head>
 <body class="no-scroll-body">
@@ -57,6 +57,7 @@
                                 <li>
                                     <a class="nav-link text-calm-blue" data-bs-toggle="modal" data-bs-target="#addListModal">+ Add List</a>
                                 </li>
+   
                             </ul>
                             @if (!string.IsNullOrEmpty(Context.Session.GetString("UserEmail")))
                             {
@@ -120,53 +121,98 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="salesforceStepModal" tabindex="-1" aria-labelledby="salesforceStepModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-xl modal-dialog-centered custom-modal-height">
-                        <div class="modal-content">
-                            <div class="modal-header bg-primary text-white">
-                                <h5 class="modal-title">Salesforce List Selection</h5>
-                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!--<div class="modal fade" id="salesforceStepModal" tabindex="-1" aria-labelledby="salesforceStepModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content border-0">
+                            <div class="tabstrip bg-light border-bottom d-flex">
+                                <div class="tab-link active flex-fill text-center py-2" data-tab="objects">Objects</div>
+                                <div class="tab-link flex-fill text-center py-2" data-tab="reports">Reports</div>
+                                <div class="tab-link flex-fill text-center py-2" data-tab="views">Views</div>
                             </div>
-                            <div class="modal-body">
-                                <div id="kendoTabstrip">
-                                    <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
-                                        <div class="dropdown">
-                                            <button class="btn btn-primary dropdown-toggle" type="button" id="objectDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Objects
-                                            </button>
-                                            <ul class="dropdown-menu" aria-labelledby="objectDropdownBtn">
-                                                <li><a class="dropdown-item object-item" data-object="Lead" href="#">Lead</a></li>
-                                                <li><a class="dropdown-item object-item" data-object="Contact" href="#">Contact</a></li>
-                                                <li><a class="dropdown-item object-item" data-object="Task" href="#">Task</a></li>
-                                                <li><a class="dropdown-item object-item" data-object="Campaign" href="#">Campaign</a></li>
-                                            </ul>
-                                        </div>
-                                        <button class="btn btn-success sf-tag" data-type="Reports">Reports</button>
-                                        <button class="btn btn-warning sf-tag" data-type="Views">Views</button>
+                            <div class="modal-body bg-light">
+                                <div class="tab-content" id="objects">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="object" id="lead" value="Lead">
+                                        <label class="form-check-label" for="lead">Lead</label>
                                     </div>
-                                    <div id="kendoSelectionContent" class="text-center text-muted">
-                                        Please select a type to proceed.
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="object" id="contact" value="Contact">
+                                        <label class="form-check-label" for="contact">Contact</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="object" id="task" value="Task">
+                                        <label class="form-check-label" for="task">Task</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="object" id="campaign" value="Campaign">
+                                        <label class="form-check-label" for="campaign">Campaign</label>
                                     </div>
                                 </div>
+                                <div class="tab-content d-none" id="reports">
+                                    <p class="text-muted">Reports content goes here...</p>
+                                </div>
+                                <div class="tab-content d-none" id="views">
+                                    <p class="text-muted">Views content goes here...</p>
+                                </div>
+
                             </div>
+                        </div>
+                    </div>
+                </div>-->
+                <div class="modal fade" id="salesforceStepModal" tabindex="-1" aria-labelledby="salesforceStepModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-content border-0">
+                            <div class="modal-header border-bottom-0 p-0">
+                                <div id="tabstripHeader" class="w-100">
+                                    <ul class="k-tabstrip-items m-0">
+                                        <li class="k-state-active">Objects</li>
+                                        <li>Reports</li>
+                                        <li>Views</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="modal-body bg-light">
+                                <div id="tabstripBody">
+                                    <div>
+                                        <div class="row">
+                                    
+                                            <div class="col-md-4 border-end">
+                                                <div class="position-sticky" style="top: 0;">
+                                                    <div class="form-check mb-3">
+                                                        <input class="form-check-input object-radio" type="radio" name="object" id="lead" value="Lead">
+                                                        <label class="form-check-label" for="lead">Lead</label>
+                                                    </div>
+                                                    <div class="form-check mb-3">
+                                                        <input class="form-check-input object-radio" type="radio" name="object" id="contact" value="Contact">
+                                                        <label class="form-check-label" for="contact">Contact</label>
+                                                    </div>
+                                                    <div class="form-check mb-3">
+                                                        <input class="form-check-input object-radio" type="radio" name="object" id="task" value="Task">
+                                                        <label class="form-check-label" for="task">Task</label>
+                                                    </div>
+                                                    <div class="form-check mb-3">
+                                                        <input class="form-check-input" type="radio" name="object" id="campaign" value="Campaign">
+                                                        <label class="form-check-label" for="campaign">Campaign</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="col-md-8">
+                                                <div id="objectRecordsArea">
+                                                    <p class="text-muted">Select an object to view records...</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="displayData" tabindex="-1" aria-labelledby="salesforceDisplayData" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header bg-primary text-white">
-                                <h5>Showing Lead Records.</h5>
-                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="filters">
-                                    <div class="d-flex flex-wrap justify-content gap-3 mb-4"></div>
-
-                                </div>
-                                <div>
-                        </div>
-                    </div>
+                <div class="modal fade" id="salesforceStepModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
 
                 </div>
 
@@ -248,12 +294,126 @@
                 $('#kendoSelectionContent').load(url);
             }
         });
-        $(document).on('click', '.sf-tag', function () {
-            const selected = $(this).data("type");
+            $(document).on('click', '.sf-tag', function () {
+        const selected = $(this).data("type");
+
+        if (selected === "Reports") {
+            $('#kendoSelectionContent').html(`<p class="text-muted">Loading report folders...</p>`);
+            $('#kendoSelectionContent').load("/ReportFolder/GetReportFolderPartial");
+        } else {
             let html = `<p class="mt-3 text-muted">${selected} content will be shown here.</p>`;
             $('#kendoSelectionContent').html(html);
-        });
+        }
+    });
+
     });
 
 </script>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $.get("/Data/GetReportFoldersPartial", function (data) {
+                $("#folderListContainer").html(data);
+            });
+        });
+
+        function loadReports(folderDevName) {
+            $.get("/Data/GetReportsByFolderPartial?developerName=" + folderDevName, function (data) {
+                $("#reportListContainer").html(data);
+            });
+        }
+    </script>
+}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const tabs = document.querySelectorAll(".tab-link");
+      const contents = document.querySelectorAll(".tab-content");
+
+      tabs.forEach(tab => {
+        tab.addEventListener("click", function () {
+          tabs.forEach(t => t.classList.remove("active"));
+          contents.forEach(c => c.classList.add("d-none"));
+          this.classList.add("active");
+          const target = this.getAttribute("data-tab");
+          document.getElementById(target).classList.remove("d-none");
+        });
+      });
+    });
+</script>
+@*<script>
+    let isTabStripInitialized = false;
+    $('#salesforceStepModal').on('shown.bs.modal', function () {
+        if (!isTabStripInitialized) {
+            $("#kendoTabstrip").kendoTabStrip({
+                animation: {
+                    open: { effects: "fadeIn" }
+                }
+            });
+            isTabStripInitialized = true;
+        }
+    });
+</script>*@
+<script>
+    let isTabstripInitialized = false;
+
+    $('#salesforceStepModal').on('shown.bs.modal', function () {
+        if (!isTabstripInitialized) {
+            $("#tabstripHeader").kendoTabStrip({
+                animation: { open: { effects: "fadeIn" } },
+                contentElement: "#tabstripBody > div"
+            });
+            isTabstripInitialized = true;
+        }
+    });
+</script>
+<script>
+    $(document).on("change", ".object-radio", function () {
+        const selectedObject = $(this).val();
+
+        if (selectedObject === "Lead"){
+            $("#objectRecordsArea").html('<p class="text-muted">Loading Lead records...</p>');
+            $.ajax({
+                url: '/Data/GetLeadTablePartial',
+                type: 'GET',
+                success: function(partialHtml){
+                    $("#objectRecordsArea").html(partialHtml);
+                },
+                error: function(){
+                    $("#objectRecordsArea").html('<p class="text-danger">Failed to load lead records.</p>');
+                }
+            });
+        } else if(selectedObject === "Contact"){
+            $("#objectRecordsArea").html('<p class="text-muted">Loading Contact records...</p>');
+            $.ajax({
+                url: '/Data/GetContactTablePartial',
+                type: 'GET',
+                success: function(partialHtml){
+                    $("#objectRecordsArea").html(partialHtml);
+
+                },
+                error: function(){
+                    $("#objectRecordsArea").html('<p class="text-danger">Failed to load contact records.</p>');
+                }
+            });
+
+        } else if(selectedObject === "Task"){
+            $("#objectRecordsArea").html('<p class="text-muted">Loading Task records...</p>');
+            $.ajax({
+                url:'/Data/GetTaskTablePartial',
+                type: 'GET',
+                success: function(partialHtml){
+                    $("#objectRecordsArea").html(partialHtml);
+                },
+                error: function(){
+                    $("#objectRecordsArea").html('p class="text-danger">Failed to load Task records.</p>');
+                }
+            });
+        } else{
+            $("#objectRecordsArea").html(`<p class="text-muted">${selectedObject} No content...</p>`);
+        }
+    });
+</script>
+
+
+
            

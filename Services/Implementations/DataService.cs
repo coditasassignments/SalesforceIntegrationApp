@@ -14,6 +14,8 @@ using SalesforceIntegrationApp.Logging;
 using System.Text.Json;
 using Microsoft.AspNetCore.Razor.Language.Intermediate;
 using Microsoft.AspNetCore.JsonPatch.Internal;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using SalesforceIntegrationApp.Exceptions;
 namespace SalesforceIntegrationApp.Services.Implementations
 {
     public class DataService : IDataService //inheriting the IDataService interface
@@ -76,6 +78,34 @@ namespace SalesforceIntegrationApp.Services.Implementations
                 Logger.LogError("Exception in Getting Campaign records", ex);
                 return new List<CampaignDto>();
             }
+        }
+        public async Task<List<TaskDto>> GetTaskAsync()
+        {
+            Logger.LogInfo("Fetching task records from crm");
+            try
+            {
+                var auth = await _authService.GetValidTokenAsync();
+                using var client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", auth.AccessToken);
+                string query = "SELECT Subject, Status, ActivityDate, Description, Priority FROM Task";
+                string url = $"{auth.InstanceUrl}/services/data/v54.0/query?q={Uri.EscapeDataString(query)}";
+                var response = await client.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    var text = await response.Content.ReadAsStringAsync();
+                    var json = JsonConvert.DeserializeObject<TaskWrapDto>(text);
+                    return json?.Records ?? new List<TaskDto>();
+                }
+                Logger.LogError($"Failed to fetch task records. Status Code:{response.StatusCode}", new Exception("Salesforce API fails to fetch Task records"));
+                return new List<TaskDto>();
+
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("Exception in Getting Task records", ex);
+                return new List<TaskDto>();
+            }
+
         }
         public async Task<bool> UpdateLeadInSalesforceAsync(Lead lead)
         {
