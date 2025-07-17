@@ -3,6 +3,7 @@ using SalesforceIntegrationApp.Models; //is a namespace that gives access to all
 using SalesforceIntegrationApp.Data; //is a namespace that gives access to Data folder to use database
 using System.Linq; //this namespace is imported inorder to use properties of Linq: FirstOrDefault 
 using SalesforceIntegrationApp.Logging; //inorder to add logger in the file
+using Microsoft.AspNetCore.Authorization;
 
 namespace SalesforceIntegrationApp.Controllers //importing namespace 
 {

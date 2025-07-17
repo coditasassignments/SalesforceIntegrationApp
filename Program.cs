@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SalesforceIntegrationApp.Data;
 using SalesforceIntegrationApp.Services.Implementations;
 using SalesforceIntegrationApp.Services.Interfaces;
+using Microsoft.AspNetCore.DataProtection;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +23,8 @@ builder.Services.AddScoped<ISalesforceService, SalesforceIntegrationApp.Services
 builder.Services.AddScoped<IDataService, DataService>();
 builder.Services.AddScoped<IInProgressService, InProgressService>();
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(@"C:\Keys\"))
+    .SetApplicationName("SalesforceIntegrationApp");
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -34,6 +37,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseSession();
 app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",

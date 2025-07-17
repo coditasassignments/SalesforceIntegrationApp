@@ -176,7 +176,7 @@
                                     <div>
                                         <div class="row">
                                     
-                                            <div class="col-md-4 border-end">
+                                            <!--<div class="col-md-4 border-end">
                                                 <div class="position-sticky" style="top: 0;">
                                                     <div class="form-check mb-3">
                                                         <input class="form-check-input object-radio" type="radio" name="object" id="lead" value="Lead">
@@ -194,28 +194,39 @@
                                                         <input class="form-check-input" type="radio" name="object" id="campaign" value="Campaign">
                                                         <label class="form-check-label" for="campaign">Campaign</label>
                                                     </div>
+                                                </div>-->
+                                            <div class="col-md-4 border-end">
+                                                <div id="objectSubTabs" class="nav flex-column nav-pills">
+                                                    <button class="nav-link text-start active object-tab" data-object="Lead">Lead</button>
+                                                    <button class="nav-link text-start object-tab" data-object="Contact">Contact</button>
+                                                    <button class="nav-link text-start object-tab" data-object="Task">Task</button>
+                                                    <button class="nav-link text-start object-tab" data-object="Campaign">Campaign</button>
                                                 </div>
                                             </div>
-                                           
                                             <div class="col-md-8">
                                                 <div id="objectRecordsArea">
                                                     <p class="text-muted">Select an object to view records...</p>
                                                 </div>
                                             </div>
+                                            <div class="modal-footer px-4 pb-4">
+                                                <button type="button" class="btn btn-primary" id="prevStepBtn">Previous</button>
+                                            </div>
+                                            <div class="modal-footer px-4 pb-4">
+                                                <button type="button" class="btn btn-primary" id="nextStepBtn">Next</button>
+                                            </div>
+
+
+
 
                                         </div>
                                     </div>
 
                                 </div>
+                                </div>
                             </div>
 
                         </div>
                     </div>
-                </div>
-                <div class="modal fade" id="salesforceStepModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
-
-                </div>
-
                 </header>
         <div class="w-100 px-0">
             <main role="main" class="pb-3">
@@ -366,7 +377,7 @@
         }
     });
 </script>
-<script>
+<!--script>
     $(document).on("change", ".object-radio", function () {
         const selectedObject = $(this).val();
 
@@ -412,8 +423,67 @@
             $("#objectRecordsArea").html(`<p class="text-muted">${selectedObject} No content...</p>`);
         }
     });
+</script>-->
+<script>
+    $(document).on("click", ".object-tab", function () {
+        $(".object-tab").removeClass("active");
+        $(this).addClass("active");
+
+        const selectedObject = $(this).data("object");
+        $("#objectRecordsArea").html(`<p class="text-muted">Loading ${selectedObject} records...</p>`);
+
+        let url = '';
+        switch (selectedObject) {
+            case 'Lead': url = '/Data/GetLeadTablePartial'; break;
+            case 'Contact': url = '/Data/GetContactTablePartial'; break;
+            case 'Task': url = '/Data/GetTaskTablePartial'; break;
+            case 'Campaign': url = '/Data/GetCampaignTablePartial'; break;
+        }
+
+        if (url) {
+            $.get(url, function (partialHtml) {
+                $("#objectRecordsArea").html(partialHtml);
+            }).fail(function () {
+                $("#objectRecordsArea").html(`<p class="text-danger">Failed to load ${selectedObject} records.</p>`);
+            });
+        }
+    });
 </script>
+@*<script>
+    $(document).ready(function(){
+        $('#prevStepBtn').click(function(){
+            $('#salesforceStepModal')
+        }
+    })
+</script>
+$(document).ready(function () {
+        $('#nextStepBtn').click(function () {
+            const listName = $('#listName').val().trim();
+            if (!listName) {
+                alert("Please enter a list name.");
+                return;
+            }
 
+            $('#addListModal').modal('hide');
+            setTimeout(() => {
+                $('#salesforceStepModal').modal('show');
+            }, 300);
+        });
+        $(document).on('click', '.object-item', function (e) {
+            e.preventDefault();
+            const selectedObject = $(this).data("object");
+            $('#kendoSelectionContent').html(`<p class='text-muted'>Loading ${selectedObject} records...</p>`);
 
+            let url = '';
+            switch (selectedObject) {
+                case 'Lead': url = '/Data/GetLeadTablePartial'; break;
+                case 'Contact': url = '/Data/GetContactTablePartial'; break;
+                case 'Task': url = '/Data/GetTaskTablePartial'; break;
+                case 'Campaign': url = '/Data/GetCampaignTablePartial'; break;
+            }
 
-           
+            if (url) {
+                $('#kendoSelectionContent').load(url);
+            }
+        });*@
+

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SalesforceIntegrationApp.Models;
 using SalesforceIntegrationApp.Logging;
 using SalesforceIntegrationApp.Filters;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SalesforceIntegrationApp.Controllers;
 

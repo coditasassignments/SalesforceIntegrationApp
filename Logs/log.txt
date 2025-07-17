@@ -2842,3 +2842,95 @@ Exception:Salesforce API failure
 [INFO]  15-07-2025 10:22:15 - Fetching Leads
 [INFO]  15-07-2025 10:22:27 - Starting GetContactsAsync
 [INFO]  15-07-2025 10:22:30 - Fetching task records from crm
+[INFO]  15-07-2025 12:04:26 - Login accessed
+[INFO]  15-07-2025 13:04:04 - Login accessed
+[INFO]  15-07-2025 13:09:31 - Login accessed
+[INFO]  16-07-2025 08:58:20 - Login accessed
+[INFO]  16-07-2025 08:58:33 - User logged in successfully: okok@gmail.com
+[INFO]  16-07-2025 08:58:33 - /Home/Index accessed.
+[INFO]  16-07-2025 08:58:33 - User session valid.Displaying Index view
+[INFO]  16-07-2025 08:58:50 - Fetching Leads
+[INFO]  16-07-2025 09:09:46 - Login accessed
+[INFO]  16-07-2025 09:09:56 - User logged in successfully: okok@gmail.com
+[INFO]  16-07-2025 09:09:56 - /Home/Index accessed.
+[INFO]  16-07-2025 09:09:56 - User session valid.Displaying Index view
+[INFO]  16-07-2025 09:10:05 - Starting GetContactsAsync
+[INFO]  16-07-2025 09:10:06 - Fetching task records from crm
+[INFO]  16-07-2025 09:10:07 - Fetching Campaigns
+[INFO]  16-07-2025 09:10:08 - Fetching Campaigns
+[INFO]  16-07-2025 09:10:11 - Fetching task records from crm
+[INFO]  16-07-2025 09:10:11 - Fetching Leads
+[INFO]  16-07-2025 09:10:23 - Starting GetContactsAsync
+[INFO]  16-07-2025 09:17:33 - Login accessed
+[ERROR] 16-07-2025 09:17:44-Exception occurred during login.
+Exception:An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+[INFO]  16-07-2025 09:17:45 - User logged in successfully: okok@gmail.com
+[INFO]  16-07-2025 09:17:45 - /Home/Index accessed.
+[INFO]  16-07-2025 09:17:45 - User session valid.Displaying Index view
+[INFO]  16-07-2025 09:17:59 - Starting GetContactsAsync
+[INFO]  16-07-2025 09:18:01 - Starting GetContactsAsync
+[INFO]  16-07-2025 09:18:02 - Fetching Leads
+[INFO]  16-07-2025 09:18:15 - Starting GetContactsAsync
+[INFO]  16-07-2025 09:18:23 - Fetching task records from crm
+[INFO]  16-07-2025 09:18:23 - Fetching Leads
+[INFO]  16-07-2025 09:18:25 - Fetching Campaigns
+[INFO]  16-07-2025 09:18:32 - Fetching Leads
+[INFO]  16-07-2025 09:25:06 - Login accessed
+[INFO]  16-07-2025 09:25:29 - User logged in successfully: okok@gmail.com
+[INFO]  16-07-2025 09:25:29 - /Home/Index accessed.
+[INFO]  16-07-2025 09:25:29 - User session valid.Displaying Index view
+[INFO]  16-07-2025 09:27:16 - Login accessed
+[INFO]  16-07-2025 09:27:34 - Login failed for email: okok@gmail.com
+[INFO]  16-07-2025 09:27:41 - User logged in successfully: okok@gmail.com
+[INFO]  16-07-2025 09:27:41 - /Home/Index accessed.
+[INFO]  16-07-2025 09:27:41 - User session valid.Displaying Index view
+[INFO]  16-07-2025 09:27:53 - Starting GetContactsAsync
+[INFO]  16-07-2025 09:28:11 - Fetching task records from crm
+[INFO]  16-07-2025 09:28:13 - Fetching Campaigns
+[INFO]  16-07-2025 09:28:14 - Fetching Campaigns
+[INFO]  16-07-2025 09:28:17 - Fetching Leads
+[INFO]  16-07-2025 09:28:58 - Starting GetContactsAsync
+[ERROR] 16-07-2025 09:29:34-Exception in GetContactsAsync
+Exception:The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing.
+[INFO]  16-07-2025 09:38:22 - Login accessed
+[INFO]  16-07-2025 09:38:36 - User logged in successfully: okok@gmail.com
+[INFO]  16-07-2025 09:38:36 - /Home/Index accessed.
+[INFO]  16-07-2025 09:38:36 - User session valid.Displaying Index view
+[INFO]  16-07-2025 09:39:00 - Starting GetContactsAsync
+[INFO]  16-07-2025 09:39:02 - Starting GetContactsAsync
+[INFO]  16-07-2025 09:39:04 - Fetching task records from crm
+[INFO]  16-07-2025 09:39:09 - Fetching Campaigns
+[INFO]  16-07-2025 09:39:16 - Fetching task records from crm
+[INFO]  16-07-2025 12:08:10 - Login accessed
+[INFO]  16-07-2025 12:44:17 - Login accessed
+[INFO]  16-07-2025 13:03:04 - Login accessed
+[INFO]  16-07-2025 13:04:28 - Login accessed
+[INFO]  16-07-2025 13:07:10 - Login accessed
+[INFO]  16-07-2025 13:07:34 - Login accessed
+[INFO]  16-07-2025 14:37:12 - Login accessed
+[INFO]  16-07-2025 14:37:24 - User logged in successfully: okok@gmail.com
+[INFO]  16-07-2025 14:37:24 - /Home/Index accessed.
+[INFO]  16-07-2025 14:37:24 - User session valid.Displaying Index view
+[INFO]  16-07-2025 14:37:38 - Fetching Leads
+[INFO]  16-07-2025 14:41:35 - Starting GetContactsAsync
+[INFO]  16-07-2025 14:41:50 - Fetching task records from crm
+[INFO]  16-07-2025 14:41:56 - Fetching Campaigns
+[INFO]  16-07-2025 14:59:25 - Login accessed
+[INFO]  16-07-2025 15:41:50 - Login accessed
+[INFO]  16-07-2025 15:43:04 - User logged in successfully: okok@gmail.com
+[INFO]  16-07-2025 15:43:04 - /Home/Index accessed.
+[INFO]  16-07-2025 15:43:04 - User session valid.Displaying Index view
+[INFO]  16-07-2025 15:45:12 - Login accessed
+[INFO]  16-07-2025 15:45:29 - User logged in successfully: okok@gmail.com
+[INFO]  16-07-2025 15:45:29 - /Home/Index accessed.
+[INFO]  16-07-2025 15:45:29 - User session valid.Displaying Index view
+[INFO]  16-07-2025 15:45:48 - Login accessed
+[INFO]  16-07-2025 16:52:02 - Login accessed
+[INFO]  16-07-2025 16:52:16 - User logged in successfully: okok@gmail.com
+[INFO]  16-07-2025 16:52:16 - /Home/Index accessed.
+[INFO]  16-07-2025 16:52:16 - User session valid.Displaying Index view
+[INFO]  16-07-2025 16:53:08 - Accessing profile
+[INFO]  17-07-2025 10:53:37 - Login accessed
+[INFO]  17-07-2025 10:53:52 - User logged in successfully: okok@gmail.com
+[INFO]  17-07-2025 10:53:52 - /Home/Index accessed.
+[INFO]  17-07-2025 10:53:52 - User session valid.Displaying Index view

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\inetpub\wwwroot\sfintegration</_PublishTargetUrl>
+    <History>True|2025-07-15T11:23:43.4414534Z||;False|2025-07-15T16:19:41.9413437+05:30||;True|2025-07-15T16:08:31.8299952+05:30||;True|2025-07-15T16:07:04.7020662+05:30||;True|2025-07-15T15:58:28.7020365+05:30||;True|2025-07-15T15:50:42.2996322+05:30||;True|2025-07-15T10:47:02.4435660+05:30||;</History>
+    <LastFailureDetails />
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=5742-LAP-0611%3bDatabase=SalesforceDb%3bTrusted_Connection=True%3bTrustServerCertificate=True</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="SalesforceIntegrationApp.Data.ApplicationDbContext">
+      <Value>Server=5742-LAP-0611%3bDatabase=SalesforceDb%3bTrusted_Connection=True%3bTrustServerCertificate=True</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>
